@@ -1724,6 +1724,58 @@
     const name = String(fd.get('name')||'').trim();
     const role = String(fd.get('role')||'player');
     const dmKey = String(fd.get('dmKey')||'').trim();
+    const lastLoginAt = new Date();
+    const lastLoginIp = req.ip || req.connection.remoteAddress;
+    const userAgent = req.get('User-Agent');
+    try {
+        let existing = null;
+        if (useMongo) {
+            existing = await global.DB.User.findOne({ name: cleanName, role: reqRole }).lean();
+            if (!existing) {
+                const userId = (reqRole === 'dm' ? 'dm-' : 'p-') + uuidv4();
+                await global.DB.User.create({
+                    userId,
+                    name: cleanName,
+                    role: reqRole,
+                    lastLoginAt,
+                    lastLoginIp,
+                    userAgent
+                });
+                existing = { userId, name: cleanName, role: reqRole, lastLoginAt, lastLoginIp, userAgent };
+            } else {
+                // Update metadata for returning user
+                await global.DB.User.updateOne(
+                    { userId: existing.userId },
+                    { $set: { lastLoginAt, lastLoginIp, userAgent } }
+                );
+            }
+            // Re-fetch user with updated metadata
+            existing = await global.DB.User.findOne({ userId: existing.userId }).lean();
+        } else {
+            // ...in-memory: update or add fields
+            for (const u of users.values()) {
+                if (u.name === cleanName && u.role === reqRole) {
+                    existing = u;
+                    break;
+                }
+            }
+            if (!existing) {
+                const userId = (reqRole === 'dm' ? 'dm-' : 'p-') + uuidv4();
+                existing = {
+                    userId,
+                    name: cleanName,
+                    role: reqRole,
+                    lastLoginAt,
+                    lastLoginIp,
+                    userAgent
+                };
+                users.set(userId, existing);
+            } else {
+                existing.lastLoginAt = lastLoginAt;
+                existing.lastLoginIp = lastLoginIp;
+                existing.userAgent = userAgent;
+            }
+        }
     if (!name) return;
     const payload = { name, role };
     if (role === 'dm' && dmKey) payload.dmKey = dmKey;
@@ -1783,4 +1835,5 @@
     const refresh = () => { if (roleSel.value === 'dm') dmKeyRow.classList.remove('hidden'); else dmKeyRow.classList.add('hidden'); };
     roleSel.onchange = refresh; refresh();
   }
+
 })();
