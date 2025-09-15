@@ -1,4 +1,4 @@
-
+// app.js (fixed version)
 (() => {
     const qs = (sel) => document.querySelector(sel);
     const el = {
@@ -8,8 +8,8 @@
       characterSheetView: qs('#characterSheetView'),
       inventoryView: qs('#inventoryView'),
       shopView: qs('#shopView'),
-    craftingView: qs('#craftingView'),
-    conditionsView: qs('#conditionsView'),
+      craftingView: qs('#craftingView'),
+      conditionsView: qs('#conditionsView'),
       loginForm: qs('#loginForm'),
       logoutBtn: qs('#logoutBtn'),
       charactersList: qs('#charactersList'),
@@ -19,57 +19,57 @@
       characterForm: qs('#characterForm'),
       openInventory: qs('#openInventory'),
       openShop: qs('#openShop'),
-    openEquipment: qs('#openEquipment'),
-    openCrafting: qs('#openCrafting'),
-    openConditions: qs('#openConditions'),
-    openAssist: qs('#openAssist'),
-    assistView: qs('#assistView'),
-    assistContent: qs('#assistContent'),
-    backToSheetFromAssist: qs('#backToSheetFromAssist'),
-    backToCharsFromAssist: qs('#backToCharsFromAssist'),
+      openEquipment: qs('#openEquipment'),
+      openCrafting: qs('#openCrafting'),
+      openConditions: qs('#openConditions'),
+      openAssist: qs('#openAssist'),
+      assistView: qs('#assistView'),
+      assistContent: qs('#assistContent'),
+      backToSheetFromAssist: qs('#backToSheetFromAssist'),
+      backToCharsFromAssist: qs('#backToCharsFromAssist'),
       diceFeed: qs('#diceFeed'),
       damageFeed: qs('#damageFeed'),
       dmTools: qs('#dmTools'),
       shopManage: qs('#shopManage'),
       invContent: qs('#inventoryContent'),
       backToSheetFromInv: qs('#backToSheetFromInv'),
-    backToCharsFromInv: qs('#backToCharsFromInv'),
-    equipmentView: qs('#equipmentView'),
-    equipmentContent: qs('#equipmentContent'),
-    backToSheetFromEquip: qs('#backToSheetFromEquip'),
-    backToCharsFromEquip: qs('#backToCharsFromEquip'),
+      backToCharsFromInv: qs('#backToCharsFromInv'),
+      equipmentView: qs('#equipmentView'),
+      equipmentContent: qs('#equipmentContent'),
+      backToSheetFromEquip: qs('#backToSheetFromEquip'),
+      backToCharsFromEquip: qs('#backToCharsFromEquip'),
       shopContent: qs('#shopContent'),
-    backToSheetFromShop: qs('#backToSheetFromShop'),
-    backToCharsFromShop: qs('#backToCharsFromShop'),
-    shopManageView: qs('#shopManageView'),
-    shopManagePage: qs('#shopManagePage'),
-    backToCharsFromShopManage: qs('#backToCharsFromShopManage'),
-    craftContent: qs('#craftingContent'),
-    craftSearch: qs('#craftSearch'),
-    backToSheetFromCraft: qs('#backToSheetFromCraft'),
-    backToCharsFromCraft: qs('#backToCharsFromCraft'),
-    conditionsContent: qs('#conditionsContent'),
-    backToSheetFromCond: qs('#backToSheetFromCond'),
-    backToCharsFromCond: qs('#backToCharsFromCond'),
-    hamburger: qs('#hamburger'),
-    searchOverlay: qs('#searchOverlay'),
-    searchInput: qs('#searchInput'),
-    searchResults: qs('#searchResults'),
-    searchClose: qs('#searchClose'),
-    perkPicker: qs('#perkPicker'),
-    perkPickerGrid: qs('#perkPickerGrid'),
-    perkPickerClose: qs('#perkPickerClose'),
-    traitPicker: qs('#traitPicker'),
-    traitPickerGrid: qs('#traitPickerGrid'),
-    traitPickerClose: qs('#traitPickerClose'),
-    customBgOverlay: qs('#customBgOverlay'),
-    cbgSkills: qs('#cbgSkills'),
-    cbgSkillsHint: qs('#cbgSkillsHint'),
-    cbgItemsGrid: qs('#cbgItemsGrid'),
-    cbgChosen: qs('#cbgChosen'),
-    cbgItemSearch: qs('#cbgItemSearch'),
-    customBgClose: qs('#customBgClose'),
-    cbgApply: qs('#cbgApply')
+      backToSheetFromShop: qs('#backToSheetFromShop'),
+      backToCharsFromShop: qs('#backToCharsFromShop'),
+      shopManageView: qs('#shopManageView'),
+      shopManagePage: qs('#shopManagePage'),
+      backToCharsFromShopManage: qs('#backToCharsFromShopManage'),
+      craftContent: qs('#craftingContent'),
+      craftSearch: qs('#craftSearch'),
+      backToSheetFromCraft: qs('#backToSheetFromCraft'),
+      backToCharsFromCraft: qs('#backToCharsFromCraft'),
+      conditionsContent: qs('#conditionsContent'),
+      backToSheetFromCond: qs('#backToSheetFromCond'),
+      backToCharsFromCond: qs('#backToCharsFromCond'),
+      hamburger: qs('#hamburger'),
+      searchOverlay: qs('#searchOverlay'),
+      searchInput: qs('#searchInput'),
+      searchResults: qs('#searchResults'),
+      searchClose: qs('#searchClose'),
+      perkPicker: qs('#perkPicker'),
+      perkPickerGrid: qs('#perkPickerGrid'),
+      perkPickerClose: qs('#perkPickerClose'),
+      traitPicker: qs('#traitPicker'),
+      traitPickerGrid: qs('#traitPickerGrid'),
+      traitPickerClose: qs('#traitPickerClose'),
+      customBgOverlay: qs('#customBgOverlay'),
+      cbgSkills: qs('#cbgSkills'),
+      cbgSkillsHint: qs('#cbgSkillsHint'),
+      cbgItemsGrid: qs('#cbgItemsGrid'),
+      cbgChosen: qs('#cbgChosen'),
+      cbgItemSearch: qs('#cbgItemSearch'),
+      customBgClose: qs('#customBgClose'),
+      cbgApply: qs('#cbgApply')
     };
   
     let socket = null;
@@ -1702,7 +1702,7 @@
       const d = document.createElement('div'); d.className='item';
       const prereq = t.prerequisite || '';
       const eff = t.effect || t.description || '';
-      d.innerHTML = `<h3>${t.name}</h3>${prereq?`<div class="meta">Req: ${prereq}</div>`:''}${eff?`<div class="muted">${eff}</div>`:''}<div class="row-btns"><button data-pick="${t.name}">Select</button></div>`;
+      d.innerHTML = `<h3>${t.name}</h3>${prereq?`<div class="meta">Req: ${prereq}</div>`:''}${eff?`<div class="muted\">${eff}</div>`:''}<div class="row-btns"><button data-pick="${t.name}">Select</button></div>`;
       list.appendChild(d);
     });
     el.traitPickerGrid.appendChild(list);
@@ -1724,58 +1724,6 @@
     const name = String(fd.get('name')||'').trim();
     const role = String(fd.get('role')||'player');
     const dmKey = String(fd.get('dmKey')||'').trim();
-    const lastLoginAt = new Date();
-    const lastLoginIp = req.ip || req.connection.remoteAddress;
-    const userAgent = req.get('User-Agent');
-    try {
-        let existing = null;
-        if (useMongo) {
-            existing = await global.DB.User.findOne({ name: cleanName, role: reqRole }).lean();
-            if (!existing) {
-                const userId = (reqRole === 'dm' ? 'dm-' : 'p-') + uuidv4();
-                await global.DB.User.create({
-                    userId,
-                    name: cleanName,
-                    role: reqRole,
-                    lastLoginAt,
-                    lastLoginIp,
-                    userAgent
-                });
-                existing = { userId, name: cleanName, role: reqRole, lastLoginAt, lastLoginIp, userAgent };
-            } else {
-                // Update metadata for returning user
-                await global.DB.User.updateOne(
-                    { userId: existing.userId },
-                    { $set: { lastLoginAt, lastLoginIp, userAgent } }
-                );
-            }
-            // Re-fetch user with updated metadata
-            existing = await global.DB.User.findOne({ userId: existing.userId }).lean();
-        } else {
-            // ...in-memory: update or add fields
-            for (const u of users.values()) {
-                if (u.name === cleanName && u.role === reqRole) {
-                    existing = u;
-                    break;
-                }
-            }
-            if (!existing) {
-                const userId = (reqRole === 'dm' ? 'dm-' : 'p-') + uuidv4();
-                existing = {
-                    userId,
-                    name: cleanName,
-                    role: reqRole,
-                    lastLoginAt,
-                    lastLoginIp,
-                    userAgent
-                };
-                users.set(userId, existing);
-            } else {
-                existing.lastLoginAt = lastLoginAt;
-                existing.lastLoginIp = lastLoginIp;
-                existing.userAgent = userAgent;
-            }
-        }
     if (!name) return;
     const payload = { name, role };
     if (role === 'dm' && dmKey) payload.dmKey = dmKey;
@@ -1836,4 +1784,4 @@
     roleSel.onchange = refresh; refresh();
   }
 
-})();
+})(); 
