@@ -202,7 +202,10 @@ if (useMongo) {
     const userSchema = new mongoose.Schema({
         userId: { type: String, unique: true },
         name: String,
-        role: { type: String, enum: ['player', 'dm'] }
+        role: { type: String, enum: ['player', 'dm'] },
+        lastLoginAt: Date, // Timestamp of last login
+        lastLoginIp: String, // IP address
+        userAgent: String,  // Browser/Device info
     }, { timestamps: true });
     const characterSchema = new mongoose.Schema({
         id: { type: String, unique: true },
