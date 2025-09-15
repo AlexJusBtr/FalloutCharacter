@@ -1,0 +1,1042 @@
+{
+    "perks": [
+    {
+      "name": "Adaptive Reflexes",
+      "requirement": "Missing Hand, Arm, Foot, or Leg.",
+      "effect": "Allows you to endure and overcome a disability. If a foot or leg is lost, movement is no longer limited to 20 feet per turn. If a hand or foot is lost, you gain 3 points to increase any ability scores. If an arm or leg is lost, you gain 5 points for ability score increases.",
+      "repeat": "Can be taken as many times as you have missing arms or legs."
+    },
+    {
+      "name": "Blind Devil",
+      "requirement": "Permanently Blinded.",
+      "effect": "Sharpens other senses, allowing pinpoint accuracy within a radius of 5 times your Perception ability score. Your passive sense increases by 5, and you have advantage on all combat sequence rolls.",
+      "repeat": ""
+    },
+    {
+      "name": "Cowboy",
+      "requirement": "",
+      "effect": "Reduces the AP cost to draw a lever action rifle, cowboy repeater, or revolver to 1. If you hit a surprised creature with one of these weapons, the attack critically hits.",
+      "repeat": ""
+    },
+    {
+      "name": "Deadeye",
+      "requirement": "",
+      "effect": "Adds 2 to attack or damage rolls with a ranged weapon. Adds an additional 2 to targeted attack rolls to the head with a ranged weapon.",
+      "repeat": "Can be taken up to a maximum of three times."
+    },
+    {
+      "name": "Duelist",
+      "requirement": "",
+      "effect": "Adds 2 to attack or damage rolls with an unarmed or melee weapon.",
+      "repeat": "Can be taken up to a maximum of three times."
+    },
+    {
+      "name": "Educated",
+      "requirement": "Intelligence 4 or lower.",
+      "effect": "You gain 4 skill points at levels 5, 9, 13, 17, 21, 25, and 29, instead of 3. Additionally, you gain skill points as if your Intelligence score was 5 (referencing the Level Up table).",
+      "repeat": ""
+    },
+    {
+      "name": "Entomologist",
+      "requirement": "",
+      "effect": "When dealing damage to an insect creature type's hit points, their Damage Threshold (DT) is not subtracted from your damage total. Insect examples include Ants, Bloatflies, Cazador, and Radscorpion.",
+      "repeat": ""
+    },
+    {
+      "name": "Fight the Power!",
+      "requirement": "",
+      "effect": "When taking damage to hit points from a faction-affiliated creature, your DT increases by 1. When dealing damage to a faction-affiliated creature, your damage increases by 1. Faction examples include the NCR, Brotherhood of Steel, Caesar’s Legion, Institute, or Railroad.",
+      "repeat": "Can be taken up to a maximum of twice."
+    },
+    {
+      "name": "Here and Now",
+      "requirement": "Level 3.",
+      "effect": "You and each other player character immediately gain 1000 XP.",
+      "repeat": "Cannot be taken again by any other player characters once chosen."
+    },
+    {
+      "name": "Purifier",
+      "requirement": "",
+      "effect": "Adds 3 to attack rolls with an unarmed or melee weapon against an abomination. Abominations include Super Mutants, Deathclaws, Mirelurks, and Fog Crawlers.",
+      "repeat": "Can be taken up to a maximum of three times."
+    },
+    {
+      "name": "Sneering Imperialist",
+      "requirement": "",
+      "effect": "Adds 3 to damage rolls against a humanoid with no faction affiliation (raiders, junkies, freeloaders).",
+      "repeat": "Can be taken up to a maximum of twice."
+    },
+    {
+      "name": "Swift Learner",
+      "requirement": "",
+      "effect": "When the GM awards XP, you and each other player character gain an additional 20% bonus.",
+      "repeat": "Can be taken up to a maximum of twice by one player character or once by a total of two player characters."
+    },
+    {
+      "name": "Heavyweight",
+      "requirement": "Strength 4.",
+      "effect": "Allows a special heavy unarmed attack for 6 AP, dealing 2d4 additional damage. You are immune to the encumbered condition but can still become heavily encumbered.",
+      "repeat": ""
+    },
+    {
+      "name": "Weapon Handling",
+      "requirement": "Strength 4.",
+      "effect": "You no longer have disadvantage on attack rolls with weapons for which you do not meet the Strength requirement. Ignores the negative effects of the first two levels of decay on all weapons.",
+      "repeat": ""
+    },
+    {
+      "name": "Butcher",
+      "requirement": "Strength 5.",
+      "effect": "Adds 2 to damage rolls with a melee weapon. If a targeted attack to a creature's arms or legs with a bladed melee weapon deals more than double their level in hit point damage, the limb is severed.",
+      "repeat": ""
+    },
+    {
+      "name": "Fisticuffs",
+      "requirement": "Strength 5.",
+      "effect": "Adds 3 to damage rolls with an unarmed attack when damage is dealt to a target’s stamina points. If an unarmed targeted attack to a creature's head deals more than their level in hit point damage, they become dazed for a number of rounds equal to 8 minus their Endurance (minimum 1).",
+      "repeat": ""
+    },
+    {
+      "name": "Heave Ho!",
+      "requirement": "Strength 5.",
+      "effect": "Doubles the distance you can throw an object or creature.",
+      "repeat": ""
+    },
+    {
+      "name": "Hauler",
+      "requirement": "Strength 5.",
+      "effect": "Increases your maximum carry load by 50. You do not become slowed when carrying heavy objects.",
+      "repeat": ""
+    },
+    {
+      "name": "Assert Power",
+      "requirement": "Strength 5.",
+      "effect": "Allows you to spend 4 AP to frighten a target creature within 30 feet of you. Cannot frighten a creature you have already frightened.",
+      "repeat": ""
+    },
+    {
+      "name": "Leaping Powerhouse",
+      "requirement": "Strength 6.",
+      "effect": "Increases long jump distance by 10 feet and high jump height by 3 feet. Takes half impact damage from falls.",
+      "repeat": ""
+    },
+    {
+      "name": "Super Slam!",
+      "requirement": "Strength 6.",
+      "effect": "If you move at least 15 feet in a straight line, your next unarmed or melee weapon attack has advantage. If it hits and deals hit point damage, the target either falls prone or is knocked back 5 feet times your Strength modifier.",
+      "repeat": ""
+    },
+    {
+      "name": "Stonewall",
+      "requirement": "Strength 6.",
+      "effect": "Your DT increases by 2. You have advantage on Strength ability checks to resist being grappled, restrained, or knocked prone, or can flip a Karma Cap to automatically succeed.",
+      "repeat": ""
+    },
+    {
+      "name": "K.O.",
+      "requirement": "Strength 7.",
+      "effect": "When you deal hit point damage to a target creature's hit points for the first time with an unarmed or melee weapon attack, they become dazed for 2 rounds.",
+      "repeat": ""
+    },
+    {
+      "name": "Piercing Strikes",
+      "requirement": "Strength 7.",
+      "effect": "When dealing damage from an unarmed or melee weapon attack, the target’s DT is reduced by your Strength modifier (minimum 0).",
+      "repeat": ""
+    },
+    {
+      "name": "Paralyzing Punch",
+      "requirement": "Strength 8.",
+      "effect": "If you hit a single target with at least three melee attacks on a turn, they gain 2 levels of fatigue. If a creature reaches 4 levels of fatigue this way, they become paralyzed until the end of their next turn. This paralysis effect cannot be applied to the same creature again until you roll combat sequence.",
+      "repeat": ""
+    },
+    {
+      "name": "Rooted",
+      "requirement": "Strength 8.",
+      "effect": "For 4 AP, you can become Rooted, increasing your DT by 5 and unarmed/melee weapon damage by 2. Moving 5 feet costs 2 AP while Rooted. The condition can be removed for 3 AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Unstoppable Force",
+      "requirement": "Strength 9.",
+      "effect": "When dealing damage from an unarmed or melee weapon attack to a creature's hit points, their DT is not subtracted from your damage total.",
+      "repeat": ""
+    },
+    {
+      "name": "Never Unarmed",
+      "requirement": "Strength 9.",
+      "effect": "When making an attack roll with an improvised weapon, damage increases by 1 die rank and critical hit chance decreases by 1.",
+      "repeat": ""
+    },
+    {
+      "name": "Living Weapons",
+      "requirement": "Strength 10.",
+      "effect": "Allows using other creatures as improvised weapons. If unwilling, a grapple check is required. Costs 6 AP, uses Melee Weapons skill, critically hits on 20 (x2), and deals impact damage based on size (Small: 3d6, Medium: 4d6, Large: 5d6). Can throw creatures 2 feet times your Strength score. If a thrown creature hits another, both fall prone and the creature used as a weapon takes half the impact damage.",
+      "repeat": ""
+    },
+    {
+      "name": "Slayer",
+      "requirement": "Strength 10.",
+      "effect": "Gains 1 AP when spending AP to attack with an unarmed or melee weapon. Critical hit chance with all unarmed and melee weapons decreases by 1.",
+      "repeat": ""
+    },
+    {
+      "name": "Careful Aim",
+      "requirement": "Perception 4",
+      "effect": "When making a ranged weapon attack, you can spend 1 additional AP to add 1 to the result of the roll, up to 3 additional AP for an additional +1 per AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Friend of the Night",
+      "requirement": "Perception 4",
+      "effect": "Removes disadvantage on attack rolls, ability checks, or skill checks due to low-light conditions.",
+      "repeat": "If taken again, grants night vision out to 100 feet."
+    },
+    {
+      "name": "Alertness",
+      "requirement": "Perception 5",
+      "effect": "If you remain in a location no larger than a 20-foot radius for at least 10 minutes, your passive sense gains a bonus equal to your Perception ability score (passive sense becomes 12 + double your Perception modifier).",
+      "repeat": ""
+    },
+    {
+      "name": "Infiltrator",
+      "requirement": "Perception 5",
+      "effect": "For 3 AP, you can examine a lock or computer to learn its Breach DC. If you fail a Breach check, you can flip a Karma Cap to automatically succeed.",
+      "repeat": ""
+    },
+    {
+      "name": "Empowered Energy",
+      "requirement": "Perception 5",
+      "effect": "Rolls an additional damage die with energy weapon attacks. On a critical hit with an energy weapon, you can choose to make an additional attack (once per turn) or double critical hit damage.",
+      "repeat": "Can be taken up to a maximum of three times, each time increasing energy weapon damage dice by one."
+    },
+    {
+      "name": "Standoff",
+      "requirement": "Perception 5",
+      "effect": "When rolling Combat Sequence, you and one other creature within 30 feet gain a bonus equal to your Perception modifier.",
+      "repeat": "Can be taken up to a maximum of three times, each time increasing the number of affected creatures by one."
+    },
+    {
+      "name": "Efficient Diagnosis",
+      "requirement": "Perception 5",
+      "effect": "When using a stimpak, first aid kit, or doctor’s bag on another creature, they heal an additional 2 hit points. Alternatively, you can flip a Karma Cap to heal double the normal amount.",
+      "repeat": "Can be taken up to a maximum of three times, each time increasing the number healed by 2."
+    },
+    {
+      "name": "Pack Rat",
+      "requirement": "Perception 6",
+      "effect": "Each player character’s carry load increases by 10. Any item you carry with a load less than 3 is reduced to 1.",
+      "repeat": "Can be taken up to a maximum of three times, each time increasing each player character’s carry load by 10."
+    },
+    {
+      "name": "Splash Damage",
+      "requirement": "Perception 6",
+      "effect": "Increases the area of effect of weapons or equipment by half.",
+      "repeat": "If taken again, the area of effect size is increased by half again (effectively doubling the original size)."
+    },
+    {
+      "name": "Careful Detonations",
+      "requirement": "Perception 6",
+      "effect": "When throwing an explosive (not placed), you can choose a 5-foot radius area where creatures/objects take no damage or effects. Alternatively, you can reduce the area of effect radius by up to 5 feet.",
+      "repeat": ""
+    },
+    {
+      "name": "Pulsion Perforation",
+      "requirement": "Perception 7",
+      "effect": "Allows energy weapon attacks to target up to three creatures in a line starting from your location.",
+      "repeat": "Can be taken up to a maximum of twice. If taken again, you can target up to six creatures in a line."
+    },
+    {
+      "name": "Demolitions Expert",
+      "requirement": "Perception 7",
+      "effect": "Increases explosive damage by an additional die.",
+      "repeat": "Can be taken up to a maximum of three times."
+    },
+    {
+      "name": "Hit the Deck",
+      "requirement": "Perception 8",
+      "effect": "Halves damage taken to stamina points from an explosive.",
+      "repeat": "Can be taken up to a maximum of once."
+    },
+    {
+      "name": "Meltdown",
+      "requirement": "Perception 8",
+      "effect": "When an attack dealing laser, plasma, or electricity damage brings a creature to 0 hit points, you can choose for that creature to explode. Each creature within 10 feet takes damage equal to the amount you dealt.",
+      "repeat": "Can be taken up to a maximum of once."
+    },
+    {
+      "name": "Sniper",
+      "requirement": "Perception 9",
+      "effect": "When making a two-handed ranged weapon attack, you can spend 1 additional AP to add 2 to the result, up to 3 additional AP for an additional +2 per AP. If you make a targeted head shot with a scoped rifle and deal hit point damage, the target dies if they cannot live without their head or are not wearing power armor.",
+      "repeat": ""
+    },
+    {
+      "name": "Volatile Hucker",
+      "requirement": "Perception 9",
+      "effect": "Reduces AP cost to throw an explosive by 1 (minimum 3). If you roll a 20 on an Explosives skill check, the explosive detonates at the end of your turn and deals double damage dice.",
+      "repeat": ""
+    },
+    {
+      "name": "Medicinal Master",
+      "requirement": "Perception 10",
+      "effect": "When another creature rests for at least an hour, you can use a first aid kit, stimpak, or doctor’s bag to heal them of half their total hit points. If they rest for at least 4 hours, you can heal them of all their hit points.",
+      "repeat": "If taken again, you can heal them of all their hit points after at least an hour of rest."
+    },
+    {
+      "name": "Oracle",
+      "requirement": "Perception 10",
+      "effect": "When rolling Combat Sequence, you can swap the combat sequence rolls of any number of willing creatures.",
+      "repeat": "If taken again, you can swap the combat sequence rolls of up to three additional creatures (they do not have to be willing)."
+    },
+    {
+      "name": "Master Chef",
+      "requirement": "Endurance 4",
+      "effect": "Cooking pre-made food or crafting cooked food always gives it the 'filling' property. If it has the 'bland' property, it becomes 'tasty.' Consumers gain temporary stamina points equal to their level.",
+      "repeat": ""
+    },
+    {
+      "name": "Lifegiver",
+      "requirement": "Endurance 4",
+      "effect": "Your maximum hit points increase by 10, and each other player character's maximum hit points increase by 1.",
+      "repeat": "If taken again, your maximum hit points increase by 10, and each other player character's maximum hit points increase by 1."
+    },
+    {
+      "name": "Toughness",
+      "requirement": "Endurance 5",
+      "effect": "Your DT increases by 1. When frightened, you can always choose to be frightened (fight).",
+      "repeat": "If taken again, your DT increases by 1."
+    },
+    {
+      "name": "Beyond the Sea",
+      "requirement": "Endurance 5",
+      "effect": "When moving through water, you can spend 1 AP to move 5 feet instead of 10. Drinking dirty water no longer gives irradiated levels.",
+      "repeat": ""
+    },
+    {
+      "name": "Mad Dash",
+      "requirement": "Endurance 5",
+      "effect": "When sprinting on your turn, you move 80 feet in a line instead of 50.",
+      "repeat": ""
+    },
+    {
+      "name": "Trailblazer’s Instinct",
+      "requirement": "Endurance 5",
+      "effect": "Once per day when starting travel, you can make a DC 12 Survival check (DC increases by 2 for difficult terrain, travel longer than 3 days, or unfamiliar territory). On success, you and fellow travelers move 2 miles per hour faster. You also have advantage on encounter rolls.",
+      "repeat": ""
+    },
+    {
+      "name": "Survivorship Bias",
+      "requirement": "Endurance 5",
+      "effect": "If you have rolled combat sequence with a creature type and subtype before and can sense them, you can spend 3 AP to learn their HP, SP, AP, AC, or DT total. For 6 AP, you can learn one of its attacks or any weaknesses.",
+      "repeat": "Can be taken up to a maximum of three times, each time learning an additional statistic, action, or weakness."
+    },
+    {
+      "name": "Grit",
+      "requirement": "Endurance 6",
+      "effect": "While dying, movement costs no extra AP, and you gain an additional AP at the start of your turn.",
+      "repeat": "If taken again, you gain 2 additional AP at the start of your turn while dying."
+    },
+    {
+      "name": "The Long Road",
+      "requirement": "Endurance 6",
+      "effect": "While traveling, you and each player character can travel an additional hour without gaining an exhaustion level. You regain all stamina points after resting for an hour instead of eight.",
+      "repeat": ""
+    },
+    {
+      "name": "Alive and Kickin’",
+      "requirement": "Endurance 6",
+      "effect": "Ignores the negative effects of the first three levels of exhaustion.",
+      "repeat": ""
+    },
+    {
+      "name": "Solar Powered",
+      "requirement": "Endurance 7",
+      "effect": "When resting for at least an hour in direct sunlight, you gain temporary stamina points equal to your level. You can lose these temporary stamina points to increase damage dealt by that amount.",
+      "repeat": ""
+    },
+    {
+      "name": "Roughin’ It",
+      "requirement": "Endurance 7",
+      "effect": "When resting outside for at least 1 hour, you gain temporary hit points and stamina points equal to your level for the next 8 hours.",
+      "repeat": "Can be taken up to a maximum of twice. When taken again, each other chosen creature resting with you gains the same bonus."
+    },
+    {
+      "name": "Pure Determination",
+      "requirement": "Endurance 8",
+      "effect": "When first reduced to 0 hit points on a turn, you can flip a Karma Cap to heal hit points equal to your healing rate. You are immune to the shock condition.",
+      "repeat": ""
+    },
+    {
+      "name": "Quick Recovery",
+      "requirement": "Endurance 8",
+      "effect": "For 3 AP, you can heal stamina or hit points equal to your healing rate. Usable once per 6-hour rest. When healing hit points, you gain a bonus equal to your Endurance modifier.",
+      "repeat": ""
+    },
+    {
+      "name": "Implant Y-7",
+      "requirement": "Endurance 9",
+      "effect": "Your maximum hit points increase by double your level. Your Healing Rate increases by 2.",
+      "repeat": ""
+    },
+    {
+      "name": "NEMEAN Sub-Dermal Armor",
+      "requirement": "Endurance 9",
+      "effect": "For 3 AP, activate implant to gain resistance to any three damage types (acid, bludgeoning, ballistic, cold, electricity, explosive, fire, impact, laser, piercing, plasma, poison, radiation, or slashing) for 3 rounds. Cannot activate again until after 1 hour rest or next combat sequence.",
+      "repeat": ""
+    },
+    {
+      "name": "Indomitable Spirit",
+      "requirement": "Endurance 10",
+      "effect": "When rolling combat sequence, you and chosen creatures gain temporary hit points equal to your Endurance modifier. For 3 AP on a dying creature within 5 feet, they succeed one death save.",
+      "repeat": ""
+    },
+    {
+      "name": "PHOENIX Implant",
+      "requirement": "Endurance 10",
+      "effect": "For 3 AP, activate implant to heal hit points equal to your healing rate at the start of your turn for 6 rounds. Cannot activate again until after 1 hour rest or next combat sequence.",
+      "repeat": "Can be taken up to a maximum of once."
+    },
+    {
+      "name": "Savvy Salesman",
+      "requirement": "Charisma 4",
+      "effect": "When purchasing an item, the price is reduced by a percentage equal to twice your Charisma ability score.",
+      "repeat": ""
+    },
+    {
+      "name": "Party Animal",
+      "requirement": "Charisma 4",
+      "effect": "Cannot become addicted to Alcohol. When drinking an alcoholic drink, you regain stamina points equal to your level.",
+      "repeat": ""
+    },
+    {
+      "name": "Flaunt ‘n Taunt",
+      "requirement": "Charisma 5",
+      "effect": "For 3 AP, taunt a target creature. On a failed Charisma check (DC equals your check total), the next attack against them (not from you) has advantage, and they can only target you on their next turn. If you taunt a previously taunted creature, they have advantage on their Charisma check. Cannot taunt a creature more than twice.",
+      "repeat": ""
+    },
+    {
+      "name": "Dealer's Choice",
+      "requirement": "Charisma 5",
+      "effect": "When selling an item, you can sell it for 75% of the price instead of 50%.",
+      "repeat": ""
+    },
+    {
+      "name": "Poker Face",
+      "requirement": "Charisma 5",
+      "effect": "If a Speech skill check result is less than 9, it is instead 9 plus your Speech bonus. When gambling, you can add your Charisma score to the roll.",
+      "repeat": ""
+    },
+    {
+      "name": "Battle Cry",
+      "requirement": "Charisma 5",
+      "effect": "For 3 AP, encourage allies within 20 feet. Each chosen creature gains 2 additional AP (max 15) and advantage on their first attack roll on their turn. Usable once per combat sequence.",
+      "repeat": ""
+    },
+    {
+      "name": "Animal Friend",
+      "requirement": "Charisma 5",
+      "effect": "In combat, animals or insects will not target you unless all other targets are out of sight or unconscious.",
+      "repeat": ""
+    },
+    {
+      "name": "Synergizing Teamwork",
+      "requirement": "Charisma 6",
+      "effect": "If another party member fails an attack roll, you can flip a Karma Cap to add your Charisma modifier to the roll. If it hits, the next creature to attack for the first time on their turn gains your Charisma modifier plus 1 bonus. This ability triggers until a party member misses their first attack.",
+      "repeat": ""
+    },
+    {
+      "name": "Ferocious Loyalty",
+      "requirement": "Charisma 6",
+      "effect": "When you first take hit point damage, your party members regain all their stamina points if they can sense you. This triggers once per 8-hour rest.",
+      "repeat": "Once a player character has taken this perk, it cannot be taken by any other characters."
+    },
+    {
+      "name": "Back to Back",
+      "requirement": "Charisma 6",
+      "effect": "When rolling combat sequence, choose one ally. When you and that ally are within 5 feet, both gain +1 AC and +2 DT. If either takes damage, either can choose to halve that damage, with the other taking the same amount.",
+      "repeat": "Cannot be taken by other characters. If taken again, AC bonus increases by 1, DT bonus by 2. If either takes damage, either can choose to reduce it to 0, with the other taking the full damage instead."
+    },
+    {
+      "name": "Big Ego",
+      "requirement": "Charisma 7",
+      "effect": "Your Party Nerve modifier is doubled for you.",
+      "repeat": ""
+    },
+    {
+      "name": "Inspiring Action",
+      "requirement": "Charisma 7",
+      "effect": "For 3 AP, inspire a creature within 30 feet. That creature can add 2d10 to any d20 roll for the next minute (once per minute). Cannot inspire the same creature again until the next day.",
+      "repeat": ""
+    },
+    {
+      "name": "Terrifying Presence",
+      "requirement": "Charisma 7",
+      "effect": "During the first round of combat, each enemy with an Intelligence higher than 2 that can see you becomes frightened.",
+      "repeat": ""
+    },
+    {
+      "name": "Legend of the Wastelander",
+      "requirement": "Charisma 8",
+      "effect": "Your Party Nerve negatively affects any enemies’ Stamina Points that you are in combat with, even if they are creatures incapable of comprehending the idea of a legend.",
+      "repeat": ""
+    },
+    {
+      "name": "Empowering Personality",
+      "requirement": "Charisma 8",
+      "effect": "When another creature within 30 feet deals damage, you can flip a Karma Cap to increase the damage by double your Charisma modifier. When another creature takes hit point damage, you can flip a Karma Cap to reduce the damage by double your Charisma modifier.",
+      "repeat": ""
+    },
+    {
+      "name": "Commander",
+      "requirement": "Charisma 9",
+      "effect": "For 3 AP, give an allied creature within 60 feet a command. That creature immediately gains 6 AP to complete the action. These AP are not retained or recycled.",
+      "repeat": ""
+    },
+    {
+      "name": "Cunning Strategist",
+      "requirement": "Charisma 9",
+      "effect": "If another player character flips their Karma Cap back over (due to rolling a 1 or critical hit), you can also flip over your Karma Cap.",
+      "repeat": "Can be taken up to a maximum of twice. If taken again, if another player character flips their Karma Cap back over, you can choose for another player character to flip over their Karma Cap."
+    },
+    {
+      "name": "Celebrity",
+      "requirement": "Charisma 10",
+      "effect": "You get free drinks at bars and a permanent 20% discount on all items. When meeting a non-hostile, neutral NPC not directly affiliated with a faction, you can make a Luck check (DC 30 - your Speech or Barter skill bonus). On success, the NPC knows who you are, granting you advantage on all Charisma-based skill checks with them. You can also lose your Karma Cap to have this NPC follow your party (obeying reasonable orders, not self-harming). If dismissed or they die, you regain your Karma Cap at the beginning of the next game session.",
+      "repeat": ""
+    },
+    {
+      "name": "Stand and Fight",
+      "requirement": "Charisma 10",
+      "effect": "If another creature within 30 feet fails a death save and dies, you can turn that roll into a success. Usable once per creature until you roll combat sequence.",
+      "repeat": ""
+    },
+    {
+      "name": "Retention",
+      "requirement": "Intelligence 4",
+      "effect": "If another player character succeeds a Barter, Breach, Crafting, Intimidation, Medicine, Science, Sneak, Speech, or Survival skill check, you gain a +3 bonus to that skill check the next time you roll it (max +3). Skill Magazine effects last for 8 hours instead of 1.",
+      "repeat": ""
+    },
+    {
+      "name": "Math Wrath",
+      "requirement": "Intelligence 4",
+      "effect": "When making a targeted attack, you can spend half the additional AP (rounded up). Can make a special 'Calculated attack' for 6 AP with a ranged weapon, targeting creatures behind cover if a ricochet surface is available (GM discretion). Damage from a Calculated attack is reduced by 1 for every 10 feet the projectile travels after ricocheting.",
+      "repeat": ""
+    },
+    {
+      "name": "Adroit Alchemist",
+      "requirement": "Intelligence 5",
+      "effect": "When crafting a Chem, you use one less material (minimum one). You can make any Chem 'potent' (effects doubled, addiction DC +2) or 'diluted' (effects halved, no addiction) by using one listed material.",
+      "repeat": ""
+    },
+    {
+      "name": "Patch Up",
+      "requirement": "Intelligence 5",
+      "effect": "You can heal a creature up to their healing rate. That creature can only be healed this way again after an 8-hour rest.",
+      "repeat": ""
+    },
+    {
+      "name": "Explorer",
+      "requirement": "Intelligence 5",
+      "effect": "When resting and gaining bonus XP for discovering new locations, you gain an additional 50% bonus XP. You can also learn the direction and distance of any three named locations (GM discretion).",
+      "repeat": ""
+    },
+    {
+      "name": "Weatherboy!",
+      "requirement": "Intelligence 5",
+      "effect": "You always know which way is north, the weather for the next three days, and if your travel area is populated or empty (determining encounters).",
+      "repeat": ""
+    },
+    {
+      "name": "On-the-Go Mechanic",
+      "requirement": "Intelligence 5",
+      "effect": "No longer requires a workbench to craft items, but your tools (5 Load) must be carried.",
+      "repeat": ""
+    },
+    {
+      "name": "Light Touch",
+      "requirement": "Intelligence 6",
+      "effect": "When reduced to 0 hit points, your armor only decays 1 level. When taking hit point damage, you can have your armor absorb the blow (damage reduced to 0, but armor decays 1 level for every 10 damage absorbed).",
+      "repeat": ""
+    },
+    {
+      "name": "Chemist",
+      "requirement": "Intelligence 6",
+      "effect": "Duration of any chems you take lasts twice as long. You have advantage on resisting addiction.",
+      "repeat": ""
+    },
+    {
+      "name": "Efficient Munitions",
+      "requirement": "Intelligence 6",
+      "effect": "Ammunition you craft gains +2 to attack and damage rolls. Alternatively, you can double the amount of ammunition crafted instead of the bonus.",
+      "repeat": ""
+    },
+    {
+      "name": "Nerd Rage!",
+      "requirement": "Intelligence 7",
+      "effect": "When starting your turn with less than half your total hit points, your DT increases by 2.",
+      "repeat": ""
+    },
+    {
+      "name": "In Shining Armor",
+      "requirement": "Intelligence 7",
+      "effect": "You have resistance to laser and plasma damage. Each time you are hit with laser or plasma damage, roll a Luck check. On a 19 or higher, the beam refracts and hits the attacker for the same damage.",
+      "repeat": ""
+    },
+    {
+      "name": "Computer Whiz",
+      "requirement": "Intelligence 8",
+      "effect": "If you fail a Breach skill check on a computer, you can spend 10 minutes to automatically succeed (GM discretion).",
+      "repeat": ""
+    },
+    {
+      "name": "Robotic Expert",
+      "requirement": "Intelligence 8",
+      "effect": "Ignores 2 points of DT when dealing damage to Robots. Can attempt to shut down robots with a Science check (DC equals Robot's Intelligence score + 10), but not in combat.",
+      "repeat": ""
+    },
+    {
+      "name": "Quick Repair",
+      "requirement": "Intelligence 9",
+      "effect": "For 6 AP, perform a Quick Repair, removing two levels of decay from an item. Usable once per 8-hour rest.",
+      "repeat": "Can be taken up to a maximum of three times. Each time taken, you can Quick Repair an additional time per 8-hour rest."
+    },
+    {
+      "name": "Remedial Atomizer",
+      "requirement": "Intelligence 9",
+      "effect": "For 6 AP and two stimpaks, all non-robotic creatures within 20 feet regain hit points equal to their healing rate. Alternatively, for 6 AP and two robot repair kits, all robotic creatures within 20 feet regain hit points equal to their healing rate.",
+      "repeat": "Can be taken up to a maximum of twice. If taken again, you can use four stimpaks or robot repair kits to heal creatures for double their healing rate."
+    },
+    {
+      "name": "Overcharge",
+      "requirement": "Intelligence 10",
+      "effect": "When making a ranged weapon attack, you can spend up to 3 additional AP to add additional damage dice equal to the extra AP spent. Usable once per turn.",
+      "repeat": ""
+    },
+    {
+      "name": "Expert Engineer",
+      "requirement": "Intelligence 10",
+      "effect": "When crafting an item, you use two fewer materials for each listed material (minimum one).",
+      "repeat": ""
+    },
+    {
+      "name": "Quick Draw",
+      "requirement": "Agility 4",
+      "effect": "Reduces AP cost to equip or stow an item by 2 (minimum 1).",
+      "repeat": ""
+    },
+    {
+      "name": "Action Hero",
+      "requirement": "Agility 4",
+      "effect": "Your action point maximum increases by 2, to a maximum of 15.",
+      "repeat": ""
+    },
+    {
+      "name": "Fan the Hammer",
+      "requirement": "Agility 5",
+      "effect": "When attacking with a revolver, you can flip a Karma Cap and spend 10 AP to make additional attacks equal to the rounds left in the revolver, targeting creatures within 10 feet of the previous target, without spending additional AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Rapid Reload",
+      "requirement": "Agility 5",
+      "effect": "Reduces AP cost to reload or take cover by 3 (minimum 1). When reloading a Manual Reload weapon, you can spend 1 AP to reload three rounds.",
+      "repeat": ""
+    },
+    {
+      "name": "Reaction Reactor",
+      "requirement": "Agility 5",
+      "effect": "If you end your turn with at least 3 unused AP, you can use them at the end of another creature's turn. If not used, all are recycled at the start of your next turn.",
+      "repeat": ""
+    },
+    {
+      "name": "The Dance",
+      "requirement": "Agility 5",
+      "effect": "When dealing damage with a bladed melee weapon, you can choose to add your Agility modifier to the damage instead of your Strength modifier.",
+      "repeat": ""
+    },
+    {
+      "name": "Nimble Dash",
+      "requirement": "Agility 5",
+      "effect": "When sprinting, you do not stop movement for small barriers; instead, you can spend 10 feet of movement to vault over or slide under them. If you spent all AP on sprinting, all attack rolls against you have disadvantage until your next turn.",
+      "repeat": ""
+    },
+    {
+      "name": "Evasive Action",
+      "requirement": "Agility 5",
+      "effect": "The first time you take stamina point damage after rolling combat sequence, the damage is reduced to 0.",
+      "repeat": ""
+    },
+    {
+      "name": "Gunslinger",
+      "requirement": "Agility 6",
+      "effect": "Adds 2 to attack rolls with a handgun. When hitting a creature with a targeted head shot with a handgun, you can flip a Karma Cap to turn it into a critical hit. Usable once per combat sequence.",
+      "repeat": ""
+    },
+    {
+      "name": "And Stay Back",
+      "requirement": "Agility 6",
+      "effect": "When damaging a creature with a shotgun, you ignore 2 points of DT. If the target is within 5 feet, you can knock them back 15 feet.",
+      "repeat": ""
+    },
+    {
+      "name": "Multitarget Hotshot",
+      "requirement": "Agility 6",
+      "effect": "If you hit a creature with a ranged attack, your next ranged attack roll (on a different creature) increases by 2. If you then target a third different creature, that attack roll increases by 4. The bonus then resets. You do not need to make these attacks all on one turn.",
+      "repeat": ""
+    },
+    {
+      "name": "Ninja",
+      "requirement": "Agility 7",
+      "effect": "For 5 AP, perform a spinning attack that targets 3 creatures within 5 feet, acting as an unarmed attack. When attacking with a melee weapon or unarmed attack, your crit chance decreases by 2.",
+      "repeat": ""
+    },
+    {
+      "name": "Concentrated Fire",
+      "requirement": "Agility 7",
+      "effect": "When hitting with a targeted attack, you can choose the limb condition. Your attack rolls against creatures increase by 2 for each limb condition they have.",
+      "repeat": ""
+    },
+    {
+      "name": "Mister Sandman",
+      "requirement": "Agility 8",
+      "effect": "If you attack an unconscious creature, they die.",
+      "repeat": ""
+    },
+    {
+      "name": "Ranger’s Deadly Aim",
+      "requirement": "Agility 8",
+      "effect": "If you are first in combat sequence, you can choose for your first attack roll to critically hit, or you can attack up to three times without spending any AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Group Camouflage",
+      "requirement": "Agility 9",
+      "effect": "Your Group Sneak score is 20, as are any allies within 30 feet of you.",
+      "repeat": ""
+    },
+    {
+      "name": "Efficient Speedster",
+      "requirement": "Agility 9",
+      "effect": "You recycle all unused AP at the start of your turn. When sprinting, you can change direction once and continue sprinting.",
+      "repeat": ""
+    },
+    {
+      "name": "Anticipated Reflexes",
+      "requirement": "Agility 10",
+      "effect": "If an attack hits you, you can spend 3 AP to increase AC by 1, 6 AP for AC by 2, or 9 AP for AC by 3. However, at the start of your next turn, you regain less AP equal to the amount spent.",
+      "repeat": ""
+    },
+    {
+      "name": "Nerves of Steel",
+      "requirement": "Agility 10",
+      "effect": "At the start of each of your turns, if your hit points are not below half, you regain stamina points equal to half your level (rounded down).",
+      "repeat": ""
+    },
+    {
+      "name": "Scrounger",
+      "requirement": "Luck 4",
+      "effect": "When making a Luck ability check to determine loot, you can roll two checks and choose which result to take.",
+      "repeat": ""
+    },
+    {
+      "name": "Big Crits",
+      "requirement": "Luck 4",
+      "effect": "If you roll a 20 on a weapon attack roll, you critically hit, and the crit's damage is doubled.",
+      "repeat": ""
+    },
+    {
+      "name": "Bloody Mess",
+      "requirement": "Luck 5",
+      "effect": "When dealing damage with a weapon, damage increases by 2. If you reduce a creature to 0 hit points with a weapon attack, roll a DC 20 Luck check. On success, the creature's body bursts, frightening chosen creatures within 30 feet for 1 round.",
+      "repeat": ""
+    },
+    {
+      "name": "Fortune Finder",
+      "requirement": "Luck 5",
+      "effect": "You immediately gain 800 caps. When finding bottle caps, you find additional caps equal to your Luck modifier.",
+      "repeat": ""
+    },
+    {
+      "name": "Make it Double",
+      "requirement": "Luck 5",
+      "effect": "You gain an additional Karma Cap.",
+      "repeat": ""
+    },
+    {
+      "name": "It Just Works",
+      "requirement": "Luck 5",
+      "effect": "When a weapon or armor would gain a level of decay, roll a Luck check (DC 12 + current decay levels). On failure, it gains a level of decay. On success, it still gains decay, but that level applies no negative effects as long as you have it.",
+      "repeat": "Can be taken up to a maximum of twice. If taken again, on a successful Luck check, the item gains no levels of decay."
+    },
+    {
+      "name": "On a Fluke!",
+      "requirement": "Luck 5",
+      "effect": "If you or another party member misses an attack or fails an ability/skill check, you can flip a Karma Cap to turn it into a success (GM discretion).",
+      "repeat": ""
+    },
+    {
+      "name": "Grim Reaper's Sprint",
+      "requirement": "Luck 6",
+      "effect": "When bringing a creature to 0 hit points with a targeted attack, you immediately gain 8 AP. If you bring another creature to 0 HP with a targeted attack on the same turn, you gain 6 AP. A third creature grants 4 AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Spray and Pray",
+      "requirement": "Luck 6",
+      "effect": "You have advantage on blind attack rolls. The blind attack DC is halved.",
+      "repeat": ""
+    },
+    {
+      "name": "Randomizer",
+      "requirement": "Luck 6",
+      "effect": "When crafting or repairing an item, you can randomly choose one required material, reducing it by your Luck modifier (minimum 1) and replacing it with a randomly chosen junk material. When consuming food, drink, or chem, you can make a DC 15 Luck check. On success, one random food, drink, or chem property is added to the consumed item.",
+      "repeat": ""
+    },
+    {
+      "name": "Critical Banker",
+      "requirement": "Luck 7",
+      "effect": "When rolling a critical hit, you can choose to deal no extra damage to gain a temporary Karma Cap (lost when flipped). If this temporary cap is used on an attack roll, the attack is automatically a critical hit. You can only have one temporary Karma Cap.",
+      "repeat": ""
+    },
+    {
+      "name": "Ricochet",
+      "requirement": "Luck 7",
+      "effect": "If another creature makes an attack roll against you and rolls a 1, the attack hits them instead. When another creature makes an attack roll within 30 feet of you, you can flip a Karma Cap to turn the attack roll’s result into a 1.",
+      "repeat": ""
+    },
+    {
+      "name": "Mysterious Stranger",
+      "requirement": "Luck 8",
+      "effect": "Choose a number from 2 to 19. When you make an attack roll and the result is this number, the Mysterious Stranger appears. Roll a d20 (can add Luck modifier) and consult the table: Luck Check 1-9: Target takes ballistic damage equal to 2 times your level. Luck Check 10-20: Target takes ballistic damage equal to 3 times your level. Luck Check 21-24: Your attack becomes a critical hit. If already a critical hit, you deal maximum damage on each die. Luck Check 25+: Target dies.",
+      "repeat": "Can only be taken once and only by one player character."
+    },
+    {
+      "name": "Dumb Luck",
+      "requirement": "Luck 8",
+      "effect": "Your full Luck modifier is added to all your skill modifiers instead of half. When you flip your Karma Cap for advantage on an ability or skill check, you can add double your Luck modifier to the total.",
+      "repeat": "Can be taken up to a maximum of twice. If taken again, all your skill modifiers increase by 2. When you flip your Karma Cap to reroll an ability or skill check, you can add double your Luck modifier to the second roll."
+    },
+    {
+      "name": "Been There, Done That.",
+      "requirement": "Luck 9",
+      "effect": "When you or an ally within 100 feet makes a Luck ability check, it is increased by 3. When you gain XP, you gain a bonus equal to 5d10 plus the sum of every player character's Luck scores, then halved.",
+      "repeat": ""
+    },
+    {
+      "name": "Fortune Favors the Bold",
+      "requirement": "Luck 9",
+      "effect": "When you or any other player character flips a Karma Cap for advantage or a reroll, physically flick and flip the cap. If it lands face up, it stays face up.",
+      "repeat": "Can be taken up to a maximum of once. If any other player character takes this perk, and if your Karma Cap lands face down, you can physically flip a number of times equal to the number of other player characters who have taken this perk beyond the first."
+    },
+    {
+      "name": "Outrageous Advantage",
+      "requirement": "Luck 10",
+      "effect": "When you or any other player character rolls with advantage, you roll three d20s instead of two and choose the highest result.",
+      "repeat": "Can be taken up to a maximum of once. If any other player character takes this perk, the number of d20s rolled with advantage increases by one."
+    },
+    {
+      "name": "Never Tell Me the Odds",
+      "requirement": "Luck 10",
+      "effect": "If another creature hits you with an attack, you can flip a Karma Cap to turn the hit into a miss. While you have the dying condition, all attacks against you automatically miss.",
+      "repeat": ""
+    },
+    {
+      "name": "Cannibal",
+      "requirement": "Human, Ghoul, or Super Mutant",
+      "effect": "When consuming the flesh of a human, ghoul, or super mutant that died within 15 minutes, you heal hit points equal to double your healing rate (once per 8-hour rest). If consuming prepared flesh, you heal stamina points equal to your level.",
+      "repeat": ""
+    },
+    {
+      "name": "Old World Gourmet",
+      "requirement": "Human",
+      "effect": "Food and drinks no longer give you Irradiated levels.",
+      "repeat": ""
+    },
+    {
+      "name": "Hunter’s Wisdom",
+      "requirement": "Human, Ghoul, or Super Mutant",
+      "effect": "When taking damage from animal or insect attacks, your DT increases by 2. When consuming the meat of an animal or insect that died within 15 minutes, you heal hit points equal to your healing rate (once per 8-hour rest). If consuming prepared meat, you heal stamina points equal to your level.",
+      "repeat": ""
+    },
+    {
+      "name": "Ghastly Scavenger",
+      "requirement": "Human, Ghoul, or Super Mutant",
+      "effect": "When consuming the flesh of an abomination that died within 15 minutes, you heal hit points equal to double your healing rate (once per 8-hour rest). If consuming prepared abomination flesh, you heal stamina points equal to your level.",
+      "repeat": ""
+    },
+    {
+      "name": "Computer Cousin",
+      "requirement": "Robot or Synth, Level 5",
+      "effect": "Robots will not target you with attacks unless you are the only hostile target within 60 feet. You have advantage on Breach skill checks with any computer.",
+      "repeat": ""
+    },
+    {
+      "name": "Partition Reset",
+      "requirement": "Robot or Synth, Level 10",
+      "effect": "You can reduce any of your ability scores by 1, 2, or 3, and increase any other ability score by the amount you decreased plus 1.",
+      "repeat": ""
+    },
+    {
+      "name": "Factory Reset",
+      "requirement": "Robot or Synth, Level 10",
+      "effect": "Your character becomes 1st level, retaining all previous XP. You can rebuild your character, choosing new traits, skill bonuses, ability scores, and perks. However, your memory is wiped, and you remember nothing up to taking this perk.",
+      "repeat": ""
+    },
+    {
+      "name": "Determination is not a Malfunction",
+      "requirement": "Robot or Synth, Level 10",
+      "effect": "You are immune to the frightened condition. If you have unused AP at the end of your turn, you recycle all of them on your next turn.",
+      "repeat": ""
+    },
+    {
+      "name": "Nuclear Reactor",
+      "requirement": "Human",
+      "effect": "While in an irradiated zone, you have advantage on all ability and skill checks. Your AC increases by 1, your DT increases by 2, and you gain temporary hit points equal to your level.",
+      "repeat": ""
+    },
+    {
+      "name": "Rad Absorption",
+      "requirement": "Human",
+      "effect": "Your radiation level slowly decreases over time. Every time you sleep outside an irradiated zone, your rad level decreases by one.",
+      "repeat": ""
+    },
+    {
+      "name": "Rad-Tastic!",
+      "requirement": "Human, Endurance 5",
+      "effect": "Your Radiation DC decreases by 3. You ignore the negative effects of the first 3 levels of radiation.",
+      "repeat": ""
+    },
+    {
+      "name": "Atomic!",
+      "requirement": "Human, Endurance 8",
+      "effect": "While in an irradiated zone, you gain additional AP equal to your Endurance modifier (max 15). If your AP is already 15, actions costing 4 AP or more cost 1 less AP.",
+      "repeat": ""
+    },
+    {
+      "name": "Springboard Recovery",
+      "requirement": "Human",
+      "effect": "For 3 AP on your turn, you can heal stamina points equal to your healing rate. Usable once per 6-hour rest.",
+      "repeat": ""
+    },
+    {
+      "name": "Holey Moley",
+      "requirement": "Ghoul",
+      "effect": "Once per turn, when making an unarmed attack, you can spend 1 AP to make an additional one.",
+      "repeat": ""
+    },
+    {
+      "name": "Chem Resistant",
+      "requirement": "Ghoul",
+      "effect": "You no longer suffer negative effects of addiction to chems. Syringes have no effect on you unless they are stimpaks or chems.",
+      "repeat": ""
+    },
+    {
+      "name": "Eye for an Eye",
+      "requirement": "Ghoul",
+      "effect": "When another creature deals hit point damage to you for the first time on a turn, that creature becomes marked. Your next attack that hits the marked creature is automatically a critical hit. If it was already a critical hit, the damage is doubled. Once a creature is marked, another cannot be marked until you rest.",
+      "repeat": ""
+    },
+    {
+      "name": "Stitched Together",
+      "requirement": "Ghoul",
+      "effect": "If you lose any limb (except your head), you can spend 5 minutes reattaching it with a first aid kit if you still have the limb. Also, you can spend 1 minute to heal hit points equal to your healing rate (once per 6-hour rest).",
+      "repeat": ""
+    },
+    {
+      "name": "Savage Sprint",
+      "requirement": "Ghoul",
+      "effect": "You can spend 3 AP on your turn to sprint instead of 5. Your long jump distance increases by 10 feet, and high jump height by 3 feet.",
+      "repeat": ""
+    },
+    {
+      "name": "How do you do, fellow Ghouls?",
+      "requirement": "Ghoul, Level 5",
+      "effect": "Feral Ghouls will not target you with attacks unless you are the only hostile target within 60 feet. You have advantage on Speech skill checks with any ghoul.",
+      "repeat": ""
+    },
+    {
+      "name": "Can’t Put Me Down",
+      "requirement": "Ghoul, Level 5",
+      "effect": "Your DT increases by 1. You gain advantage on all Death Saves. If you already have advantage on Death Saves, you roll three d20s and take the highest result.",
+      "repeat": ""
+    },
+    {
+      "name": "Reanimated",
+      "requirement": "Ghoul, Level 10",
+      "effect": "While dying, your speed is not halved, and you gain an additional AP at the start of your turn. When you die, you immediately gain 20 AP. Once these AP are used, or your turn ends, you die.",
+      "repeat": ""
+    },
+    {
+      "name": "Pain Train",
+      "requirement": "Robot",
+      "effect": "If you sprint through another creature's space with equal or less Strength, they are knocked prone.",
+      "repeat": ""
+    },
+    {
+      "name": "Hardware Upgrade",
+      "requirement": "Robot",
+      "effect": "You can choose any two weapons to become your Robot weapons, provided you can purchase them, craft them, or already own them.",
+      "repeat": ""
+    },
+    {
+      "name": "Thick Plating",
+      "requirement": "Robot, Level 8",
+      "effect": "Your AC and DT increase by 1.",
+      "repeat": "Can be taken up to a maximum of three times."
+    },
+    {
+      "name": "Adamantium Skeleton",
+      "requirement": "Synth",
+      "effect": "You are immune to all limb conditions. When taking hit point damage from a targeted attack, the damage is halved.",
+      "repeat": ""
+    },
+    {
+      "name": "Light Step",
+      "requirement": "Synth",
+      "effect": "You never set off placed explosives or traps.",
+      "repeat": ""
+    },
+    {
+      "name": "Pump the Coolant",
+      "requirement": "Synth, Level 5",
+      "effect": "For 6 AP on your turn, you can heal stamina points equal to double your healing rate. Usable once per 8-hour rest.",
+      "repeat": ""
+    },
+    {
+      "name": "Reinforced Recovery",
+      "requirement": "Super Mutant",
+      "effect": "For 6 AP on your turn, you can heal hit points equal to your healing rate. Usable once per sleep.",
+      "repeat": ""
+    },
+    {
+      "name": "Fine-Toothed Giant",
+      "requirement": "Super Mutant",
+      "effect": "You no longer suffer the effects of the 'Bulky' racial trait. When making a crafting check to repair an item, the DC is reduced by 5.",
+      "repeat": ""
+    },
+    {
+      "name": "Wasteland Camel",
+      "requirement": "Super Mutant",
+      "effect": "You no longer require double the amount of water each day to avoid dehydration. Dirty water has the 'hydrating' property for you.",
+      "repeat": ""
+    },
+    {
+      "name": "No Gods, No Masters",
+      "requirement": "Super Mutant, Level 5",
+      "effect": "Super Mutants will not target you with attacks unless you are the only hostile target within 60 feet. For 3 AP on your turn, choose one target Super Mutant within 60 feet to learn their total ability scores.",
+      "repeat": ""
+    },
+    {
+      "name": "Feel No Wounds",
+      "requirement": "Super Mutant, Level 5",
+      "effect": "Your DT increases by 1. If you end your turn with at least 6 AP, when you take hit point damage, you can spend 6 AP to reduce the damage by half (rounded down).",
+      "repeat": ""
+    },
+    {
+      "name": "Evolution",
+      "requirement": "Super Mutant, Level 10",
+      "effect": "Your AC increases by 1, DT increases by 1, hit points increase by your level, and stamina points increase by your level. Choose one damage type; when you take that damage type to your hit points, the total amount is halved (rounded down).",
+      "repeat": ""
+    }
+  ]
+}

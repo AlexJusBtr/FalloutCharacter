@@ -1,0 +1,282 @@
+{
+    "ConditionsAndLoot": {
+      "Description": "This section provides rules for conditions affecting characters and creatures, as well as loot tables for determining random items based on Luck rolls. For rolls of 21+ Luck, choose an item or roll twice unless otherwise specified.",
+      "Conditions": [
+        {
+          "Name": "Blinded",
+          "Effects": [
+            "Cannot see and automatically fails any ability check requiring sight.",
+            "Attack rolls against the creature have advantage.",
+            "Can attempt a blind attack if aware of its target."
+          ]
+        },
+        {
+          "Name": "Bleeding",
+          "Effects": [
+            "At the start of each turn, takes hit point damage equal to half their healing rate (rounded down) per level of bleeding.",
+            "A dying creature with bleeding levels automatically fails a death save at the start of their turn.",
+            "If healed, does not regain hit points; instead, removes two levels of bleeding."
+          ]
+        },
+        {
+          "Name": "Burning",
+          "Effects": [
+            "Takes 1d10 fire damage at the start of their turn.",
+            "Can spend 6 Action Points (AP) to put themselves out."
+          ]
+        },
+        {
+          "Name": "Buzzed",
+          "Effects": [
+            "Disadvantage on all Intelligence and Perception ability and skill checks.",
+            "Advantage on all Endurance and Strength ability and skill checks."
+          ]
+        },
+        {
+          "Name": "Corroded",
+          "Effects": [
+            "Damage Threshold (DT) is reduced by 5."
+          ]
+        },
+        {
+          "Name": "Dazed",
+          "Effects": [
+            "Maximum AP is reduced by half (rounded down).",
+            "Does not recycle any unused AP at the start of their next turn."
+          ]
+        },
+        {
+          "Name": "Deafened",
+          "Effects": [
+            "Cannot hear and automatically fails any ability check requiring hearing."
+          ]
+        },
+        {
+          "Name": "Dehydration",
+          "Effects": [
+            "For each level of dehydration, subtract 1 from d20 rolls.",
+            "If the creature does not consume at least three drinks or a drink with the hydrating property every 24 hours, they gain three levels of dehydration.",
+            "Gaining the tenth level of dehydration results in death."
+          ]
+        },
+        {
+          "Name": "Drunk",
+          "Effects": [
+            "Gains the effects of being buzzed.",
+            "Has 2 fewer AP.",
+            "Maximum stamina points increase by a number equal to their level."
+          ]
+        },
+        {
+          "Name": "Encumbered",
+          "Effects": [
+            "Moves slowly, costing 2 AP per 5 feet.",
+            "Travel pace is halved.",
+            "Gains a level of Fatigue each hour they remain encumbered."
+          ]
+        },
+        {
+          "Name": "Exhaustion",
+          "Effects": [
+            "For each level of exhaustion, subtract 1 from d20 rolls.",
+            "Gaining the tenth level of exhaustion results in death."
+          ],
+          "Recovery": [
+            "Humans, ghouls, or super mutants: Remove one level of exhaustion after resting for at least 6 hours.",
+            "Robots or gen-2 synths: Remove one level of exhaustion after resting for at least 2 hours."
+          ]
+        },
+        {
+          "Name": "Fatigue",
+          "Effects": [
+            "For each level of fatigue, subtract 1 from d20 rolls.",
+            "Maximum of nine levels of fatigue."
+          ],
+          "Recovery": [
+            "At the end of each turn, the creature loses one level of fatigue."
+          ]
+        },
+        {
+          "Name": "Frightened",
+          "Check": "Must succeed on an Endurance ability check with a DC equal to 8 + the Intimidation skill bonus of the frightening creature.",
+          "Outcomes": [
+            {
+              "Result": "Success by 5 or more",
+              "Effect": "Not frightened."
+            },
+            {
+              "Result": "Success",
+              "Effect": "Can choose to become frightened (Flight, Fight, Freeze, or Fawn) for half the allotted time (rounded down)."
+            },
+            {
+              "Result": "Failure",
+              "Effect": "Can choose to become frightened (Flight, Fight, Freeze, or Fawn) for the allotted time."
+            },
+            {
+              "Result": "Failure by 5 or more",
+              "Effect": "Can choose to become frightened (Flight or Freeze) for the allotted time."
+            }
+          ],
+          "FrightenedTypes": [
+            {
+              "Type": "Flight",
+              "Effect": "Must use action points on their turn to move as far away from the source of their fear as possible."
+            },
+            {
+              "Type": "Fight",
+              "Effect": "Must use action points on their turn to attack with intent to kill the source of their fear and cannot spend AP to move away from it."
+            },
+            {
+              "Type": "Freeze",
+              "Effect": "Loses half their maximum AP (rounded down) and cannot spend AP to move."
+            },
+            {
+              "Type": "Fawn",
+              "Effect": "The creature uses all their AP on their turn to attack any enemies of the source of their fear, or takes actions to heal or help the source of their fear."
+            }
+          ]
+        }
+      ],
+      "LootTables": {
+        "Caps": [
+          {"LuckRoll": "1-5", "Result": "1d4 × 10 caps"},
+          {"LuckRoll": "6-10", "Result": "2d4 × 10 caps"},
+          {"LuckRoll": "11-15", "Result": "3d6 × 10 caps"},
+          {"LuckRoll": "16-20", "Result": "4d8 × 10 caps"},
+          {"LuckRoll": "21-25", "Result": "5d10 × 10 caps"},
+          {"LuckRoll": "26-29", "Result": "5d12 × 10 caps"},
+          {"LuckRoll": "30+", "Result": "6d6 × 100 caps"}
+        ],
+        "Junk": [
+          {"LuckRoll": "1-3", "Result": "1d4 Small Junk"},
+          {"LuckRoll": "4-6", "Result": "2d6 Small Junk"},
+          {"LuckRoll": "7-9", "Result": "1d4 Medium Junk"},
+          {"LuckRoll": "10-12", "Result": "2d6 Medium Junk"},
+          {"LuckRoll": "13-16", "Result": "1d4 Big Junk"},
+          {"LuckRoll": "17-20", "Result": "2d6 Big Junk"},
+          {"LuckRoll": "21+", "Result": "Roll Twice or Choose"}
+        ],
+        "Food": [
+          {"LuckRoll": 1, "Result": "BlamCo Mac & Cheese"},
+          {"LuckRoll": 2, "Result": "Canned Dog Food"},
+          {"LuckRoll": 3, "Result": "Cram"},
+          {"LuckRoll": 4, "Result": "Dandy Boy Apples"},
+          {"LuckRoll": 5, "Result": "Fancy Lads Snack Cakes"},
+          {"LuckRoll": 6, "Result": "InstaMash"},
+          {"LuckRoll": 7, "Result": "Noodle Cup"},
+          {"LuckRoll": 8, "Result": "Pork n' Beans"},
+          {"LuckRoll": 9, "Result": "Potato Crisps"},
+          {"LuckRoll": 10, "Result": "Salisbury Steak"},
+          {"LuckRoll": 11, "Result": "Sugar Bombs"},
+          {"LuckRoll": 12, "Result": "Yum Yum Deviled Eggs"},
+          {"LuckRoll": 13, "Result": "Baked Bloatfly"},
+          {"LuckRoll": 14, "Result": "Gecko Steak"},
+          {"LuckRoll": 15, "Result": "Grilled Radroach"},
+          {"LuckRoll": 16, "Result": "Grilled Radstag"},
+          {"LuckRoll": 17, "Result": "Iguana on a Stick"},
+          {"LuckRoll": 18, "Result": "Mole Rat Chunks"},
+          {"LuckRoll": 19, "Result": "Ribeye Steak"},
+          {"LuckRoll": 20, "Result": "Deathclaw Steak"}
+        ],
+        "Drinks": [
+          {"LuckRoll": "1-2", "Result": "Beer or Wine"},
+          {"LuckRoll": "3-5", "Result": "Rum, Scotch, Whiskey, Vodka, or Wasteland Tequila"},
+          {"LuckRoll": 6, "Result": "Absinthe or Moonshine"},
+          {"LuckRoll": "7-8", "Result": "Coffee"},
+          {"LuckRoll": "9-11", "Result": "Nuka-Cola"},
+          {"LuckRoll": 12, "Result": "Nuka-Cola Cherry"},
+          {"LuckRoll": "13-14", "Result": "Sunset Sarsaparilla"},
+          {"LuckRoll": 15, "Result": "Nuka-Cola Quantum"},
+          {"LuckRoll": "16-18", "Result": "Dirty Water (8oz)"},
+          {"LuckRoll": "19-20", "Result": "Purified Water (8oz)"},
+          {"LuckRoll": "21+", "Result": "Choose or Roll Twice"}
+        ],
+        "ChemsAndMedicineTable1": [
+          {"LuckRoll": 1, "Result": "Coyote Tobacco Chew"},
+          {"LuckRoll": 2, "Result": "Healing Powder"},
+          {"LuckRoll": 3, "Result": "Rebound"},
+          {"LuckRoll": 4, "Result": "Cateye"},
+          {"LuckRoll": 5, "Result": "Buffout"},
+          {"LuckRoll": 6, "Result": "Antivenom"},
+          {"LuckRoll": 7, "Result": "Jet"},
+          {"LuckRoll": 8, "Result": "Day Tripper"},
+          {"LuckRoll": 9, "Result": "Mentats (Regular, Grape, Orange, or Berry)"},
+          {"LuckRoll": 10, "Result": "Med-X"},
+          {"LuckRoll": 11, "Result": "Psycho"},
+          {"LuckRoll": 12, "Result": "Steady"},
+          {"LuckRoll": 13, "Result": "Fixer"},
+          {"LuckRoll": 14, "Result": "Hydra"},
+          {"LuckRoll": 15, "Result": "Rad-X"},
+          {"LuckRoll": 16, "Result": "Daddy-O"},
+          {"LuckRoll": 17, "Result": "Overdrive"},
+          {"LuckRoll": 18, "Result": "Stimpak or Robot Repair Kit"},
+          {"LuckRoll": 19, "Result": "RadAway"},
+          {"LuckRoll": "20+", "Result": "Choose or Roll Twice"}
+        ],
+        "ChemsAndMedicineTable2": [
+          {"LuckRoll": "1-6", "Result": "First Aid Kit"},
+          {"LuckRoll": 7, "Result": "Fury"},
+          {"LuckRoll": "8-9", "Result": "Calmex"},
+          {"LuckRoll": 10, "Result": "X-cell"},
+          {"LuckRoll": "11-13", "Result": "Addictol"},
+          {"LuckRoll": "14-17", "Result": "Doctor’s Bag"},
+          {"LuckRoll": 18, "Result": "Super Stimpak"},
+          {"LuckRoll": 19, "Result": "Auto-Inject Stimpak"},
+          {"LuckRoll": 20, "Result": "Auto-Inject Super Stimpak"},
+          {"LuckRoll": "21+", "Result": "Choose"}
+        ],
+        "Ammo": [
+          {"LuckRoll": 1, "Result": "x4d8 9mm"},
+          {"LuckRoll": 2, "Result": "x3d20 5mm"},
+          {"LuckRoll": 3, "Result": "x3d10 .32"},
+          {"LuckRoll": 4, "Result": "x2d8 20 gauge"},
+          {"LuckRoll": 5, "Result": "x2d6 12 gauge"},
+          {"LuckRoll": 6, "Result": "x2d20 5.56"},
+          {"LuckRoll": 7, "Result": "x3d10 10mm"},
+          {"LuckRoll": 8, "Result": "x3d8 .357"},
+          {"LuckRoll": 9, "Result": "x2d8 .45"},
+          {"LuckRoll": 10, "Result": "x1 Tank of Flamer Fuel"},
+          {"LuckRoll": 11, "Result": "x2d12 .44"},
+          {"LuckRoll": 12, "Result": "x1d12 Energy Cells"},
+          {"LuckRoll": 13, "Result": "x1d10 Microfusion Cells"},
+          {"LuckRoll": 14, "Result": "x3d6 .45-70 Gov't."},
+          {"LuckRoll": 15, "Result": "x3d6 .308"},
+          {"LuckRoll": 16, "Result": "x1d4 .50"},
+          {"LuckRoll": 17, "Result": "x1d8 2mm EC"},
+          {"LuckRoll": 18, "Result": "x1 Fusion Core"},
+          {"LuckRoll": 19, "Result": "x1d4 Missiles"},
+          {"LuckRoll": 20, "Result": "x1 Mini-Nuke"},
+          {"LuckRoll": "21+", "Result": "Roll Twice"}
+        ],
+        "Weapons": [
+          {"LuckRoll": "1-6", "Result": "Pistol"},
+          {"LuckRoll": "7-8", "Result": "SMG"},
+          {"LuckRoll": "9-11", "Result": "Energy Weapon"},
+          {"LuckRoll": "12-15", "Result": "Shotgun"},
+          {"LuckRoll": "16-18", "Result": "Rifle"},
+          {"LuckRoll": "19", "Result": "Big Gun"},
+          {"LuckRoll": "20+", "Result": "Choose"}
+        ],
+        "Pistols": [
+          {"LuckRoll": 1, "Result": "Flare Gun"},
+          {"LuckRoll": "2-6", "Result": ".32 Pistol"},
+          {"LuckRoll": "7-11", "Result": "9mm Pistol"},
+          {"LuckRoll": "12-14", "Result": ".357 Magnum Revolver"},
+          {"LuckRoll": "15-17", "Result": ".44 Magnum Revolver"},
+          {"LuckRoll": "18-19", "Result": "10mm Pistol"},
+          {"LuckRoll": 20, "Result": "Ranger Sequoia"},
+          {"LuckRoll": "21+", "Result": "Roll Twice"}
+        ],
+        "SubmachineGuns": [
+          {"LuckRoll": 1, "Result": "Flare Gun"},
+          {"LuckRoll": "2-6", "Result": ".32 Pistol"},
+          {"LuckRoll": "7-11", "Result": "9mm Pistol"},
+          {"LuckRoll": "12-14", "Result": ".357 Magnum Revolver"},
+          {"LuckRoll": "15-17", "Result": ".44 Magnum Revolver"},
+          {"LuckRoll": "18-19", "Result": "10mm Pistol"},
+          {"LuckRoll": 20, "Result": "H&K G11"},
+          {"LuckRoll": "21+", "Result": "Roll Twice"}
+        ]
+      }
+    }
+  }

@@ -1,0 +1,1849 @@
+{
+    "Crafting": {
+      "Description": "Crafting allows creation of items in the wasteland with necessary materials, junk, and knowledge. Requires a suitable space and tools (e.g., workbench), which may be found, created, or jury-rigged at GM’s discretion.",
+      "HowToCraft": {
+        "Requirements": "Crafting skill bonus must meet or exceed the item’s requirement in the Vault-Tec Item Blueprint Table. If not, attempt a Crafting skill check against DC 10 + item’s Crafting DC.",
+        "Outcomes": [
+          {
+            "Result": "Failed Check",
+            "Effect": "Fail to craft, lose 1d4 of each material (minimum 1)."
+          },
+          {
+            "Result": "Failed by 8 or more",
+            "Effect": "Fail to craft, lose 1d6 of each material."
+          },
+          {
+            "Result": "Succeeded Check",
+            "Effect": "Craft item, consume all required materials."
+          },
+          {
+            "Result": "Succeeded by 8 or more",
+            "Effect": "Craft item, use 1d4 less of one material (minimum 1)."
+          }
+        ],
+        "OptionalCheck": "Can attempt a Crafting skill check even if skill meets requirement to reduce material use, risking failure.",
+        "Assistance": "Each assistant halves crafting time (e.g., 1 hour becomes 30 minutes with one assistant, 15 minutes with two). Assistants whose Crafting skill doesn’t meet requirement must succeed on a crafting check. If any assistant fails, the item fails to craft."
+      }
+    },
+    "DecayAndRepair": {
+      "Description": "Equipment degrades and requires maintenance in the wasteland.",
+      "Decay": {
+        "Mechanics": "Items accumulate up to 9 levels of decay via item-specific conditions, targeted attack damage, or GM discretion. At 10 levels, item breaks and ceases function.",
+        "BrokenItems": "Cannot be used, operated, or provide benefits from mods, upgrades, abilities, or perks. Retains load, can be used as an improvised weapon."
+      },
+      "ArmorDecay": {
+        "Mechanics": "Armor gains 1 level of decay on critical hit or when wearer falls to 0 hit points. Each level reduces AC and DT by half the decay level (rounded down). AC cannot fall below 10, DT cannot fall below 0."
+      },
+      "WeaponDecay": {
+        "Mechanics": "Weapons gain 1 level of decay on critical failure of an attack roll. Each level reduces attack rolls by 1."
+      },
+      "RepairingItems": {
+        "SingleLevel": "Repair one level of decay with a crafting check (DC 10 + item’s repair bonus). If Crafting skill bonus equals listed bonus, succeed automatically. Failure: no decay reduced, spend half time and materials (rounded down).",
+        "BrokenItem": "Repair requires 5× time and resources at once, repair bonus/DC increases by 5. Repaired item is no longer broken, has 5 levels of decay.",
+        "UsingAnotherItem": "Use a copy of the item or similar item (with ≤5 decay levels) to repair an additional level of decay."
+      }
+    },
+    
+    "CraftableItems": {
+      "Armor": [
+        {
+          "Name": "Cloth Armor",
+          "Craft": {
+            "DC": 1,
+            "Materials": ["x10 cloth"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 0,
+            "Materials": ["x2 cloth"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Leather Armor",
+          "Craft": {
+            "DC": 3,
+            "Materials": ["x10 leather"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x2 leather"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Scrap Metal Armor",
+          "Craft": {
+            "DC": 3,
+            "Materials": ["x10 steel"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x2 steel", "x1 screws"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Multilayered Armor",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x6 cloth", "x6 leather"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x3 leather or cloth (combined)"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Ballistic Weave",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x15 ballistic fiber"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 10,
+            "Materials": ["x2 ballistic fiber"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Steel Armor",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x20 steel", "x10 screws", "x10 leather"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x2 steel", "x1 leather"],
+            "Time": "10 minutes"
+          }
+        }
+      ],
+      "ArmorUpgrades": [
+        {
+          "Name": "Camouflage",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 6,
+              "Materials": ["x4 paint"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 10,
+              "Materials": ["x5 cloth", "x4 rubber"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 16,
+              "AlternateRequirement": "Sneak skill bonus +8",
+              "Materials": ["x3 adhesive", "x5 leather", "x3 paint"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Light",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 8,
+              "Materials": [],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 13,
+              "Materials": [],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 18,
+              "Materials": ["x6 adhesive", "x5 rubber", "x4 springs"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Fitted",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 10,
+              "Materials": ["x5 of each material needed for armor"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 15,
+              "Materials": ["x5 of each material needed for armor"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 20,
+              "Materials": ["x8 of each material needed for armor"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Lead Lined",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 4,
+              "Materials": ["x6 lead", "x6 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 8,
+              "Materials": ["x6 lead", "x6 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 12,
+              "Materials": ["x6 lead", "x6 adhesive"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Strengthened",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 6,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 12,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 18,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Sturdy",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 6,
+              "Materials": ["x3 of each material needed for armor", "x3 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 12,
+              "Materials": ["x3 of each material needed for armor", "x3 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 18,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Pocketed",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 4,
+              "Materials": ["x4 cloth", "x5 leather", "x3 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 8,
+              "Materials": ["x6 cloth", "x8 leather", "x3 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 12,
+              "Materials": ["x8 cloth", "x10 leather", "x4 adhesive"],
+              "Time": "1 hour"
+            }
+          ]
+        },
+        {
+          "Name": "Reinforced",
+          "Ranks": [
+            {
+              "Rank": 1,
+              "CraftDC": 12,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 2,
+              "CraftDC": 17,
+              "Materials": ["x5 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            },
+            {
+              "Rank": 3,
+              "CraftDC": 22,
+              "Materials": ["x8 of each material needed for armor", "x5 adhesive"],
+              "Time": "1 hour"
+            }
+          ]
+        }
+      ],
+      "Chems": [
+        {
+          "Name": "Buffout",
+          "Craft": {
+            "DC": {"Medicine": 8},
+            "Materials": ["x3 cloth", "x5 antiseptic", "x3 plastic"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "First Aid Kit",
+          "Craft": {
+            "DC": {"Medicine": 1},
+            "Materials": ["x2 antiseptic", "x4 cloth", "x3 adhesive"],
+            "Time": "Not specified"
+          }
+        },
+        {
+          "Name": "Healing Powder",
+          "Craft": {
+            "DC": {"Medicine or Survival": 2},
+            "Materials": ["x1 Broc flower", "x1 Xander root"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "RadAway",
+          "Craft": {
+            "DC": {"Medicine": 6},
+            "Materials": ["x2 antiseptic", "x1 purified water", "x3 glowing fungus", "x1 plastic"],
+            "Time": "Not specified"
+          }
+        },
+        {
+          "Name": "RadAway (Diluted)",
+          "Craft": {
+            "DC": {"Medicine": 2},
+            "Materials": ["x2 purified water", "x1 RadAway"],
+            "Time": "5 minutes",
+            "Output": "Makes two"
+          }
+        },
+        {
+          "Name": "Stimpak",
+          "Craft": {
+            "DC": {"Medicine": 8},
+            "Materials": ["x2 antiseptic", "x1 circuitry", "x1 nuclear material", "8oz blood", "x1 steel"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Stimpak (Diluted)",
+          "Craft": {
+            "DC": {"Medicine": 3},
+            "Materials": ["x2 purified water", "x1 Stimpak"],
+            "Time": "15 minutes",
+            "Output": "Makes two"
+          }
+        },
+        {
+          "Name": "Super Stimpak",
+          "Craft": {
+            "DC": {"Medicine": 14},
+            "Materials": ["x2 antiseptic", "x1 circuitry", "x3 nuclear material", "16oz blood", "x1 steel", "x2 rubber"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Auto-Inject Stimpak",
+          "Craft": {
+            "DC": {"Medicine": 4, "Crafting": 8},
+            "Materials": ["x2 circuitry", "x1 cloth", "x1 rubber", "x1 Stimpak"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Auto-Inject Super Stimpak",
+          "Craft": {
+            "DC": {"Medicine": 4, "Crafting": 8},
+            "Materials": ["x2 circuitry", "x1 cloth", "x1 rubber", "x1 Super Stimpak"],
+            "Time": "30 minutes"
+          }
+        }
+      ],
+      "FoodAndDrinks": [
+        {
+          "Name": "InstaMash",
+          "Craft": {
+            "DC": {"Survival": 10},
+            "Materials": ["x3 Potatoes"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Noodle Cup",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Purified water", "x1 Razorgrain"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Baked Bloatfly",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x2 Bloatfly meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Bear Roast",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Carrot", "x1 Tato", "x1 Bear meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Bighorner Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Bighorner meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Bloodbug Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Bloodbug meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Deathclaw Egg Omelette",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x1 Deathclaw egg"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Deathclaw Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Deathclaw meat"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Donut",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x2 Razorgrain", "x1 Sugar Bombs", "x1 Purified water"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Fruit Filled Donut",
+          "Craft": {
+            "DC": {"Survival": 6},
+            "Materials": ["x2 Razorgrain", "x1 Sugar Bombs", "x1 Purified water", "x1 any fruit"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Quantum Crunch Donut",
+          "Craft": {
+            "DC": {"Survival": 10},
+            "Materials": ["x2 Razorgrain", "x1 Sugar Bombs", "x1 Purified water", "x1 Nuka-Cola Quantum"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Desert Salad",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x1 Barrel cactus fruit", "x1 Brahmin steak", "x1 Pinyon nuts"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Fire Ant Fricassée",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x1 Cram", "x1 Fire ant meat", "x1 Flour"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Gecko Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Gecko meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Grilled Radroach",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x3 Radroach meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Grilled Radstag",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Radstag meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Iguana on a Stick",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Iguana bits", "x1 wood"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Mole Rat Chunks",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x2 Mole rat meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Mole Rat Stew",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x1 Beer", "x1 Maize", "x1 Mole rat meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Mutt Chops",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Dog meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Radscorpion Egg Omelette",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x1 Purified water", "x1 Radscorpion egg"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Radscorpion Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Radscorpion meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Radstag Stew",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x1 Gourd", "x1 Radstag meat", "x1 Vodka"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Ribeye Steak",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x1 Brahmin meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Roasted Ant",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x3 Ant meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Roasted Mirelurk Meat",
+          "Craft": {
+            "DC": {"Survival": 3},
+            "Materials": ["x2 Mirelurk meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Vegetable Soup",
+          "Craft": {
+            "DC": {"Survival": 1},
+            "Materials": ["x1 Carrot", "x1 Dirty water", "x1 Tato"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Wasteland Omelet",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x1 BlamCo Mac & Cheese", "x1 Mutfruit", "x1 Deathclaw egg", "x1 Lakelurk meat"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Yeast",
+          "Craft": {
+            "DC": {"Survival": 5},
+            "Materials": ["x3 razorgrain", "x2 purified water"],
+            "Time": "12 hours"
+          }
+        },
+        {
+          "Name": "Alcohol Yeast",
+          "Craft": {
+            "DC": {"Survival": 8},
+            "Materials": ["x1 yeast", "x5 citrus"],
+            "Time": "2 days"
+          }
+        },
+        {
+          "Name": "Atomic Cocktail",
+          "Craft": {
+            "DC": {"Science or Survival": 3},
+            "Materials": ["x1 mentats", "x1 Nuka-Cola", "8oz vodka"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Beer (16 oz)",
+          "Craft": {
+            "DC": {"Science or Survival": 8},
+            "Materials": ["x5 razorgrain", "x3 alcohol yeast", "x10 steel", "x5 cloth", "x8 glass"],
+            "Time": "2 weeks"
+          }
+        },
+        {
+          "Name": "Coffee",
+          "Craft": {
+            "DC": {"Science or Survival": 3},
+            "Materials": ["x1 coffee beans", "x1 cloth", "x1 glass or x1 plastic"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Cowboy Coffee",
+          "Craft": {
+            "DC": {"Science or Survival": 1},
+            "Materials": ["x1 coffee beans"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Dirty Wastelander",
+          "Craft": {
+            "DC": {"Science or Survival": 2},
+            "Materials": ["x1 mutfruit", "x1 Nuka-Cola", "x1 whiskey"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Moonshine (16 oz)",
+          "Craft": {
+            "DC": {"Science or Survival": 4},
+            "Materials": ["x1 fission battery", "x20 purified water", "x1 maize", "x2 mutfruit", "x1 yeast"],
+            "Time": "2 weeks"
+          }
+        },
+        {
+          "Name": "Purified Water",
+          "Craft": {
+            "DC": {"Science or Survival": 2},
+            "Materials": ["x2 Dirty water"],
+            "Time": "6 hours"
+          }
+        },
+        {
+          "Name": "Rum (16 oz)",
+          "Craft": {
+            "DC": {"Science or Survival": 10},
+            "Materials": ["x5 molasses", "x5 sugar", "x20 purified water", "x2 alcohol yeast", "x2 steel", "x5 plastic"],
+            "Time": "1 week"
+          }
+        },
+        {
+          "Name": "Wasteland Tequila",
+          "Craft": {
+            "DC": {"Science or Survival": 6},
+            "Materials": ["x1 glass", "x1 cloth", "x1 agave fruit", "x1 purified water"],
+            "Time": "20 days"
+          }
+        },
+        {
+          "Name": "Dead Man’s Wine (1 gallon)",
+          "Craft": {
+            "DC": {"Science or Survival": 2},
+            "Materials": ["x5 citrus", "x3 tomato", "x1 plastic", "x5 sugar bombs"],
+            "Time": "3 days"
+          }
+        },
+        {
+          "Name": "Wasteland Wine (60 gallon barrel)",
+          "Craft": {
+            "DC": {"Science or Survival": 6},
+            "Materials": ["x1 alcohol yeast", "x20 tarberry", "x3 glass", "x5 cloth", "x2 plastic", "x8 wood"],
+            "Time": "6 months"
+          }
+        }
+      ],
+      "BigGuns": [
+        {
+          "Name": "Flamer",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x11 adhesive", "x15 asbestos", "x10 copper", "x13 rubber", "x12 screws", "x11 spring", "x34 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 asbestos", "x1 copper", "x1 rubber", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Missile Launcher",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x7 adhesive", "x10 aluminum", "x12 gear", "x8 leather", "x20 screws", "x17 spring", "x39 steel"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gear", "x1 leather", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Minigun",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x8 adhesive", "x9 aluminum", "x19 gears", "x10 oil", "x14 screws", "x19 spring", "x46 steel"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gears", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Fat-Man",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x10 aluminum", "x30 screws", "x5 nuclear material", "x40 steel", "x20 spring", "x15 rubber", "x8 circuitry"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 aluminum", "x1 screws", "x1 nuclear material", "x1 steel", "x1 spring", "x1 rubber", "x1 circuitry"],
+            "Time": "5 minutes"
+          }
+        }
+      ],
+      "EnergyWeapons": [
+        {
+          "Name": "Solar Scorcher",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x4 aluminum", "x4 circuitry", "x7 glass", "x6 screws", "x20 steel", "x2 solar panel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 glass", "x1 screws", "x1 steel", "x1 solar panel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Laser Pistol",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x4 aluminum", "x4 circuitry", "x4 crystal", "x3 fiber optics", "x7 glass", "x6 screws", "x20 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 crystal", "x1 fiber optics", "x1 glass", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Laser Rifle",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x4 aluminum", "x4 circuitry", "x4 crystal", "x4 fiber optics", "x7 glass", "x7 screws", "x24 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 crystal", "x1 fiber optics", "x1 glass", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Automatic Laser Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x4 aluminum", "x4 circuitry", "x4 crystal", "x5 fiber optics", "x7 glass", "x7 screws", "x24 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 crystal", "x1 fiber optics", "x1 glass", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Tri-Beam Laser Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x4 aluminum", "x4 circuitry", "x6 crystal", "x5 fiber optics", "x10 glass", "x7 screws"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 crystal", "x1 fiber optics", "x1 glass", "x1 screws"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Plasma Pistol",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x4 adhesive", "x4 circuitry", "x3 fiber optics", "x4 glass", "x3 nuclear material", "x7 screws", "x24 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 fiber optics", "x1 glass", "x1 nuclear material", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Plasma Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x5 adhesive", "x5 circuitry", "x4 fiber optics", "x5 glass", "x4 nuclear material", "x9 screws", "x26 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 fiber optics", "x1 glass", "x1 nuclear material", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Multiplas Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x5 adhesive", "x5 circuitry", "x4 fiber optics", "x5 glass", "x4 nuclear material", "x9 screws", "x26 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 fiber optics", "x1 glass", "x1 nuclear material", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Tesla Cannon",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x16 adhesive", "x11 circuitry", "x8 crystal", "x7 nuclear material", "x15 plastic", "x19 screws", "x25 steel"],
+            "Time": "5 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 crystal", "x1 nuclear material", "x1 plastic", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Gamma Gun",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x4 adhesive", "x4 nuclear material", "x12 plastic", "x7 screws", "x15 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 adhesive", "x1 nuclear material", "x1 plastic", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Cryolator",
+          "Craft": {
+            "DC": 22,
+            "Materials": ["x8 adhesive", "x8 circuitry", "x8 glass", "x14 plastic", "x13 rubber", "x13 screws", "x34 steel"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 glass", "x1 plastic", "x1 rubber", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Crystalizing Cryolator",
+          "Craft": {
+            "DC": 25,
+            "Materials": ["x8 adhesive", "x8 circuitry", "x8 glass", "x14 plastic", "x13 rubber", "x13 screws", "x34 steel"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 adhesive", "x1 circuitry", "x1 glass", "x1 plastic", "x1 rubber", "x1 screws", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Gauss Pistol",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x8 aluminum", "x4 circuitry", "x4 nuclear material", "x11 screws", "x2 silver", "x2 spring", "x10 steel"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 nuclear material", "x1 screws", "x1 silver", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Gauss Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x10 aluminum", "x6 circuitry", "x6 nuclear material", "x15 screws", "x4 silver", "x5 spring", "x20 steel"],
+            "Time": "5 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 nuclear material", "x1 screws", "x1 silver", "x1 spring", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        },
+        {
+          "Name": "Gatling Laser",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x15 aluminum", "x12 circuitry", "x9 crystal", "x12 fiber optics", "x12 gears", "x21 plastic", "x32 steel"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 aluminum", "x1 circuitry", "x1 crystal", "x1 fiber optics", "x1 gears", "x1 plastic", "x1 steel"],
+            "Time": "15 minutes"
+          }
+        }
+      ],
+      "Pistols": [
+        {
+          "Name": "10mm Pistol",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x2 adhesive", "x3 aluminum", "x3 gear", "x2 oil", "x4 screws", "x2 spring", "x23 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Pipe Pistol",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 adhesive", "x2 gear", "x2 oil", "x2 screws", "x10 steel"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Pipe Revolver",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 adhesive", "x2 gear", "x2 oil", "x2 screws", "x10 steel"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": ".44 Pistol",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x2 gears", "x2 oil", "x7 screws", "x2 spring", "x20 steel"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 gears", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "12.7mm Pistol",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x11 aluminum", "x8 adhesive", "x11 screws", "x13 spring", "x17 steel"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 aluminum", "x1 adhesive", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Ranger Sequoia",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x5 adhesive", "x5 oil", "x12 screws", "x20 steel", "x9 wood"],
+            "Time": "6 hours"
+          },
+          "Repair": {
+            "DC": 6,
+            "Materials": ["x1 adhesive", "x1 oil", "x1 screws", "x1 steel", "x1 wood"],
+            "Time": "10 minutes"
+          }
+        }
+      ],
+      "SubMachineGuns": [
+        {
+          "Name": "H&H Tools Nail Gun",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 aluminum", "x2 gear", "x3 screws", "x10 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 aluminum", "x1 gear", "x1 screws", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "10mm SMG",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x3 adhesive", "x4 aluminum", "x5 gear", "x3 oil", "x6 screws", "x5 spring", "x25 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "9mm SMG",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x2 adhesive", "x3 aluminum", "x3 gear", "x2 oil", "x4 screws", "x2 spring", "x23 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Tommy Gun",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x4 gear", "x3 oil", "x14 screws", "x8 spring", "x30 steel", "x7 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "12.7mm SMG",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x11 aluminum", "x8 adhesive", "x11 screws", "x13 spring", "x17 steel"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 8,
+            "Materials": ["x1 aluminum", "x1 adhesive", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        }
+      ],
+      "Rifles": [
+        {
+          "Name": "Syringer",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 adhesive", "x2 screw", "x10 steel"],
+            "Time": "1 hour"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 adhesive", "x1 screw", "x1 steel"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Lever Action Rifle",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x5 adhesive", "x5 gear", "x4 oil", "x10 screws", "x7 spring", "x18 steel", "x8 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Cowboy Repeater",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x3 adhesive", "x2 gear", "x2 oil", "x7 screws", "x3 spring", "x9 steel", "x5 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Varmint Rifle",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x6 adhesive", "x7 gear", "x5 oil", "x12 screws", "x10 spring", "x20 steel", "x10 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 1,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Trail Carbine",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x8 adhesive", "x9 gear", "x7 oil", "x14 screws", "x12 spring", "x23 steel", "x13 wood"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Railway Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x8 adhesive", "x7 gear", "x6 nuclear material", "x8 oil", "x7 plastic", "x16 screws", "x30 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 nuclear material", "x1 oil", "x1 plastic", "x1 screws", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Junk Jet",
+          "Craft": {
+            "DC": 20,
+            "Materials": ["x12 adhesive", "x5 gear", "x3 nuclear material", "x10 oil", "x8 plastic", "x20 screws", "x30 steel"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 4,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 nuclear material", "x1 oil", "x1 plastic", "x1 screws", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Sniper Rifle",
+          "Craft": {
+            "DC": 15,
+            "Materials": ["x7 adhesive", "x4 gear", "x4 oil", "x11 screws", "x7 spring", "x24 steel", "x7 wood"],
+            "Time": "3 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Assault Rifle",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x2 adhesive", "x3 aluminum", "x3 gear", "x2 oil", "x4 screws", "x2 spring", "x23 steel"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 5,
+            "Materials": ["x1 adhesive", "x1 aluminum", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        },
+        {
+          "Name": "Anti-Material Rifle",
+          "Craft": {
+            "DC": 25,
+            "Materials": ["x9 adhesive", "x10 gear", "x3 nuclear material", "x8 oil", "x15 screws", "x15 spring", "x28 steel", "x14 wood"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 6,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 nuclear material", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "15 minutes"
+          }
+        }
+      ],
+      "Shotguns": [
+        {
+          "Name": "Lever-action Shotgun",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 adhesive", "x2 oil", "x6 screws", "x16 steel", "x5 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 oil", "x1 screws", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Single Shotgun",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x6 adhesive", "x4 gear", "x4 oil", "x9 screws", "x6 spring", "x22 steel", "x7 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Sawed-off Shotgun",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x4 adhesive", "x3 gear", "x4 oil", "x7 screws", "x16 steel", "x7 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Double Barrel Shotgun",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x4 adhesive", "x3 gear", "x4 oil", "x7 screws", "x16 steel", "x7 wood"],
+            "Time": "2 hours"
+          },
+          "Repair": {
+            "DC": 3,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Combat Shotgun",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x8 adhesive", "x6 gear", "x6 oil", "x11 screws", "x9 spring", "x24 steel", "x9 wood"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 6,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel", "x1 wood"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Riot Shotgun",
+          "Craft": {
+            "DC": 16,
+            "Materials": ["x8 adhesive", "x6 gear", "x6 oil", "x11 screws", "x9 spring", "x32 steel"],
+            "Time": "4 hours"
+          },
+          "Repair": {
+            "DC": 6,
+            "Materials": ["x1 adhesive", "x1 gear", "x1 oil", "x1 screws", "x1 spring", "x1 steel"],
+            "Time": "10 minutes"
+          }
+        }
+      ],
+      "RangedWeaponMods": [
+        {
+          "Name": "Auto-Firing Turret",
+          "Craft": {
+            "DC": 10,
+            "Materials": ["x1 circuitry", "x4 gears", "x2 glass", "x3 oil", "x8 screws", "x6 steel or x12 wood"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Bayonet",
+          "Craft": {
+            "DC": 2,
+            "Materials": ["x1 knife (no decay)", "x3 adhesive", "x3 screws"],
+            "Time": "5 minutes"
+          }
+        },
+        {
+          "Name": "Boosted Capacitor",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x3 adhesive", "x6 circuitry", "x5 crystal", "x4 nuclear material", "x4 screws", "x2 gold", "x6 steel"],
+            "Time": "2 hours"
+          }
+        },
+        {
+          "Name": "Double Action",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x3 adhesive", "x3 screws"],
+            "Time": "2 hours"
+          }
+        },
+        {
+          "Name": "Ergonomic Grip",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x3 adhesive", "x3 screws"],
+            "Time": "2 hours"
+          }
+        },
+        {
+          "Name": "Hardened Receiver",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x4 adhesive", "x4 screws"],
+            "Time": "2 hours"
+          }
+        },
+        {
+          "Name": "Holographic Weapon Sight",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x2 adhesive", "x2 fiber optics", "x2 fiberglass", "x2 glass", "x1 nuclear material", "x2 screws", "x1 gold"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Improved Rifling",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 steel"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Increased Clip Size",
+          "Craft": {
+            "DC": 6,
+            "Materials": ["x2 steel", "x6 screws"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Infrared Scope",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x2 adhesive", "x2 fiber optics", "x2 fiberglass", "x2 glass", "x6 nuclear material", "x2 screws", "x1 gold"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Laser Sight",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x2 adhesive", "x2 fiber optics", "x2 glass", "x2 screws"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Light Build",
+          "Craft": {
+            "DC": 10,
+            "Materials": [],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Longer Barrel",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x3 steel"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Lucky Charm",
+          "Craft": {
+            "DC": 2,
+            "AdditionalRequirement": "Luck ability score 7 or higher",
+            "Materials": ["x1 of any material (x3 total)"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Muzzle Brake",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x3 adhesive", "x4 aluminum"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "On-Board Target Tracking",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x7 adhesive", "x9 aluminum", "x4 circuitry", "x6 crystal", "x5 fiber optics", "x4 nuclear material", "x5 screws", "x4 gold"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Overclocked Capacitor",
+          "Craft": {
+            "DC": 14,
+            "Materials": ["x8 adhesive", "x8 circuitry", "x6 crystal", "x12 fiberglass", "x6 gold", "x6 nuclear material", "x3 screws"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Remote Controlled Turret",
+          "Craft": {
+            "DC": 12,
+            "Materials": ["x1 terminal", "x3 circuitry", "x8 gears", "x2 glass", "x6 oil", "x12 screws", "x10 steel or x18 wood"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Scope",
+          "Craft": {
+            "DC": 4,
+            "Materials": ["x2 adhesive", "x4 glass", "x2 screws"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Semi-Automatic",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x3 adhesive", "x3 screws"],
+            "Time": "4 hours"
+          }
+        },
+        {
+          "Name": "Silencer",
+          "Craft": {
+            "DC": 3,
+            "Materials": ["x4 adhesive", "x4 aluminum", "x4 plastic", "x3 screws"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Speedloader",
+          "Craft": {
+            "DC": 4,
+            "Materials": ["x6 aluminum", "x2 screws"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Stock",
+          "Craft": {
+            "DC": 5,
+            "Materials": ["x4 adhesive", "x6 wood"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Strengthen",
+          "Craft": {
+            "DC": 8,
+            "Materials": ["x3 adhesive", "x3 screws"],
+            "Time": "1 hour"
+          }
+        }
+      ],
+      "ThrownExplosives": [
+        {
+          "Name": "Dynamite",
+          "Craft": {
+            "DC": {"Crafting": 5, "Explosives": 3},
+            "Materials": ["x2 adhesive", "x4 gunpowder", "x2 oil"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Molotov Cocktail",
+          "Craft": {
+            "DC": {"Crafting": 3, "Explosives": 1},
+            "Materials": ["x1 adhesive", "x2 glass", "x1 cloth", "x2 oil"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Frag Grenade",
+          "Craft": {
+            "DC": {"Crafting": 10, "Explosives": 5},
+            "Materials": ["x2 adhesive", "x1 aluminum", "x8 gunpowder", "x2 oil", "x1 spring"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Plasma Grenade",
+          "Craft": {
+            "DC": {"Crafting": 10, "Explosives": 5},
+            "Materials": ["x2 adhesive", "x2 aluminum", "x1 circuitry", "x3 nuclear material", "x1 Plasma cartridge", "x1 spring"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Pulse Grenade",
+          "Craft": {
+            "DC": {"Crafting": 10, "Explosives": 5},
+            "Materials": ["x2 aluminum", "x1 circuitry", "x2 adhesive", "x2 nuclear material", "x1 spring"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Incendiary Grenade",
+          "Craft": {
+            "DC": {"Crafting": 5, "Explosives": 3},
+            "Materials": ["x2 adhesive", "x2 aluminum", "x1 oil", "x2 spring"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Flash Bang",
+          "Craft": {
+            "DC": {"Crafting": 5, "Explosives": 3},
+            "Materials": ["x2 adhesive", "x1 aluminum", "x1 gunpowder", "x1 spring"],
+            "Time": "30 minutes"
+          }
+        },
+        {
+          "Name": "Cryogenic Grenade",
+          "Craft": {
+            "DC": {"Crafting": 15, "Explosives": 10},
+            "Materials": ["x2 acid", "x2 adhesive", "x2 aluminum", "x2 cryo cell", "x2 nuclear material", "x1 spring"],
+            "Time": "30 minutes"
+          }
+        }
+      ],
+      "PlacedExplosives": [
+        {
+          "Name": "Long Fuse Dynamite",
+          "Craft": {
+            "DC": {"Crafting": 5, "Explosives": 3},
+            "Materials": ["x2 adhesive", "x4 gunpowder", "x2 oil"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Frag Mine",
+          "Craft": {
+            "DC": {"Crafting": 10, "Explosives": 5},
+            "Materials": ["x2 adhesive", "x1 aluminum", "x6 gunpowder", "x2 oil", "x1 spring"],
+            "Time": "1 hour"
+          }
+        },
+        {
+          "Name": "Plasma Mine",
+          "Craft": {
+            "DC": {"Crafting": 10, "Explosives": 5},
+            "Materials": ["x2 adhesive", "x2 aluminum", "x1 circuitry", "x3 nuclear material", "x1 Plasma cartridge", "x1 spring"],
+            "Time": "1 hour"
+          }
+        }
+      ],
+      "JunkItems": [
+        {
+          "Material": "Acid",
+          "Sources": [
+            {"Item": "Abraxo Cleaner", "Quantity": 1},
+            {"Item": "Bloatfly Gland", "Quantity": 2},
+            {"Item": "Big Battery", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Adhesive",
+          "Sources": [
+            {"Item": "Duct Tape", "Quantity": 1},
+            {"Item": "Wonderglue", "Quantity": 2},
+            {"Item": "Vegetable Starch", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Aluminum",
+          "Sources": [
+            {"Item": "Soda Can", "Quantity": 1},
+            {"Item": "Hubcap", "Quantity": 2},
+            {"Item": "Cake Pan", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Antiseptic",
+          "Sources": [
+            {"Item": "Toothpaste", "Quantity": 1},
+            {"Item": "Blood Sac", "Quantity": 2},
+            {"Item": "Turpentine", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Asbestos",
+          "Sources": [
+            {"Item": "Coffee Pot", "Quantity": 1},
+            {"Item": "Abraxo Cleaner", "Quantity": 2},
+            {"Item": "Extinguisher", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Ballistic Fiber",
+          "Sources": [
+            {"Item": "Military ammo bag", "Quantity": 1},
+            {"Item": "Military grade duct tape", "Quantity": 2},
+            {"Item": "Raw Fiber", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Ceramic",
+          "Sources": [
+            {"Item": "Coffee cup", "Quantity": 1},
+            {"Item": "Bowl", "Quantity": 2},
+            {"Item": "Vase", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Circuitry",
+          "Sources": [
+            {"Item": "Hot plate", "Quantity": 1},
+            {"Item": "Telephone", "Quantity": 2},
+            {"Item": "Military-grade circuit board", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Cloth",
+          "Sources": [
+            {"Item": "Pre-war money", "Quantity": 1},
+            {"Item": "Duct Tape", "Quantity": 2},
+            {"Item": "Jangles the moon monkey", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Copper",
+          "Sources": [
+            {"Item": "Light Bulb", "Quantity": 1},
+            {"Item": "Hot Plate", "Quantity": 2},
+            {"Item": "High Powered Magnet", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Crystal",
+          "Sources": [
+            {"Item": "Magnifying glass", "Quantity": 1},
+            {"Item": "Microscope", "Quantity": 2},
+            {"Item": "Camera", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Fertilizer",
+          "Sources": [
+            {"Item": "Bag of fertilizer", "Quantity": 1}
+          ]
+        },
+        {
+          "Material": "Fiber optics",
+          "Sources": [
+            {"Item": "Magnifying glass", "Quantity": 1},
+            {"Item": "Biometric scanner", "Quantity": 2},
+            {"Item": "Flight data recorder", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Fiberglass",
+          "Sources": [
+            {"Item": "Cigar box", "Quantity": 1},
+            {"Item": "Jangles the Moon Monkey", "Quantity": 2},
+            {"Item": "Telephone", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Gears",
+          "Sources": [
+            {"Item": "Adjustable Wrench", "Quantity": 1},
+            {"Item": "Desk Fan", "Quantity": 2},
+            {"Item": "Typewriter", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Glass",
+          "Sources": [
+            {"Item": "Bottle", "Quantity": 1},
+            {"Item": "Microscope", "Quantity": 2},
+            {"Item": "Vacuum Tube", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Lead",
+          "Sources": [
+            {"Item": "Pencil", "Quantity": 1},
+            {"Item": "Five Bullets", "Quantity": 2},
+            {"Item": "Dumbbell", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Leather",
+          "Sources": [
+            {"Item": "Baseball", "Quantity": 1},
+            {"Item": "Baseball Glove", "Quantity": 2},
+            {"Item": "Animal Hide", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Nuclear Material",
+          "Sources": [
+            {"Item": "Blast Radius Board Game", "Quantity": 1},
+            {"Item": "Biometric Scanner", "Quantity": 2},
+            {"Item": "Radioactive Gland", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Oil",
+          "Sources": [
+            {"Item": "Blowtorch", "Quantity": 1},
+            {"Item": "Oil Can", "Quantity": 2},
+            {"Item": "Cooking Oil", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Paint",
+          "Sources": [
+            {"Item": "Paint Can", "Quantity": "1 to 3 uses"}
+          ]
+        },
+        {
+          "Material": "Plastic",
+          "Sources": [
+            {"Item": "Globe", "Quantity": 1},
+            {"Item": "Plastic Pumpkin", "Quantity": 2},
+            {"Item": "Dog Bowl", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Rubber",
+          "Sources": [
+            {"Item": "Bonesaw", "Quantity": 1},
+            {"Item": "Extinguisher", "Quantity": 2},
+            {"Item": "Basketball", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Screw",
+          "Sources": [
+            {"Item": "Globe", "Quantity": 1},
+            {"Item": "Typewriter", "Quantity": 2},
+            {"Item": "Any Ranged Weapon", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Silver",
+          "Sources": [
+            {"Item": "Silver fork", "Quantity": 1},
+            {"Item": "Hairbrush", "Quantity": 2},
+            {"Item": "Silver bar", "Quantity": 10}
+          ]
+        },
+        {
+          "Material": "Spring",
+          "Sources": [
+            {"Item": "Flip lighter", "Quantity": 1},
+            {"Item": "Camera", "Quantity": 2},
+            {"Item": "Typewriter", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Steel",
+          "Sources": [
+            {"Item": "Metal Bucket", "Quantity": 1},
+            {"Item": "Toaster", "Quantity": 2},
+            {"Item": "Any Weapon", "Quantity": 3}
+          ]
+        },
+        {
+          "Material": "Wood",
+          "Sources": [
+            {"Item": "Clipboard", "Quantity": 1},
+            {"Item": "Broom", "Quantity": 2},
+            {"Item": "Log", "Quantity": 3}
+          ]
+        }
+      ]
+    }
+  }

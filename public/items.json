@@ -1,0 +1,2414 @@
+{
+    "Armor": [
+    {
+      "name": "Cloth",
+      "base_cost": 50,
+      "armor_class": 10,
+      "damage_threshold": 0,
+      "upgrade_slots": 8,
+      "carry_load": 5,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Leather",
+      "base_cost": 175,
+      "armor_class": 11,
+      "damage_threshold": 1,
+      "upgrade_slots": 6,
+      "carry_load": 15,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Metal",
+      "base_cost": 250,
+      "armor_class": 12,
+      "damage_threshold": 0,
+      "upgrade_slots": 4,
+      "carry_load": 20,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Multilayered",
+      "base_cost": 275,
+      "armor_class": 10,
+      "damage_threshold": 2,
+      "upgrade_slots": 5,
+      "carry_load": 40,
+      "strength_requirement": 3
+    },
+    {
+      "name": "Ballistic Weave",
+      "base_cost": 800,
+      "armor_class": 12,
+      "damage_threshold": 3,
+      "upgrade_slots": 2,
+      "carry_load": 10,
+      "strength_requirement": 3
+    },
+    {
+      "name": "Steel",
+      "base_cost": 650,
+      "armor_class": 13,
+      "damage_threshold": 2,
+      "upgrade_slots": 2,
+      "carry_load": 50,
+      "strength_requirement": 6
+    }
+  ],
+  "Armor Upgrades": [
+    {
+      "name": "Camouflage",
+      "base_cost": 125,
+      "ranks": [
+        {"rank": 1, "effect": "Advantage on sneak checks relying on sight, passive sneak increases by 3"},
+        {"rank": 2, "effect": "Advantage on sneak checks relying on sound, passive sneak increases by 3"},
+        {"rank": 3, "effect": "While in dim light, you become shadowed, passive sneak increases by 3"}
+      ]
+    },
+    {
+      "name": "Light",
+      "base_cost": 75,
+      "ranks": [
+        {"rank": 1, "effect": "Load reduced by 5, Strength requirement reduced by 1, DT reduced by 1"},
+        {"rank": 2, "effect": "Load reduced by 10 (minimum of 3)"},
+        {"rank": 3, "effect": "If you spend at least 4 AP on your turn to move, you can move an additional 10 feet"}
+      ]
+    },
+    {
+      "name": "Fitted",
+      "base_cost": 175,
+      "ranks": [
+        {"rank": 1, "effect": "When taking damage from an area of effect, your DT is doubled"},
+        {"rank": 2, "effect": "Your maximum stamina points increase by a number equal to your level"},
+        {"rank": 3, "effect": "Advantage on combat sequence rolls (if already have advantage, gain +5)"}
+      ]
+    },
+    {
+      "name": "Lead Lined",
+      "base_cost": 125,
+      "ranks": [
+        {"rank": 1, "effect": "Radiation DC decreases by 2"},
+        {"rank": 2, "effect": "Radiation DC decreases by 2"},
+        {"rank": 3, "effect": "Radiation DC decreases by 2"}
+      ]
+    },
+    {
+      "name": "Strengthened",
+      "base_cost": 410,
+      "ranks": [
+        {"rank": 1, "effect": "When taking damage from a critical hit, your DT increases by 3"},
+        {"rank": 2, "effect": "When taking damage from a critical hit, your DT increases by 5"},
+        {"rank": 3, "effect": "If you would gain a severe injury, you instead gain a random limb condition"}
+      ]
+    },
+    {
+      "name": "Sturdy",
+      "base_cost": 475,
+      "ranks": [
+        {"rank": 1, "effect": "Ignores negative effects of the first 2 levels of decay for the armor"},
+        {"rank": 2, "effect": "Ignores negative effects of the first 4 levels of decay for the armor"},
+        {"rank": 3, "effect": "Armor no longer decays from being damaged by a critical hit"}
+      ]
+    },
+    {
+      "name": "Pocketed",
+      "base_cost": 210,
+      "ranks": [
+        {"rank": 1, "effect": "Carry load increased by 10"},
+        {"rank": 2, "effect": "Carry load increased by 15"},
+        {"rank": 3, "effect": "Carry load increased by 25"}
+      ]
+    },
+    {
+      "name": "Reinforced",
+      "base_cost": 450,
+      "ranks": [
+        {"rank": 1, "effect": "+1 bonus to DT"},
+        {"rank": 2, "effect": "+1 bonus to DT"},
+        {"rank": 3, "effect": "+2 bonus to DT"}
+      ]
+    },
+    {
+      "name": "Hardened",
+      "base_cost": 800,
+      "ranks": [
+        {"rank": 1, "effect": "+1 bonus to AC"},
+        {"rank": 2, "effect": "+1 bonus to AC"},
+        {"rank": 3, "effect": "+1 bonus to AC"}
+      ]
+    }
+  ],
+  "Power Armor": [
+    {
+      "name": "T-45",
+      "base_cost": 4050,
+      "armor_class": 14,
+      "defense_points": 10,
+      "upgrade_slots": 6,
+      "repair_dc": 16,
+      "allotted_time": "4 hours",
+      "carry_load": 100,
+      "strength_requirement": 0
+    },
+    {
+      "name": "T-51",
+      "base_cost": 80250,
+      "armor_class": 17,
+      "defense_points": 15,
+      "upgrade_slots": 5,
+      "repair_dc": 23,
+      "allotted_time": "6 hours",
+      "carry_load": 100,
+      "strength_requirement": 0
+    },
+    {
+      "name": "T-60",
+      "base_cost": 85750,
+      "armor_class": 16,
+      "defense_points": 20,
+      "upgrade_slots": 6,
+      "repair_dc": 20,
+      "allotted_time": "4 hours",
+      "carry_load": 100,
+      "strength_requirement": 0
+    },
+    {
+      "name": "X-01",
+      "base_cost": 133500,
+      "armor_class": 16,
+      "defense_points": 35,
+      "upgrade_slots": 4,
+      "repair_dc": 25,
+      "allotted_time": "3 hours",
+      "carry_load": 100,
+      "strength_requirement": 0
+    },
+    {
+      "name": "X-02",
+      "base_cost": 155000,
+      "armor_class": 18,
+      "defense_points": 30,
+      "upgrade_slots": 4,
+      "repair_dc": 25,
+      "allotted_time": "3 hours",
+      "carry_load": 100,
+      "strength_requirement": 0
+    }
+  ],
+  "Power Armor Upgrades": [
+    {
+      "name": "Explosive Shielding",
+      "base_cost": 1350,
+      "ranks": [
+        {"rank": 1, "effect": "Reduce explosive damage taken by 5"},
+        {"rank": 2, "effect": "Reduce explosive damage taken by 10"},
+        {"rank": 3, "effect": "Reduce explosive damage taken by 15"}
+      ]
+    },
+    {
+      "name": "Prism Shielding",
+      "base_cost": 1800,
+      "ranks": [
+        {"rank": 1, "effect": "Reduce laser and plasma damage taken by 5"},
+        {"rank": 2, "effect": "Reduce laser and plasma damage taken by 5"},
+        {"rank": 3, "effect": "Reduce laser and plasma damage taken by 10"}
+      ]
+    },
+    {
+      "name": "Emergency Protocols",
+      "base_cost": 1800,
+      "ranks": [
+        {"rank": 1, "effect": "If you start your turn with less than half your hit points, you can spend 1 AP to move 10 feet"},
+        {"rank": 2, "effect": "If you start your turn with less than half your hit points, your DT increases by 5 (only for damage against HP)"}
+      ]
+    },
+    {
+      "name": "Kinetic Dynamo",
+      "base_cost": 2400,
+      "ranks": [
+        {"rank": 1, "effect": "You gain an additional AP at the start of your turn for each level of decay the power armor gained since your last turn"}
+      ]
+    },
+    {
+      "name": "Tesla Coils",
+      "base_cost": 2400,
+      "ranks": [
+        {"rank": 1, "effect": "Spend 3 AP to activate/deactivate. Each creature within 10 feet takes 1d6 electricity damage when activated and at the start of their turns. Removes 10 minutes from allotted time per round active"},
+        {"rank": 2, "effect": "Electricity damage increases by 1d6. Removes an additional 5 minutes from allotted time per round active"},
+        {"rank": 3, "effect": "Electricity damage increases by 2d6. Removes an additional 10 minutes from allotted time per round active"}
+      ]
+    },
+    {
+      "name": "Reactive Plates",
+      "base_cost": 2700,
+      "ranks": [
+        {"rank": 1, "effect": "When taking damage from a melee attack, the attacker takes a quarter (rounded down) of the damage they dealt"},
+        {"rank": 2, "effect": "The attacker takes another quarter (rounded down) of the damage they dealt (effectively half of the total)"},
+        {"rank": 3, "effect": "When taking damage from a melee attack, the attacker is knocked back by 15 feet"}
+      ]
+    },
+    {
+      "name": "Core Assembly",
+      "base_cost": 2250,
+      "ranks": [
+        {"rank": 1, "effect": "Spending more than 18 AP on your turn causes overheating instead of 15"},
+        {"rank": 2, "effect": "Spending more than 20 AP on your turn causes overheating instead of 15"},
+        {"rank": 3, "effect": "Overheating requires 15 minutes of allotted time loss instead of 30"}
+      ]
+    },
+    {
+      "name": "Jet Pack",
+      "base_cost": 6000,
+      "ranks": [
+        {"rank": 1, "effect": "You can spend 1 AP on your turn to fly 5 feet upwards"}
+      ]
+    },
+    {
+      "name": "Sensor Array",
+      "base_cost": 4500,
+      "ranks": [
+        {"rank": 1, "effect": "Passive sense increases by 5"},
+        {"rank": 2, "effect": "Passive sense increases by 5"},
+        {"rank": 3, "effect": "Passive sense increases by 10"}
+      ]
+    },
+    {
+      "name": "VATS Matrix Overlay",
+      "base_cost": 2700,
+      "ranks": [
+        {"rank": 1, "effect": "Whenever you make a targeted attack roll, reduce the additional AP cost by 1"},
+        {"rank": 2, "effect": "Whenever you make a targeted attack roll, reduce the additional AP cost by 1"}
+      ]
+    },
+    {
+      "name": "Internal Database",
+      "base_cost": 2400,
+      "ranks": [
+        {"rank": 1, "effect": "If you can see a creature, you can spend 6 AP on your turn to learn its HP total, SP total, AC, or DT"}
+      ]
+    },
+    {
+      "name": "Targeting HUD",
+      "base_cost": 1800,
+      "ranks": [
+        {"rank": 1, "effect": "If you can see a creature, you can spend 3 AP to mark it (one marked creature at a time). When dealing damage to a marked creature, you deal an additional die of damage"},
+        {"rank": 2, "effect": "You can mark up to two more creatures"},
+        {"rank": 3, "effect": "When dealing damage to a marked creature, you deal an additional die of damage"}
+      ]
+    },
+    {
+      "name": "Headlamp",
+      "base_cost": 250,
+      "ranks": [
+        {"rank": 1, "effect": "Spend 1 AP to turn on headlamp (bright light in a 40-foot cone, dim light for an additional 40 feet)"},
+        {"rank": 2, "effect": "Bright and dim light both shine an additional 10 feet"},
+        {"rank": 3, "effect": "Bright and dim light both shine an additional 10 feet. If turned on in darkness, creatures within 5 feet become blinded for one round"}
+      ]
+    },
+    {
+      "name": "Rusty Knuckles",
+      "base_cost": 100,
+      "ranks": [
+        {"rank": 1, "effect": "If you hit a creature with an unarmed attack, they bleed"}
+      ]
+    },
+    {
+      "name": "Optimized Bracers",
+      "base_cost": 1700,
+      "ranks": [
+        {"rank": 1, "effect": "Spend 6 AP to make a powerful unarmed attack (2d6 bludgeoning damage)"},
+        {"rank": 2, "effect": "Damage increases by 1d6"},
+        {"rank": 3, "effect": "Damage increases by 1d6 and pushes targets 15 feet back"}
+      ]
+    },
+    {
+      "name": "Calibrated Shocks",
+      "base_cost": 1000,
+      "ranks": [
+        {"rank": 1, "effect": "Carry Load increases by 15"},
+        {"rank": 2, "effect": "Carry Load increases by 15"},
+        {"rank": 3, "effect": "Carry Load increases by 20"}
+      ]
+    },
+    {
+      "name": "Overclock Hydraulics",
+      "base_cost": 1950,
+      "ranks": [
+        {"rank": 1, "effect": "While overheated, your maximum AP increases by 2, you have advantage on all attack rolls, you can move 15 feet with 1 AP, and your unarmed attacks deal an additional 3d6 fire damage"},
+        {"rank": 2, "effect": "You can spend 3 AP to overheat the fusion core"},
+        {"rank": 3, "effect": "Your maximum AP increases by 2"}
+      ]
+    },
+    {
+      "name": "Explosive Vent",
+      "base_cost": 1250,
+      "ranks": [
+        {"rank": 1, "effect": "If you fall at least 15 feet, upon hitting the ground you can activate this upgrade. Each creature within 20 feet takes 3d6 fire damage and 3d6 explosive damage. Removes 20 minutes from allotted time per activation"},
+        {"rank": 2, "effect": "Fire and explosive damage each increase by 1d6"},
+        {"rank": 3, "effect": "Radius increases by 10 feet"}
+      ]
+    },
+    {
+      "name": "Super Mutant Fitting",
+      "base_cost": "50% of base armor cost",
+      "effect": "The armor is modified for a Super Mutant. Humans and Ghouls cannot use it. Removing this upgrade costs the same price or crafting materials as adding it"
+    }
+  ],
+  "Melee Weapons": [
+    {
+      "name": "Shiv",
+      "base_cost": 65,
+      "action_points": 3,
+      "damage": "1d4 piercing",
+      "critical_hit": "20, x2",
+      "properties": ["Fragile"],
+      "carry_load": 1,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Knife",
+      "base_cost": 200,
+      "action_points": 3,
+      "damage": "1d6 piercing or slashing",
+      "critical_hit": "20, x3",
+      "properties": ["Thrown: x3/x6"],
+      "carry_load": 2,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Switchblade",
+      "base_cost": 120,
+      "action_points": 3,
+      "damage": "1d6 piercing or slashing",
+      "critical_hit": "20, x2",
+      "properties": ["Fragile", "Weighted"],
+      "carry_load": 2,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Sharpened Pole",
+      "base_cost": 85,
+      "action_points": 5,
+      "damage": "1d4 piercing",
+      "critical_hit": "20, x3",
+      "properties": ["Fragile", "Reach", "Thrown: x6/x10"],
+      "carry_load": 4,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Combat Knife",
+      "base_cost": 220,
+      "action_points": 3,
+      "damage": "2d4 piercing or slashing",
+      "critical_hit": "20, x3",
+      "properties": ["Applies bleeding", "Thrown: x3/x8"],
+      "carry_load": 3,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Throwing Knife",
+      "base_cost": 80,
+      "action_points": 4,
+      "damage": "1d4 piercing (1d6 if thrown)",
+      "critical_hit": "20, x3",
+      "properties": ["Applies bleeding", "Fragile", "Thrown: x4/x8"],
+      "carry_load": 2,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Spear",
+      "base_cost": 140,
+      "action_points": 4,
+      "damage": "1d10 piercing or slashing",
+      "critical_hit": "20, x3",
+      "properties": [],
+      "carry_load": 0,
+      "strength_requirement": 0
+    }
+  ],
+  "Ranged Weapons": [
+    {
+      "name": "Hunting Shotgun",
+      "base_cost": 1100,
+      "action_points": 5,
+      "damage": "3d10 ballistic",
+      "range": "x4/x8",
+      "critical_hit": "20, 3d10",
+      "ammo": "12 gauge, 5 rounds",
+      "properties": ["Manual Reload", "Powerful", "Spread", "Two Handed"],
+      "carry_load": 10,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Single Shotgun",
+      "base_cost": 500,
+      "action_points": 4,
+      "damage": "3d6 ballistic",
+      "range": "x3/x6",
+      "critical_hit": "20, 3d6",
+      "ammo": "20 gauge, 1 round",
+      "properties": ["Powerful", "Quick Reload", "Spread", "Two Handed"],
+      "carry_load": 10,
+      "strength_requirement": 4
+    },
+    {
+      "name": "Sawed-off Shotgun",
+      "base_cost": 700,
+      "action_points": 4,
+      "damage": "2d10 ballistic",
+      "range": "x2/x4",
+      "critical_hit": "20, 4d10",
+      "ammo": "12 gauge, 2 rounds",
+      "properties": ["Destructive", "Powerful", "Quick Reload", "Spread", "Two Handed", "Unstable"],
+      "carry_load": 8,
+      "strength_requirement": 4
+    },
+    {
+      "name": "Double Barrel Shotgun",
+      "base_cost": 700,
+      "action_points": 4,
+      "damage": "2d10 ballistic",
+      "range": "x3/x6",
+      "critical_hit": "20, 3d10",
+      "ammo": "12 gauge, 2 rounds",
+      "properties": ["Powerful", "Quick Reload", "Spread", "Two Handed"],
+      "carry_load": 12,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Combat Shotgun",
+      "base_cost": 800,
+      "action_points": 4,
+      "damage": "2d12 ballistic",
+      "range": "x4/x7",
+      "critical_hit": "20, 2d12",
+      "ammo": "12 gauge, 8 rounds",
+      "properties": ["Powerful", "Spread", "Two Handed"],
+      "carry_load": 14,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Riot Shotgun",
+      "base_cost": 900,
+      "action_points": 5,
+      "damage": "3d6 ballistic",
+      "range": "x3/x6",
+      "critical_hit": "20, 6d6",
+      "ammo": "12 gauge, 12 rounds",
+      "properties": ["Powerful", "Semi-Automatic", "Spread", "Two Handed"],
+      "carry_load": 10,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Flamer",
+      "base_cost": 240,
+      "action_points": 6,
+      "damage": "2d10 fire",
+      "range": "60 ft. line, 10 ft. wide, or 20 ft. cone",
+      "critical_hit": "-",
+      "ammo": "Fuel, 5 rounds",
+      "properties": ["Area of Effect", "Incendiary", "Slow", "Slow Reload", "Two Handed"],
+      "carry_load": 60,
+      "strength_requirement": 7
+    },
+    {
+      "name": "Missile Launcher",
+      "base_cost": 670,
+      "action_points": 6,
+      "damage": "10d6 explosive in a 10ft. radius",
+      "range": "x10/x40",
+      "critical_hit": "-",
+      "ammo": "Missile, 1 round",
+      "properties": ["Area of Effect", "Destructive", "Durable", "Slow", "Two Handed"],
+      "carry_load": 50,
+      "strength_requirement": 7
+    },
+    {
+      "name": "Minigun",
+      "base_cost": 1650,
+      "action_points": 6,
+      "damage": "5d6 ballistic",
+      "range": "x15/x40",
+      "critical_hit": "20, 2d6",
+      "ammo": "5mm, 120 rounds (uses 10 per attack)",
+      "properties": ["Automatic: 2", "Destructive", "Durable", "Slow Reload", "Spread", "Two Handed"],
+      "carry_load": 90,
+      "strength_requirement": 10
+    },
+    {
+      "name": "Fat-Man",
+      "base_cost": 665,
+      "action_points": 6,
+      "damage": "12d10 explosive in a 30 ft. radius and two levels of radiation in a 60 ft. radius",
+      "range": "120 feet",
+      "critical_hit": "-",
+      "ammo": "Mini nuke, 1 round",
+      "properties": ["Area of Effect", "Destructive", "Durable", "Slow", "Two Handed"],
+      "carry_load": 30,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Solar Scorcher",
+      "base_cost": 340,
+      "action_points": 3,
+      "damage": "1d4 fire",
+      "range": "x5/x10",
+      "critical_hit": "20, applies burning",
+      "ammo": "Can fire in Sunlight",
+      "properties": ["Energy Weapon", "Semi-Automatic"],
+      "carry_load": 4,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Laser Pistol",
+      "base_cost": 415,
+      "action_points": 4,
+      "damage": "1d8 laser",
+      "range": "x10/x20",
+      "critical_hit": "20, x2, applies burning",
+      "ammo": "1 Energy Cell = 30 rounds",
+      "properties": ["Energy Weapon", "Semi-Automatic"],
+      "carry_load": 6,
+      "strength_requirement": 1
+    },
+    {
+      "name": "Laser Rifle",
+      "base_cost": 500,
+      "action_points": 5,
+      "damage": "2d6 laser",
+      "range": "x12/x24",
+      "critical_hit": "20, x2, applies burning",
+      "ammo": "1 Energy Cell = 24 rounds",
+      "properties": ["Accurate", "Energy Weapon", "Unwieldy"],
+      "carry_load": 10,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Automatic Laser Rifle",
+      "base_cost": 360,
+      "action_points": 5,
+      "damage": "1d6 laser",
+      "range": "x8/x12",
+      "critical_hit": "20, 1d6 laser and applies burning",
+      "ammo": "1 Energy Cell = 24 rounds",
+      "properties": ["Automatic: 2", "Energy Weapon", "Unstable", "Unwieldy"],
+      "carry_load": 12,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Tri-Beam Laser Rifle",
+      "base_cost": 730,
+      "action_points": 5,
+      "damage": "3d6 laser",
+      "range": "x4/x8",
+      "critical_hit": "20, 5d6 laser and applies burning",
+      "ammo": "1 Energy Cell = 8 rounds",
+      "properties": ["Energy Weapon", "Spread", "Powerful", "Unwieldy"],
+      "carry_load": 12,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Plasma Pistol",
+      "base_cost": 430,
+      "action_points": 5,
+      "damage": "1d12 plasma",
+      "range": "x6/x10",
+      "critical_hit": "20, x3",
+      "ammo": "1 Microfusion Cell = 16 rounds",
+      "properties": ["Destructive", "Energy Weapon", "Kickback"],
+      "carry_load": 8,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Plasma Rifle",
+      "base_cost": 610,
+      "action_points": 6,
+      "damage": "2d8 plasma",
+      "range": "x8/x12",
+      "critical_hit": "20, x3",
+      "ammo": "1 Microfusion Cell = 12 rounds",
+      "properties": ["Destructive", "Debilitating", "Energy Weapon", "Unwieldy"],
+      "carry_load": 12,
+      "strength_requirement": 3
+    },
+    {
+      "name": "Multiplas Rifle",
+      "base_cost": 690,
+      "action_points": 6,
+      "damage": "3d8 plasma",
+      "range": "x4/x8",
+      "critical_hit": "20, 5d8",
+      "ammo": "1 Microfusion Cell = 4 rounds",
+      "properties": ["Energy Weapon", "Spread", "Powerful", "Unwieldy"],
+      "carry_load": 12,
+      "strength_requirement": 3
+    },
+    {
+      "name": "Tesla Cannon",
+      "base_cost": 425,
+      "action_points": 3,
+      "damage": "1d8 electricity",
+      "range": "30 feet",
+      "critical_hit": "20, 1d8",
+      "ammo": "1 Microfusion Cell = 5 rounds",
+      "properties": ["Applies dazed", "Arc", "Charge", "Energy Weapon", "Electromagnetic", "Two Handed"],
+      "carry_load": 15,
+      "strength_requirement": 4
+    },
+    {
+      "name": "Gamma Gun",
+      "base_cost": 355,
+      "action_points": 4,
+      "damage": "1d12 radiation",
+      "range": "x6/x10",
+      "critical_hit": "20, 1d12",
+      "ammo": "1 Gamma cell = 8 rounds",
+      "properties": ["Kickback", "Radioactive"],
+      "carry_load": 8,
+      "strength_requirement": 2
+    },
+    {
+      "name": "Cryolator",
+      "base_cost": 360,
+      "action_points": 5,
+      "damage": "3d10 cryo",
+      "range": "20 ft. cone",
+      "critical_hit": "-",
+      "ammo": "1 Cryo cell = 3 rounds",
+      "properties": ["Area of Effect", "Freezing", "Slow", "Two Handed"],
+      "carry_load": 25,
+      "strength_requirement": 6
+    },
+    {
+      "name": "Crystalizing Cryolator",
+      "base_cost": 410,
+      "action_points": 5,
+      "damage": "2d10 cryo",
+      "range": "x8/x16",
+      "critical_hit": "20, x2 applies slowed",
+      "ammo": "1 Cryo cell = 9 rounds",
+      "properties": ["Debilitating", "Destructive", "Two Handed"],
+      "carry_load": 25,
+      "strength_requirement": 6
+    },
+    {
+      "name": "Gauss Pistol",
+      "base_cost": 710,
+      "action_points": 3,
+      "damage": "1d10 ballistic",
+      "range": "x8/x16",
+      "critical_hit": "20, 2d10",
+      "ammo": "(1) 2mm EC = 12 rounds",
+      "properties": ["Charge", "Energy Weapon", "Kickback", "Powerful", "Unstable"],
+      "carry_load": 12,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Gauss Rifle",
+      "base_cost": 865,
+      "action_points": 3,
+      "damage": "1d12 ballistic",
+      "range": "x10/x20",
+      "critical_hit": "20, 4d12",
+      "ammo": "(1) 2mm EC = 6 rounds",
+      "properties": ["Charge", "Energy Weapon", "Powerful", "Two Handed", "Unstable"],
+      "carry_load": 18,
+      "strength_requirement": 5
+    },
+    {
+      "name": "Gatling Laser",
+      "base_cost": 1100,
+      "action_points": 6,
+      "damage": "2d10 laser",
+      "range": "x30/x30",
+      "critical_hit": "20, 1d10",
+      "ammo": "1 Fusion Core = 100 rounds",
+      "properties": ["Applies burning", "Automatic: 4", "Destructive", "Energy Weapon", "Unwieldy"],
+      "carry_load": 50,
+      "strength_requirement": 5
+    }
+  ],
+  "Ranged Weapon Modifications": [
+    {
+      "name": "Auto-Firing Turret",
+      "base_cost": "90% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - your Intelligence score in minutes",
+      "mod_slot_total": 3,
+      "description": "Weapon mounts to immovable stand, automatically aims using AI. Must be wired to terminal. Designate non-targets. Costs 6 AP to activate/deactivate from terminal. Turret rolls combat sequence (bonus = Intelligence modifier), gains 10 AP on its turn to attack closest target in short range. Turret is a robot with 25 HP, 10 AC. If to 0 HP, ceases function, weapon gains 1 decay",
+      "equippable_weapons": "Any weapon"
+    },
+    {
+      "name": "Bayonet",
+      "base_cost": "20% of weapon’s base cost",
+      "time_to_equip_unequip": "6 AP",
+      "mod_slot_total": 1,
+      "description": "Attach knife or combat knife to front of weapon. Can attack with knife without switching weapons",
+      "equippable_weapons": "Any ranged weapon with the Two Handed property"
+    },
+    {
+      "name": "Boosted Capacitor",
+      "base_cost": "50% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 3,
+      "description": "Enhanced power consumption. Spend 2 rounds of ammo instead of 1 to increase damage by 2",
+      "equippable_weapons": "Any energy weapon (cannot have overclocked capacitor)"
+    },
+    {
+      "name": "Double Action",
+      "base_cost": "75% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Revolver trigger mechanism upgrade fires round and cocks hammer simultaneously. Costs 1 less AP to attack (min 1)",
+      "equippable_weapons": "Any revolver"
+    },
+    {
+      "name": "Ergonomic Grip",
+      "base_cost": "60% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Improved grip, handling, and design. Weapon’s critical hit damage modifier or damage dice increases by 1",
+      "equippable_weapons": "Any weapon"
+    },
+    {
+      "name": "Hardened Receiver",
+      "base_cost": "120% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 3,
+      "description": "Improvement to firing mechanism to increase projectile power. Weapon gains Destructive and Powerful. If already Destructive, damage dice rank increases once (max d12). Load increases by 2",
+      "equippable_weapons": "Any handgun, submachine gun, rifle, or shotgun (cannot have Light Build)"
+    },
+    {
+      "name": "Holographic Weapon Sight",
+      "base_cost": "60% of weapon’s base cost",
+      "time_to_equip_unequip": "5 - (your Intelligence score) in minutes (min 1 minute)",
+      "mod_slot_total": 2,
+      "description": "Holographic reticle on non-magnifying sight. Attack roll total increases by 1. Load increases by 1",
+      "equippable_weapons": "Any ranged weapon (cannot have Scope or Infrared Scope)"
+    },
+    {
+      "name": "Improved Rifling",
+      "base_cost": "45% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Upgrade to barrel grooves. Range modifiers increase by half",
+      "equippable_weapons": "Any handgun, submachine gun, or rifle (except Flare Gun, H&H Tools nail gun, or Railway Rifle)"
+    },
+    {
+      "name": "Increased Clip Size",
+      "base_cost": "20% of weapon’s base cost",
+      "time_to_equip_unequip": "6 AP",
+      "mod_slot_total": 1,
+      "description": "Longer, larger clip for more rounds. Rounds increase by 3",
+      "equippable_weapons": "Any handgun, submachine gun, rifle, or shotgun that does not have Manual Reload or Quick Reload"
+    },
+    {
+      "name": "Infrared Scope",
+      "base_cost": "90% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Pre-war thermal imaging sight. Long range modifier triples. Can target hidden, shrouded, dark, or invisible creatures (not behind full cover). Attack rolls increase by 2. Load increases by 2",
+      "equippable_weapons": "Any revolver or rifle (including Laser Rifle, Plasma Rifle, or Gauss Rifle). Cannot have Scope or Holographic weapon sight"
+    },
+    {
+      "name": "Laser Sight",
+      "base_cost": "35% of weapon’s base cost",
+      "time_to_equip_unequip": "5 - (your Intelligence score) in minutes (min 1 minute)",
+      "mod_slot_total": 2,
+      "description": "Projects beam onto targets, providing visual reference. Weapon gains Accurate. If already Accurate, critical hit damage doubles. Load increases by 1",
+      "equippable_weapons": "Any handgun, rifle, or energy weapon (except Tri-Beam Laser Rifle, Multiplas Rifle, or Gatling Laser)"
+    },
+    {
+      "name": "Light Build",
+      "base_cost": "25% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Lighter materials for rebalance and ease of operation. Load decreases by half. Strength requirement decreases by 1. Weapon gains Breakable",
+      "equippable_weapons": "Any weapon (cannot be Strengthened)"
+    },
+    {
+      "name": "Longer Barrel",
+      "base_cost": "35% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Increased barrel length for more range, poorer short range. Long range modifier increases by 10. Short range modifier decreases by 2. Load increases by 4",
+      "equippable_weapons": "Any handgun, rifle, or energy weapon"
+    },
+    {
+      "name": "Lucky Charm",
+      "base_cost": 50,
+      "time_to_equip_unequip": "6 AP",
+      "mod_slot_total": 1,
+      "description": "Personalized attachment. Critical hit chance decreases by 1",
+      "equippable_weapons": "Any weapon"
+    },
+    {
+      "name": "Muzzle Brake",
+      "base_cost": "55% of weapon’s base cost",
+      "time_to_equip_unequip": "6 AP",
+      "mod_slot_total": 2,
+      "description": "Redirects propellant gases to reduce recoil and muzzle rise. Attack roll total increases by 1. Strength requirement decreases by 1. Load increases by 2",
+      "equippable_weapons": "Any handgun, submachine gun, rifle, or shotgun (except Flare Gun, H&H Tools nail gun, or Railway Rifle)"
+    },
+    {
+      "name": "On-Board Target Tracking",
+      "base_cost": "120% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - your Intelligence score in minutes",
+      "mod_slot_total": 2,
+      "description": "Gyroscopic muzzle synchronized with sights and AI for target locking and improved aim. Before attack, spend 6 AP to mark target creature within short range. Attack rolls against marked creature have advantage",
+      "equippable_weapons": "Any energy weapon (except Gauss rifle, Gauss pistol, or Gatling Gun)"
+    },
+    {
+      "name": "Overclocked Capacitor",
+      "base_cost": "110% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 3,
+      "description": "Further power consumption improvements. Spend 3 rounds of ammo instead of 1 to increase damage by 4",
+      "equippable_weapons": "Any energy weapon that doesn’t have automatic or charge (cannot have boosted capacitor)"
+    },
+    {
+      "name": "Remote Controlled Turret",
+      "base_cost": "175% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - your Intelligence score in minutes",
+      "mod_slot_total": 3,
+      "description": "Weapon mounts to immovable stand. Aims based on your input from a nearby terminal. Must be wired to terminal. Costs 6 AP to activate/deactivate. Can spend AP to attack with mounted weapon (AP cost reduced by 2, min 3). If Intelligence is less than weapon's Strength requirement, disadvantage on attack rolls. Turret is a robot with 25 HP, 10 AC. If to 0 HP, ceases function, weapon gains 1 decay",
+      "equippable_weapons": "Any weapon"
+    },
+    {
+      "name": "Scope",
+      "base_cost": "30% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Simple glass scope for distant magnification. If weapon already has a scope, magnification increases. Long range modifier quadrupled. Load increases by 2",
+      "equippable_weapons": "Any revolver or rifle. Laser Rifle, Plasma Rifle, or Gauss Rifle. Cannot have Infrared Scope or Holographic weapon sight"
+    },
+    {
+      "name": "Semi-Automatic",
+      "base_cost": "85% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 3,
+      "description": "Overhaul of firing mechanism for quicker round loading. Weapon gains Semi-Automatic",
+      "equippable_weapons": "Any weapon that doesn’t have Manual Reload, Quick Reload, Automatic, Area of Effect, or Energy Weapon"
+    },
+    {
+      "name": "Silencer",
+      "base_cost": "65% of weapon’s base cost",
+      "time_to_equip_unequip": "6 AP",
+      "mod_slot_total": 2,
+      "description": "Muzzle device reducing acoustic intensity. While hidden, attack rolls with silencer don't reveal presence (except to attacked creature). Load increases by 2. Damage dice rank decreases once (min d4)",
+      "equippable_weapons": "Any handgun, submachine gun, rifle, or shotgun (except Flare Gun, H&H Tools nail gun, or Railway Rifle)"
+    },
+    {
+      "name": "Speedloader",
+      "base_cost": 450,
+      "time_to_equip_unequip": "N/A",
+      "mod_slot_total": 0,
+      "description": "Device for loading multiple chambers of a revolver simultaneously. Can reload with 4 AP",
+      "equippable_weapons": "Any revolver"
+    },
+    {
+      "name": "Stock",
+      "base_cost": "45% of weapon’s base cost",
+      "time_to_equip_unequip": "15 - (your Intelligence score) in minutes",
+      "mod_slot_total": 2,
+      "description": "Added back portion for structural support. Improves existing stock. Attack roll total increases by 1. Load increases by 4",
+      "equippable_weapons": "Any submachine gun, rifle, shotgun, energy weapon, or revolver with long barrel mod"
+    },
+    {
+      "name": "Strengthen",
+      "base_cost": "30% of weapon’s base cost",
+      "time_to_equip_unequip": "60 - (5 x your Intelligence score) in minutes",
+      "mod_slot_total": 3,
+      "description": "Reinforces weapon structure, improves mechanisms. Weapon gains Sturdy and Defensive. Load increases by 2",
+      "equippable_weapons": "Any weapon (cannot have Light Build)"
+    }
+  ],
+  "Thrown Explosives": [
+    {
+      "name": "Dynamite",
+      "base_cost": 50,
+      "action_points": 6,
+      "damage": "3d6 explosive",
+      "range": "STR x 6",
+      "area_of_effect": "5ft. / 20ft. radius",
+      "properties": ["Deafening: 10ft", "Destructive"],
+      "carry_load": 3
+    },
+    {
+      "name": "Molotov Cocktail",
+      "base_cost": 20,
+      "action_points": 6,
+      "damage": "3d10 fire",
+      "range": "STR x 6",
+      "area_of_effect": "5ft. radius",
+      "properties": ["Incendiary", "Shattering"],
+      "carry_load": 4
+    },
+    {
+      "name": "Frag Grenade",
+      "base_cost": 150,
+      "action_points": 5,
+      "damage": "4d6 explosive",
+      "range": "STR x 10",
+      "area_of_effect": "5ft. / 20ft. radius",
+      "properties": ["Deafening: 10ft", "Destructive", "Dismember"],
+      "carry_load": 3
+    },
+    {
+      "name": "Plasma Grenade",
+      "base_cost": 250,
+      "action_points": 4,
+      "damage": "4d8 plasma",
+      "range": "STR x 10",
+      "area_of_effect": "10ft. radius",
+      "properties": [],
+      "carry_load": 4
+    },
+    {
+      "name": "Pulse Grenade",
+      "base_cost": 150,
+      "action_points": 4,
+      "damage": "2d8 electricity",
+      "range": "STR x 10",
+      "area_of_effect": "15ft. radius",
+      "properties": ["Electromagnetic"],
+      "carry_load": 4
+    },
+    {
+      "name": "Incendiary Grenade",
+      "base_cost": 125,
+      "action_points": 5,
+      "damage": "2d6 explosive and 3d6 fire",
+      "range": "STR x 10",
+      "area_of_effect": "5ft. / 15ft. radius",
+      "properties": ["Deafening: 5ft", "Incendiary"],
+      "carry_load": 3
+    },
+    {
+      "name": "Cryogenic Grenade",
+      "base_cost": 125,
+      "action_points": 4,
+      "damage": "2d6 explosive and 3d6 cold",
+      "range": "STR x 10",
+      "area_of_effect": "5ft. / 10ft. radius",
+      "properties": ["Deafening: 5ft", "Freezing"],
+      "carry_load": 4
+    },
+    {
+      "name": "Flash Bang",
+      "base_cost": 25,
+      "action_points": 5,
+      "damage": "1 explosive",
+      "range": "STR x 10",
+      "area_of_effect": "20ft. radius",
+      "properties": ["Blinding: 20ft", "Deafening: 20ft"],
+      "carry_load": 3
+    }
+  ],
+  "Placed Explosives": [
+    {
+      "name": "Long Fuse Dynamite",
+      "base_cost": 100,
+      "action_points": 6,
+      "damage": "3d6 explosive",
+      "arm_dc": "+1",
+      "area_of_effect": "5ft. / 15ft. radius",
+      "properties": ["Deafening: 10ft", "Destructive", "Slow: 3 rounds (18 seconds)"],
+      "carry_load": 3
+    },
+    {
+      "name": "Frag Mine",
+      "base_cost": 140,
+      "action_points": 6,
+      "damage": "6d6 explosive",
+      "arm_dc": "+4",
+      "area_of_effect": "2.5ft. / 10ft. radius",
+      "properties": ["Proximity", "Deafening: 10ft", "Destructive", "Dismember"],
+      "carry_load": 8
+    },
+    {
+      "name": "Plasma Mine",
+      "base_cost": 180,
+      "action_points": 6,
+      "damage": "4d8 plasma",
+      "arm_dc": "+6",
+      "area_of_effect": "10ft radius",
+      "properties": ["Proximity"],
+      "carry_load": 8
+    },
+    {
+      "name": "Pulse Mine",
+      "base_cost": 80,
+      "action_points": 6,
+      "damage": "3d8 electricity",
+      "arm_dc": "+6",
+      "area_of_effect": "20ft radius",
+      "properties": ["Electromagnetic", "Proximity"],
+      "carry_load": 6
+    },
+    {
+      "name": "Bottlecap Mine",
+      "base_cost": 250,
+      "action_points": 6,
+      "damage": "4d6 explosive and 6d6 slashing",
+      "arm_dc": "+2",
+      "area_of_effect": "5ft. / 20ft radius",
+      "properties": ["Proximity", "Deafening: 10ft", "Destructive", "Mangle"],
+      "carry_load": 10
+    },
+    {
+      "name": "Cryo Mine",
+      "base_cost": 140,
+      "action_points": 6,
+      "damage": "4d6 cold",
+      "arm_dc": "+8",
+      "area_of_effect": "10ft radius",
+      "properties": ["Freezing", "Proximity"],
+      "carry_load": 8
+    },
+    {
+      "name": "C-4 Plastic Explosive",
+      "base_cost": 350,
+      "action_points": 6,
+      "damage": "15d6 explosive",
+      "arm_dc": "+10",
+      "area_of_effect": "5ft. / 25ft. radius",
+      "properties": ["Deafening: 10ft", "Destructive", "Detonator", "Dismember"],
+      "carry_load": 12
+    },
+    {
+      "name": "Nuke Mine",
+      "base_cost": 600,
+      "action_points": 6,
+      "damage": "12d10 explosive and two levels of rads",
+      "arm_dc": "+10",
+      "area_of_effect": "45ft radius",
+      "properties": ["Destructive", "Proximity"],
+      "carry_load": 22
+    }
+  ],
+  "Weapon Properties": [
+    {
+      "name": "Accurate",
+      "description": "Increases the weapon's attack roll accuracy, typically granting a bonus to hit or enhancing critical hit potential (exact effect specified in modifications like Laser Sight)."
+    },
+    {
+      "name": "Ammo and Depleted",
+      "description": "Requires specific ammunition or fuel to deal listed damage. Without ammo, deals 'Depleted' damage. Reloading costs 6 AP."
+    },
+    {
+      "name": "Applies bleeding",
+      "description": "When dealing HP damage, the target gains the Bleeding condition, causing ongoing damage."
+    },
+    {
+      "name": "Applies burning",
+      "description": "When dealing HP damage, the target gains the Burning condition, causing ongoing fire damage."
+    },
+    {
+      "name": "Applies dazed",
+      "description": "When dealing HP damage, the target gains the Dazed condition, affecting their actions or reactions."
+    },
+    {
+      "name": "Applies slowed",
+      "description": "When dealing HP damage, the target gains the Slowed condition, reducing their movement or actions until the end of their next turn."
+    },
+    {
+      "name": "Arc",
+      "description": "The weapon's attack can arc to additional targets within a specified range, dealing damage to multiple enemies."
+    },
+    {
+      "name": "Area of Effect",
+      "description": "The weapon affects all creatures and objects within a specified radius or shape, dealing damage to multiple targets."
+    },
+    {
+      "name": "Automatic: X",
+      "description": "Allows multiple attacks in a single action, with the number of attacks specified by X (e.g., Automatic: 2 allows 2 attacks)."
+    },
+    {
+      "name": "Blinding",
+      "description": "Creatures in the listed area of effect become blinded for (4 - Endurance modifier) rounds (minimum 1)."
+    },
+    {
+      "name": "Breakable",
+      "description": "The weapon gains 1 level of decay on an attack roll of 3 or lower."
+    },
+    {
+      "name": "Charge",
+      "description": "The weapon requires charging before firing, typically increasing damage or requiring additional AP."
+    },
+    {
+      "name": "Clasp",
+      "description": "When dealing HP damage, the weapon clamps onto the target, grappling them and imposing disadvantage on Strength or Agility checks to escape. Cannot grapple creatures two or more size categories larger, and one size category larger only if your Strength is 10."
+    },
+    {
+      "name": "Cleave",
+      "description": "Spend 3 additional AP to target two extra areas within 5 feet of the previous. Each creature in these areas is attacked. If one creature occupies multiple areas, they are targeted by each attack. 'Always cleaves' means no extra AP cost."
+    },
+    {
+      "name": "Deafening",
+      "description": "Creatures in the listed area of effect become deafened for (4 - Endurance modifier) rounds (minimum 1)."
+    },
+    {
+      "name": "Debilitating",
+      "description": "When dealing HP damage from a targeted attack, roll twice on the conditions table and apply both. Stacking if the same condition is rolled twice."
+    },
+    {
+      "name": "Defensive",
+      "description": "DT increases by 2 when blocking while holding this weapon."
+    },
+    {
+      "name": "Destructive",
+      "description": "When rolling a 1 on the damage dice, it is treated as a 2 instead."
+    },
+    {
+      "name": "Detonator",
+      "description": "The explosive does not detonate after the allotted time. Spend 3 AP on your turn to detonate within the noted range."
+    },
+    {
+      "name": "Dismember",
+      "description": "When dealing HP damage, the target gains a random arm or leg condition. If brought to 0 HP, you can choose to sever their head or a limb."
+    },
+    {
+      "name": "Durable",
+      "description": "The weapon does not decay from being thrown or from rolling a 1 on an attack roll."
+    },
+    {
+      "name": "Electromagnetic",
+      "description": "Damage is doubled for robots, synths, or inorganic creatures."
+    },
+    {
+      "name": "Energy Weapon",
+      "description": "The weapon uses energy-based ammunition (e.g., laser, plasma, or electricity), often with unique effects or ammo types."
+    },
+    {
+      "name": "Fragile",
+      "description": "The weapon breaks and ceases function when it gains a level of decay."
+    },
+    {
+      "name": "Freezing",
+      "description": "The target gains the Slowed condition until the end of their next turn."
+    },
+    {
+      "name": "Incendiary",
+      "description": "The target gains the Burning condition, causing ongoing fire damage."
+    },
+    {
+      "name": "Kickback",
+      "description": "The weapon has significant recoil, potentially affecting accuracy or requiring higher Strength to wield effectively."
+    },
+    {
+      "name": "Mangle",
+      "description": "When dealing HP damage, the target gains the Bleeding condition."
+    },
+    {
+      "name": "Manual Reload",
+      "description": "The weapon requires a full action to reload, typically costing 6 AP."
+    },
+    {
+      "name": "Powerful",
+      "description": "The weapon deals increased damage or has enhanced effects on critical hits."
+    },
+    {
+      "name": "Proximity",
+      "description": "The explosive does not detonate after the allotted time. It detonates at the end of a creature's turn when they first enter its 10-foot proximity area."
+    },
+    {
+      "name": "Quick Reload",
+      "description": "The weapon can be reloaded faster than normal, typically reducing the AP cost for reloading."
+    },
+    {
+      "name": "Radioactive",
+      "description": "The weapon deals radiation damage, potentially causing radiation-based effects or conditions."
+    },
+    {
+      "name": "Reach",
+      "description": "The weapon's range increases by 5 feet."
+    },
+    {
+      "name": "Revitalizing",
+      "description": "Spend 6 AP to target a dying creature, which then gains 1 hit point."
+    },
+    {
+      "name": "Shattering",
+      "description": "The explosive always detonates at the end of your turn, regardless of the explosive roll."
+    },
+    {
+      "name": "Slow",
+      "description": "The weapon or explosive does not hit or detonate until the start of your next turn. Misses if the target is out of range."
+    },
+    {
+      "name": "Slow Reload",
+      "description": "Reloading the weapon takes longer than normal, often requiring additional AP or time."
+    },
+    {
+      "name": "Smoke",
+      "description": "Creates a heavily obscured cloud of smoke that spreads around corners and blinds creatures within, lasting 1 minute."
+    },
+    {
+      "name": "Spread",
+      "description": "The weapon's attack affects a wider area, increasing the chance to hit multiple targets or reducing accuracy penalties at close range."
+    },
+    {
+      "name": "Sturdy",
+      "description": "The weapon does not decay if thrown and ignores negative effects of the first 2 levels of decay."
+    },
+    {
+      "name": "Thrown",
+      "description": "The weapon can be thrown a distance equal to your Strength score multiplied by the listed numbers (base/long range). Attacks at long range have disadvantage."
+    },
+    {
+      "name": "Two Handed",
+      "description": "Attacking with one hand incurs disadvantage unless 2 additional AP are spent. Alternatively, if Strength is at least 3 greater than the requirement, it can be wielded with one hand without disadvantage."
+    },
+    {
+      "name": "Unarmed",
+      "description": "Uses the Unarmed skill bonus for attack rolls instead of the Melee Weapons skill bonus."
+    },
+    {
+      "name": "Unstable",
+      "description": "The weapon is prone to malfunctions or has unpredictable performance, potentially affecting reliability or causing decay."
+    },
+    {
+      "name": "Weighted",
+      "description": "If you roll a 1 on the damage dice, it becomes a 2 instead."
+    }
+  ],
+  "Price Modifiers": {
+    "Rarity": [
+      {"condition": "Extremely rare or lost crafting materials/blueprints", "modifier": "Cost increases by 250%"},
+      {"condition": "Somewhat difficult to acquire or high demand", "modifier": "Cost doubles"},
+      {"condition": "Limited stock, sentimental value, or above average", "modifier": "Cost increases by half"},
+      {"condition": "Easy to find, surplus, or bartering", "modifier": "Price decreases by 25%"},
+      {"condition": "Bountiful, low value, or functionally broken", "modifier": "Price decreases by half"}
+    ],
+    "Decay Discount": {"effect": "For every level of decay, price decreases by 10%"}
+  },
+    "Other Equipment": [
+      {
+        "name": "Bag, Backpack",
+        "base_cost": 20,
+        "description": "A leather, burlap, or cloth bag with straps that increases your carry load by 50 while worn.",
+        "carry_load": 10
+      },
+      {
+        "name": "Bag, Camping Backpack",
+        "base_cost": 100,
+        "description": "A large, heavy-duty backpack with nylon strings, waist belt, many pockets, and an overhead compartment. Increases carry load by 100 while worn.",
+        "carry_load": 20
+      },
+      {
+        "name": "Bag, Range",
+        "base_cost": 50,
+        "description": "A single bag with one sling, designed to store up to three two-handed or unwieldy weapons, halving their carry load.",
+        "carry_load": 12
+      },
+      {
+        "name": "Bandolier",
+        "base_cost": 30,
+        "description": "A pocketed strap worn across the body, increases carry load by 25. Not considered a bag, can be worn with a backpack without encumbrance.",
+        "carry_load": 8
+      },
+      {
+        "name": "Ball Bearings",
+        "base_cost": 10,
+        "description": "Small metal spheres scattered in a 5-foot radius for 3 AP. Creatures moving through fall prone and take 1d4 impact damage unless passive sense > 15 or noticed, then spend 2 AP per 5 feet.",
+        "carry_load": 2
+      },
+      {
+        "name": "Bear Trap",
+        "base_cost": 60,
+        "description": "Armed in a 5-foot area for 6 AP. Triggers deal 3d4 piercing damage and grapple. Reset with 6 AP and Strength check (DC 15). Disarm with 6 AP and crafting check (DC 15). Prying open requires 6 AP and Strength check (DC 15, disadvantage if grappled unless Endurance ≥ 6).",
+        "carry_load": 30
+      },
+      {
+        "name": "Binoculars",
+        "base_cost": 25,
+        "description": "Magnifies sight for 3 AP, granting advantage on Perception checks for objects/creatures/locations ≥ 100 feet away.",
+        "carry_load": 2
+      },
+      {
+        "name": "Caltrops",
+        "base_cost": 50,
+        "description": "Sharp objects scattered in a 5-foot radius for 3 AP. Creatures moving through take 2 piercing damage per foot (not reduced by DT) unless passive sense > 15 or noticed, then spend 2 AP per 5 feet.",
+        "carry_load": 2
+      },
+      {
+        "name": "Canteen",
+        "base_cost": 10,
+        "description": "Metal container holding 32 oz. of liquid.",
+        "carry_load": {
+          "empty": 1,
+          "full": 2
+        }
+      },
+      {
+        "name": "Chain",
+        "base_cost": 15,
+        "description": "Grants advantage on Strength rolls to grapple/strangle. AC 10, DT 10, 10 HP, vulnerable to ballistic, laser, plasma damage.",
+        "carry_load": 12
+      },
+      {
+        "name": "Electronic Lockpick",
+        "base_cost": 500,
+        "description": "Attaches to a lock within 5 feet for 6 AP, opens at end of turn, breaks after one use.",
+        "carry_load": 2
+      },
+      {
+        "name": "Electronic Lockpick Mk II",
+        "base_cost": 750,
+        "description": "Sleeker, opens locks like Electronic Lockpick, breaks after three uses.",
+        "carry_load": 3
+      },
+      {
+        "name": "Flare",
+        "base_cost": 10,
+        "description": "Lit for 6 AP, creates bright red light in 30-foot radius and dim red light for additional 30 feet, lasts 1 hour.",
+        "carry_load": 1
+      },
+      {
+        "name": "Flashlight",
+        "base_cost": 100,
+        "description": "Creates bright light in 20-foot cone and dim light for additional 20 feet for 1 AP. Lasts 8 hours with 6 AP to load an energy cell.",
+        "carry_load": 2
+      },
+      {
+        "name": "Gas Mask",
+        "base_cost": 80,
+        "description": "While worn, radiation DC decreases by 3, passive sense decreases by 2.",
+        "carry_load": 12
+      },
+      {
+        "name": "Geiger Counter",
+        "base_cost": 200,
+        "description": "Detects radiation levels and reveals radiation severity score in irradiated zones.",
+        "carry_load": 4
+      },
+      {
+        "name": "Grappling Hook",
+        "base_cost": 35,
+        "description": "Metal hook tied to a rope with 6 AP.",
+        "carry_load": 10
+      },
+      {
+        "name": "Hazmat Suit",
+        "base_cost": 10,
+        "description": "Lead-lined suit, takes 1 minute to don/doff, no armor over it. Radiation DC decreases by 10, immune to radiation damage, failing radiation checks doesn't increase DC. Gains 1 decay level per 5 HP damage, each decay increases radiation score by 1. Repair: crafting DC 12 (+2), x2 lead, x1 cloth.",
+        "carry_load": {
+          "worn": 10,
+          "not_worn": 50
+        }
+      },
+      {
+        "name": "Hazmat Suit, Powered",
+        "base_cost": 450,
+        "description": "Includes Geiger counter, air purification, impact absorption, bulbous helmet. Requires 3 energy cells (6 AP, lasts 6 hours). Takes 30 seconds to don/doff, no armor with it. DT increases by 3, immune to radiation levels/damage. Gains 1 decay level per 5 HP damage, ceases function at 10 decay. Repair: crafting DC 15 (+5), x3 lead, x2 leather, x2 circuitry.",
+        "carry_load": {
+          "worn": 5,
+          "not_worn": 80
+        }
+      },
+      {
+        "name": "Lockpicks",
+        "base_cost": 100,
+        "description": "Metal tools reducing breach skill check DC by 5, break after five uses.",
+        "carry_load": 4
+      },
+      {
+        "name": "Rope",
+        "base_cost": 10,
+        "description": "Used to tie items, create pulleys, climb, or grapple (advantage on Strength rolls). AC 10, DT 2, 5 HP, vulnerable to ballistic, laser, plasma, slashing damage.",
+        "carry_load": 8
+      },
+      {
+        "name": "Sleeping Bag",
+        "base_cost": 25,
+        "description": "Nylon, cloth, or hide bag for sleeping in rough terrain.",
+        "carry_load": 10
+      },
+      {
+        "name": "Stealth Boy",
+        "base_cost": 500,
+        "description": "RobCo Stealth Boy 3001, activates for 3 AP, makes you invisible for 1 minute while on body, single use.",
+        "carry_load": 3
+      },
+      {
+        "name": "Tent, one person",
+        "base_cost": 20,
+        "description": "Provides shelter from weather and terrain.",
+        "carry_load": 12
+      },
+      {
+        "name": "Tent, two person",
+        "base_cost": 25,
+        "description": "Larger tent providing shelter from weather and terrain.",
+        "carry_load": 18
+      },
+      {
+        "name": "Two-way Radio",
+        "base_cost": 120,
+        "description": "Militaristic devices for long-range communication. Functions for 100 activations per energy cell (6 AP to load). Activates for 3 AP, transmits sound within 5 feet to the other radio, audible within 5 feet. No sound if both activated simultaneously.",
+        "carry_load": 2
+      },
+      {
+        "name": "Waterskin",
+        "base_cost": 30,
+        "description": "Leather pouch holding 60 oz. of liquid.",
+        "carry_load": {
+          "empty": 2,
+          "full": 4
+        }
+      },
+      {
+        "name": "Weapon Repair Kit",
+        "base_cost": 90,
+        "description": "Repairs 2 levels of weapon decay after 1 minute with 6 AP. Ceases function after three uses.",
+        "carry_load": 10
+      }
+    ],
+    "Food and Drink Properties": [
+      {
+        "name": "Addictive",
+        "description": "If an Alcoholic drink also has this property, you must succeed an Endurance ability check of 5 or become addicted. While addicted and not under the effects, you have two levels of exhaustion. Addiction is lost after a number of weeks equal to 6 minus your Endurance ability modifier (minimum 1 week)."
+      },
+      {
+        "name": "Alcoholic",
+        "description": "If your Endurance score is 5 or higher, you become buzzed for 1d4 hours. If 4 or lower, you become drunk. Consuming another alcoholic or high-proof drink while buzzed makes you drunk for 1d4 hours. While drunk, two more alcoholic or high-proof drinks make you hammered for 1d4 hours. While hammered, two more make you wasted for 1d4 hours."
+      },
+      {
+        "name": "Caffeinated",
+        "description": "Removes negative effects of the first three levels of exhaustion for 6 hours. If no exhaustion, adds 1 to d20 rolls. Drinking another while under effects grants 1 AP at the start of your turn for 6 hours, but at the end, you gain a level of exhaustion for each additional caffeinated drink consumed."
+      },
+      {
+        "name": "High-Proof",
+        "description": "If your Endurance score is 5 or higher, you become drunk for 1d4 hours. If 4 or lower, you become hammered. Consuming another alcoholic or high-proof drink while drunk makes you hammered for 1d4 hours. While hammered, two more make you wasted for 1d4 hours."
+      },
+      {
+        "name": "Hydrating",
+        "description": "Removes an additional two levels of dehydration (total of three with the base drink effect)."
+      },
+      {
+        "name": "Irradiated",
+        "description": "Consuming irradiated food gives you one irradiated level. Ten irradiated levels result in one level of rads."
+      },
+      {
+        "name": "Filling",
+        "description": "Removes an additional level of hunger when consumed."
+      },
+      {
+        "name": "Bland",
+        "description": "Heals stamina points equal to half your level."
+      },
+      {
+        "name": "Tasty",
+        "description": "Heals stamina points equal to your level."
+      },
+      {
+        "name": "Flavorsome",
+        "description": "Heals stamina points equal to double your level."
+      },
+      {
+        "name": "Delicacy",
+        "description": "Heals stamina points equal to triple your level."
+      },
+      {
+        "name": "Fortifying",
+        "description": "Decreases your radiation DC by 2 for 6 hours."
+      },
+      {
+        "name": "Energizing",
+        "description": "Grants 1 AP at the start of your turn for 4 hours."
+      },
+      {
+        "name": "Empowering",
+        "description": "Grants 2 AP at the start of your turn for 4 hours."
+      },
+      {
+        "name": "Regenerating",
+        "description": "Heals hit points equal to your healing rate."
+      },
+      {
+        "name": "Refreshing",
+        "description": "Removes one level of dehydration when consumed."
+      },
+      {
+        "name": "Snack",
+        "description": "Does not remove hunger levels unless two foods with this property are consumed."
+      },
+      {
+        "name": "Spicy",
+        "description": "Increases your DT by 3 against fire or laser damage for the next 6 hours."
+      },
+      {
+        "name": "Hearty",
+        "description": "Increases your carry load by 50 for the next 6 hours."
+      },
+      {
+        "name": "Pungent",
+        "description": "Increases your DT by 1 for the next 6 hours."
+      },
+      {
+        "name": "Putrid",
+        "description": "Poisons you for 4 hours if your Endurance score is 5 or lower."
+      },
+      {
+        "name": "Cleansing",
+        "description": "Cures one addiction."
+      },
+      {
+        "name": "Strengthening",
+        "description": "Increases damage dealt by attacks by 2 for 6 hours."
+      },
+      {
+        "name": "Lucky",
+        "description": "Grants advantage on all Luck ability checks for 6 hours."
+      },
+      {
+        "name": "Charged",
+        "description": "Recycles all unspent AP at the beginning of each of your turns for the next hour."
+      }
+    ],
+    "Food and Drinks": {
+      "Pre-Made Food": [
+        {
+          "name": "BlamCo Mac & Cheese",
+          "base_cost": 10,
+          "properties": ["Filling", "Tasty", "Irradiated"],
+          "carry_load": 4
+        },
+        {
+          "name": "Canned Dog Food",
+          "base_cost": 4,
+          "properties": ["Filling", "Tasty", "Irradiated", "Putrid"],
+          "carry_load": 2
+        },
+        {
+          "name": "Cram",
+          "base_cost": 5,
+          "properties": ["Filling", "Bland", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Dandy Boy Apples",
+          "base_cost": 2,
+          "properties": ["Bland", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Fancy Lads Snack Cakes",
+          "base_cost": 4,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "InstaMash",
+          "base_cost": 5,
+          "properties": ["Filling", "Bland", "Irradiated"],
+          "carry_load": 6
+        },
+        {
+          "name": "Noodle cup",
+          "base_cost": 15,
+          "properties": ["Filling", "Tasty"],
+          "carry_load": 3
+        },
+        {
+          "name": "Pork n' Beans",
+          "base_cost": 10,
+          "properties": ["Filling", "Tasty", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "Potato Crisps",
+          "base_cost": 4,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Salisbury Steak",
+          "base_cost": 10,
+          "properties": ["Filling", "Tasty", "Irradiated"],
+          "carry_load": 5
+        },
+        {
+          "name": "Sugar Bombs",
+          "base_cost": 5,
+          "properties": ["Tasty", "Irradiated"],
+          "carry_load": 4
+        },
+        {
+          "name": "Yum Yum Deviled Eggs",
+          "base_cost": 10,
+          "properties": ["Filling", "Tasty", "Irradiated"],
+          "carry_load": 4
+        }
+      ],
+      "Produce": [
+        {
+          "name": "Agave Fruit",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Apple",
+          "base_cost": 5,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Yucca Fruit",
+          "base_cost": 6,
+          "properties": ["Bland", "Refreshing", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "Cactus Fruit",
+          "base_cost": 5,
+          "properties": ["Tasty", "Refreshing", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Blackberries",
+          "base_cost": 8,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Bloodleaf",
+          "base_cost": 5,
+          "properties": ["Bland", "Snack", "Regenerating", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Brain fungus",
+          "base_cost": 6,
+          "properties": ["Bland", "Irradiated"],
+          "carry_load": 3
+        },
+        {
+          "name": "Carrot",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "Cave Fungus",
+          "base_cost": 6,
+          "properties": ["Bland", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Corn",
+          "base_cost": 3,
+          "properties": ["Tasty", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "Cranberries",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Gourd",
+          "base_cost": 3,
+          "properties": ["Tasty", "Filling", "Irradiated"],
+          "carry_load": 5
+        },
+        {
+          "name": "Jalapeño pepper",
+          "base_cost": 6,
+          "properties": ["Tasty", "Spicy", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Melon",
+          "base_cost": 3,
+          "properties": ["Tasty", "Filling", "Irradiated"],
+          "carry_load": 5
+        },
+        {
+          "name": "Mutfruit",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Pear",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Potato",
+          "base_cost": 3,
+          "properties": ["Bland", "Irradiated"],
+          "carry_load": 2
+        },
+        {
+          "name": "Prickly pear fruit",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Razorgrain",
+          "base_cost": 3,
+          "properties": ["Bland", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Silt bean",
+          "base_cost": 3,
+          "properties": ["Bland", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Tarberry",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Tato",
+          "base_cost": 3,
+          "properties": ["Tasty", "Snack", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Xander Root",
+          "base_cost": 2,
+          "properties": ["Bland", "Snack", "Irradiated"],
+          "carry_load": 1
+        }
+      ],
+      "Cooked Food": [
+        {
+          "name": "Baked Bloatfly",
+          "base_cost": 10,
+          "properties": ["Tasty", "Fortifying", "Putrid"],
+          "carry_load": 4
+        },
+        {
+          "name": "Bear roast",
+          "base_cost": 45,
+          "properties": ["Filling", "Flavorsome", "Strengthening"],
+          "carry_load": 6
+        },
+        {
+          "name": "Bighorner steak",
+          "base_cost": 20,
+          "properties": ["Filling", "Flavorsome"],
+          "carry_load": 5
+        },
+        {
+          "name": "Bloodbug Steak",
+          "base_cost": 25,
+          "properties": ["Bland", "Regenerating", "Putrid"],
+          "carry_load": 3
+        },
+        {
+          "name": "Deathclaw Egg Omelette",
+          "base_cost": 80,
+          "properties": ["Delicacy", "Empowering", "Regenerating"],
+          "carry_load": 5
+        },
+        {
+          "name": "Deathclaw Steak",
+          "base_cost": 60,
+          "properties": ["Delicacy", "Empowering", "Filling"],
+          "carry_load": 8
+        },
+        {
+          "name": "Desert Salad",
+          "base_cost": 15,
+          "properties": ["Flavorsome"],
+          "carry_load": 4
+        },
+        {
+          "name": "Donut",
+          "base_cost": 8,
+          "properties": ["Tasty", "Snack"],
+          "carry_load": 1
+        },
+        {
+          "name": "Fruit filled donut",
+          "base_cost": 8,
+          "properties": ["Tasty", "Snack", "Fortifying", "Irradiated"],
+          "carry_load": 1
+        },
+        {
+          "name": "Quantum crunch donut",
+          "base_cost": 33,
+          "properties": ["Caffeinated", "Charged", "Irradiated", "Snack", "Tasty"],
+          "carry_load": 1
+        },
+        {
+          "name": "Fire ant fricassée",
+          "base_cost": 35,
+          "properties": ["Delicacy", "Spicy", "Putrid"],
+          "carry_load": 6
+        },
+        {
+          "name": "Gecko steak",
+          "base_cost": 15,
+          "properties": ["Filling", "Tasty"],
+          "carry_load": 4
+        },
+        {
+          "name": "Grilled Radroach",
+          "base_cost": 10,
+          "properties": ["Fortifying", "Tasty", "Putrid"],
+          "carry_load": 3
+        },
+        {
+          "name": "Grilled Radstag",
+          "base_cost": 30,
+          "properties": ["Filling", "Tasty", "Hearty"],
+          "carry_load": 6
+        },
+        {
+          "name": "Iguana on a Stick",
+          "base_cost": 10,
+          "properties": ["Tasty"],
+          "carry_load": 3
+        },
+        {
+          "name": "Mole rat chunks",
+          "base_cost": 20,
+          "properties": ["Energizing", "Tasty"],
+          "carry_load": 3
+        },
+        {
+          "name": "Mole rat stew",
+          "base_cost": 15,
+          "properties": ["Flavorsome"],
+          "carry_load": 8
+        },
+        {
+          "name": "Mutt chops",
+          "base_cost": 15,
+          "properties": ["Filling", "Tasty"],
+          "carry_load": 4
+        },
+        {
+          "name": "Radscorpion egg omelette",
+          "base_cost": 65,
+          "properties": ["Cleansing", "Flavorsome"],
+          "carry_load": 5
+        },
+        {
+          "name": "Radscorpion steak",
+          "base_cost": 30,
+          "properties": ["Filling", "Flavorsome", "Pungent"],
+          "carry_load": 6
+        },
+        {
+          "name": "Radstag stew",
+          "base_cost": 25,
+          "properties": ["Filling", "Tasty", "Pungent"],
+          "carry_load": 8
+        },
+        {
+          "name": "Ribeye steak",
+          "base_cost": 35,
+          "properties": ["Filling", "Flavorsome"],
+          "carry_load": 5
+        }
+      ]
+    },
+    "Medicine": [
+      {
+        "name": "Antidote",
+        "base_cost": 80,
+        "description": "Usable over 15 minutes on yourself or a creature within 5 feet. Removes poisoned condition.",
+        "carry_load": 4
+      },
+      {
+        "name": "Healing Powder",
+        "base_cost": 30,
+        "description": "Usable for 6 AP on yourself or an adjacent creature (human, mutant, abomination, animal, insect). Heals hit points equal to half their healing rate at the start of each turn for three rounds. Ineffective on ghouls, robots, gen-2 synths.",
+        "carry_load": 3
+      },
+      {
+        "name": "RadAway",
+        "base_cost": 80,
+        "description": "Usable over 15 minutes on yourself or a creature within 5 feet. Removes two levels of radiation, adds one level of thirst.",
+        "carry_load": 4
+      },
+      {
+        "name": "RadAway (Diluted)",
+        "base_cost": 30,
+        "description": "Usable over 15 minutes on yourself or a creature within 5 feet. Removes one level of radiation, adds one level of thirst.",
+        "carry_load": 4
+      },
+      {
+        "name": "Rad-X",
+        "base_cost": 40,
+        "description": "Consumable for 3 AP, decreases radiation DC by 2 for 3 hours. Up to three can be consumed for cumulative benefits.",
+        "carry_load": 0
+      },
+      {
+        "name": "RobCo Quick Fix-it 1.0",
+        "base_cost": 40,
+        "description": "Usable for 4 AP on yourself or an adjacent robot/gen-2 synth. Heals hit points equal to half their healing rate.",
+        "carry_load": 4
+      },
+      {
+        "name": "RobCo Quick Fix-it 2.0",
+        "base_cost": 75,
+        "description": "Usable for 4 AP on yourself or an adjacent robot/gen-2 synth. Heals hit points equal to their healing rate.",
+        "carry_load": 4
+      },
+      {
+        "name": "Extreme Damages RobCo Quick Fix-it 2.0",
+        "base_cost": 150,
+        "description": "Usable for 4 AP on yourself or an adjacent robot/gen-2 synth. Heals hit points equal to double their healing rate.",
+        "carry_load": 4
+      },
+      {
+        "name": "Stimpak",
+        "base_cost": 75,
+        "description": "Usable for 4 AP on yourself or an adjacent creature (human, mutant, gen-2 synth, abomination, animal, insect). Heals hit points equal to their healing rate (half for ghouls).",
+        "carry_load": 4
+      },
+      {
+        "name": "Stimpak (Diluted)",
+        "base_cost": 40,
+        "description": "Usable for 4 AP on yourself or an adjacent creature (human, mutant, gen-2 synth, abomination, animal, insect). Heals hit points equal to half their healing rate (quarter for ghouls).",
+        "carry_load": 4
+      },
+      {
+        "name": "Super Stimpak",
+        "base_cost": 150,
+        "description": "Usable for 4 AP on yourself or an adjacent creature (human, mutant, gen-2 synth, abomination, animal, insect). Heals hit points equal to double their healing rate (full for ghouls).",
+        "carry_load": 6
+      },
+      {
+        "name": "Auto-Inject Stimpak",
+        "base_cost": 150,
+        "description": "Automatically applies Stimpak effects when hit points are at or below half maximum.",
+        "carry_load": 4
+      },
+      {
+        "name": "Auto-Inject Super Stimpak",
+        "base_cost": 300,
+        "description": "Automatically applies Super Stimpak effects when hit points are at or below half maximum.",
+        "carry_load": 6
+      }
+    ],
+    "Skill Magazines": [
+      {
+        "name": "Milsurp Review",
+        "base_cost": 50,
+        "description": "Increases Guns skill bonus by 1 until you rest. Reading five issues permanently increases Guns skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Future Weapons Today",
+        "base_cost": 50,
+        "description": "Increases Energy Weapons skill bonus by 1 until you rest. Reading five issues permanently increases Energy Weapons skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Patriot's Cookbook",
+        "base_cost": 50,
+        "description": "Increases Explosives skill bonus by 1 until you rest. Reading five issues permanently increases Explosives skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Tæles of Chivalrie",
+        "base_cost": 50,
+        "description": "Increases Melee Weapons skill bonus by 1 until you rest. Reading five issues permanently increases Melee Weapons skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Boxing Times",
+        "base_cost": 50,
+        "description": "Increases Unarmed skill bonus by 1 until you rest. Reading five issues permanently increases Unarmed skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Today's Physician",
+        "base_cost": 50,
+        "description": "Increases Medicine skill bonus by 1 until you rest. Reading five issues permanently increases Medicine skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Locksmith's Reader",
+        "base_cost": 50,
+        "description": "Increases Breach skill bonus by 1 until you rest. Reading five issues permanently increases Breach skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Fixin’ Things",
+        "base_cost": 50,
+        "description": "Increases Crafting skill bonus by 1 until you rest. Reading five issues permanently increases Crafting skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "¡La Fantoma!",
+        "base_cost": 50,
+        "description": "Increases Sneak skill bonus by 1 until you rest. Reading five issues permanently increases Sneak skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Lad's Life",
+        "base_cost": 50,
+        "description": "Increases Survival skill bonus by 1 until you rest. Reading five issues permanently increases Survival skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Salesman Weekly",
+        "base_cost": 50,
+        "description": "Increases Barter skill bonus by 1 until you rest. Reading five issues permanently increases Barter skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Horror Comics",
+        "base_cost": 50,
+        "description": "Increases Intimidation skill bonus by 1 until you rest. Reading five issues permanently increases Intimidation skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Meeting People",
+        "base_cost": 50,
+        "description": "Increases Speech skill bonus by 1 until you rest. Reading five issues permanently increases Speech skill bonus by 1.",
+        "carry_load": 2
+      },
+      {
+        "name": "Programmer's Digest",
+        "base_cost": 50,
+        "description": "Increases Science skill bonus by 1 until you rest. Reading five issues permanently increases Science skill bonus by 1.",
+        "carry_load": 2
+      }
+    ],
+    "Chem Properties": [
+      {
+        "name": "Anabolic",
+        "description": "Advantage on all Strength and Endurance ability and skill checks, and gain temporary hit points equal to your level."
+      },
+      {
+        "name": "Anesthetic",
+        "description": "Your DT increases by 6."
+      },
+      {
+        "name": "Anxiolytic",
+        "description": "Advantage on Charisma ability and skill checks, combat sequence rolls, and checks to resist becoming frightened."
+      },
+      {
+        "name": "Extrapolating",
+        "description": "Advantage on all Intelligence and Perception ability and skill checks, but disadvantage on all Charisma ability and skill checks."
+      },
+      {
+        "name": "Hallucinogenic",
+        "description": "Advantage on all Luck checks and may flip your karma cap."
+      },
+      {
+        "name": "Hyperstimulant",
+        "description": "Gain 4 additional AP at the start of your turn (max 20), no longer suffer negative effects of the first eight levels of exhaustion. If no exhaustion, add 2 to d20 rolls. Immune to gaining levels of fatigue."
+      },
+      {
+        "name": "Invigorating",
+        "description": "Regain stamina points equal to half your level."
+      },
+      {
+        "name": "Painkilling",
+        "description": "Your DT increases by 3."
+      },
+      {
+        "name": "Psychosis",
+        "description": "When dealing damage from an attack roll, damage is increased by 5. You always attack the nearest hostile creature. If none are nearby, you must make an Endurance ability check of 15; on a failure, you attack the nearest creature."
+      },
+      {
+        "name": "Sedative",
+        "description": "Your passive sense increases by 5, and if you critically hit with an attack roll, damage is increased by 10."
+      },
+      {
+        "name": "Stimulant",
+        "description": "Gain 1 additional AP at the start of your turn (max 16), no longer suffer negative effects of the first three levels of exhaustion. If no exhaustion, add 1 to d20 rolls."
+      },
+      {
+        "name": "Super Stimulant",
+        "description": "Gain 2 additional AP at the start of your turn (max 20), no longer suffer negative effects of the first five levels of exhaustion. If no exhaustion, add 2 to d20 rolls. Immune to gaining levels of fatigue."
+      }
+    ],
+    "Chems": [
+      {
+        "name": "Buffout",
+        "base_cost": 20,
+        "properties": ["Anabolic"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Buffjet",
+        "base_cost": 50,
+        "properties": ["Anabolic", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Bufftats",
+        "base_cost": 50,
+        "properties": ["Anabolic", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Calmex",
+        "base_cost": 100,
+        "properties": ["Sedative"],
+        "carry_load": 1
+      },
+      {
+        "name": "Cigarette",
+        "base_cost": 5,
+        "properties": ["Anxiolytic"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Coyote tobacco chew",
+        "base_cost": 15,
+        "properties": ["Anxiolytic", "Super Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Daddy-O",
+        "base_cost": 50,
+        "properties": ["Extrapolating"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Day Tripper",
+        "base_cost": 40,
+        "properties": ["Hallucinogenic"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Fury",
+        "base_cost": 60,
+        "properties": ["Painkilling", "Psychosis", "Super Stimulant"],
+        "carry_load": 1
+      },
+      {
+        "name": "Hydra",
+        "base_cost": 55,
+        "properties": ["Painkilling"],
+        "carry_load": 1
+      },
+      {
+        "name": "Jet",
+        "base_cost": 20,
+        "properties": ["Super Stimulant"],
+        "carry_load": 1
+      },
+      {
+        "name": "Jet fuel",
+        "base_cost": 30,
+        "properties": ["Super Stimulant", "Invigorating"],
+        "carry_load": 1
+      },
+      {
+        "name": "Rocket",
+        "base_cost": 50,
+        "properties": ["Hyperstimulant"],
+        "carry_load": 1
+      },
+      {
+        "name": "Ultrajet",
+        "base_cost": 80,
+        "properties": ["Hyperstimulant", "Invigorating"],
+        "carry_load": 1
+      },
+      {
+        "name": "Med-X",
+        "base_cost": 50,
+        "properties": ["Anesthetic"],
+        "carry_load": 1
+      },
+      {
+        "name": "Mentats",
+        "base_cost": 40,
+        "properties": ["Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Berry Mentats",
+        "base_cost": 60,
+        "properties": ["Extrapolating", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Grape Mentats",
+        "base_cost": 60,
+        "properties": ["Anxiolytic", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Orange Mentats",
+        "base_cost": 60,
+        "properties": ["Sedative", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Overdrive",
+        "base_cost": 55,
+        "properties": ["Invigorating", "Psychosis"],
+        "carry_load": 1
+      },
+      {
+        "name": "Psycho",
+        "base_cost": 50,
+        "properties": ["Psychosis", "Painkilling"],
+        "carry_load": 1
+      },
+      {
+        "name": "Psycho buff",
+        "base_cost": 80,
+        "properties": ["Anabolic", "Psychosis"],
+        "carry_load": 1
+      },
+      {
+        "name": "Psycho jet",
+        "base_cost": 80,
+        "properties": ["Psychosis", "Super Stimulant"],
+        "carry_load": 1
+      }
+    ],
+    "Robot Overclock Programs": [
+      {
+        "name": "Cache Clearer",
+        "base_cost": 5,
+        "properties": ["Anxiolytic", "Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Coolant Rerouter",
+        "base_cost": 100,
+        "properties": ["Sedative"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Data Scrubber",
+        "base_cost": 50,
+        "properties": ["Extrapolating"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "EISENHOWER PROTOCOL",
+        "base_cost": 60,
+        "properties": ["Painkilling", "Psychosis", "Super Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Incoming Projectile Predictor",
+        "base_cost": 20,
+        "properties": ["Anesthetic"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Military Auto-Tank AI Upload",
+        "base_cost": 50,
+        "properties": ["Psychosis", "Painkilling"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Military Turret Operating System",
+        "base_cost": 55,
+        "properties": ["Invigorating", "Psychosis"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Overclock Hardware",
+        "base_cost": 30,
+        "properties": ["Super Stimulant"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Overclock Hardware v2.0",
+        "base_cost": 40,
+        "properties": ["Stimulant", "Invigorating"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      },
+      {
+        "name": "Servo Override",
+        "base_cost": 20,
+        "properties": ["Anabolic"],
+        "carry_load": 1,
+        "stack_load": {"10": 1}
+      }
+    ],
+    "Unique Items": [
+      {
+        "name": "Vault Suit",
+        "base_cost": 1300,
+        "description": "Form-fitting rubber and cloth jumpsuit with biometric sensors, heat-dissipation strip, and antenna. Functions as cloth armor with rank 1 Lead Lined, Reinforced, Fitted, and Sturdy upgrades.",
+        "carry_load": 5
+      },
+      {
+        "name": "Pip-Boy 2000",
+        "base_cost": 300,
+        "description": "Wrist-mounted computer displaying maps, playing holotapes, tracking location, recording audio, inputting text notes. With Vault Suit (≤ 5 decay), heals additional hit points equal to your level.",
+        "carry_load": 4
+      },
+      {
+        "name": "Pip-Boy 2000 Mark VI",
+        "base_cost": 600,
+        "description": "Basic Pip-Boy with heartbeat/electromagnetic sensor. For 2 AP, detects cardinal direction of creatures within 60 feet not covered by ≥ 1 foot lead/steel.",
+        "carry_load": 3
+      },
+      {
+        "name": "Pip-Boy 3000",
+        "base_cost": 550,
+        "description": "Pip-Boy with Geiger counter, flashlight, and radio connection capabilities.",
+        "carry_load": 4
+      },
+      {
+        "name": "Pip-Boy 3000 Mark IV",
+        "base_cost": 850,
+        "description": "Combines Pip-Boy 2000 Mark VI and 3000 features: heartbeat/electromagnetic sensor (2 AP, detects creatures within 60 feet not covered by ≥ 1 foot lead/steel), Geiger counter, flashlight, radio connection.",
+        "carry_load": 3
+      },
+      {
+        "name": "Electronic Lockpick",
+        "base_cost": 500,
+        "description": "Attaches to a lock within 5 feet for 6 AP, opens at end of turn, breaks after one use.",
+        "carry_load": 2
+      },
+      {
+        "name": "Electronic Lockpick Mk II",
+        "base_cost": 750,
+        "description": "Sleeker, opens locks like Electronic Lockpick, breaks after three uses.",
+        "carry_load": 3
+      },
+      {
+        "name": "Stealth Boy",
+        "base_cost": 500,
+        "description": "RobCo Stealth Boy 3001, activates for 3 AP, makes you invisible for 1 minute while on body, single use.",
+        "carry_load": 3
+      },
+      {
+        "name": "Two-way Radio",
+        "base_cost": 120,
+        "description": "Militaristic devices for long-range communication. Functions for 100 activations per energy cell (6 AP to load). Activates for 3 AP, transmits sound within 5 feet to the other radio, audible within 5 feet. No sound if both activated simultaneously.",
+        "carry_load": 2
+      }
+    ]
+  }

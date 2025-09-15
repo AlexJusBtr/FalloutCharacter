@@ -1,0 +1,945 @@
+{
+    "Backgrounds": [
+      {
+        "name": "Custom Background",
+        "description": "Craft your own background within the post-apocalypse. Grants a +2 bonus to three different skills of your choice. For starting equipment, choose any other background's starting equipment or select items with a budget of 850 caps, at the Game Master's discretion.",
+        "skills": ["+2 to three skills of your choice"],
+        "trait": "Choose a trait (GM discretion)",
+        "starting_equipment": {
+        }
+      },
+      {
+        "name": "Cultist",
+        "description": "You serve a group of zealous followers who see the post-apocalyptic world as a gift. You wander the wastes looking for signs and awaiting orders from the great beyond.",
+        "skills": ["+2 Melee Weapons", "+2 Speech", "+2 Sneak"],
+        "trait": "The Sight Beyond",
+        "starting_equipment": {
+          "Human": [
+            "1 cloth armor (with rank 1 lead lined upgrade)",
+            "1 knife",
+            "1 bolt-action pipe pistol",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 chain",
+            "3 cram",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "1 healing powder",
+            "3 dirty water",
+            "1 purified water",
+            "50 caps"
+          ],
+          "Ghoul or Super Mutant": [
+            "1 leather armor",
+            "1 knife",
+            "1 bolt-action pipe pistol",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 chain",
+            "3 cram",
+            "4 dirty water",
+            "1 stimpak",
+            "1 diluted stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth": [
+            "1 leather armor",
+            "1 knife",
+            "1 bolt-action pipe pistol",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 chain",
+            "1 diluted stimpak",
+            "1 RobCo Quick Fix-it 1.0",
+            "1 overclock hardware",
+            "1 cache clearer",
+            "50 caps"
+          ],
+          "Robot": [
+            "1 leather armor",
+            "1 knife",
+            "1 bolt-action pipe pistol",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 chain",
+            "2 RobCo Quick Fix-it 1.0",
+            "1 overclock hardware",
+            "1 cache clearer",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Doctor",
+        "description": "Trained to help others, you maintain a steady hand and calm demeanor. You wander the wasteland to heal those in need or earn caps from your services.",
+        "skills": ["+2 Breach", "+2 Medicine", "+2 Science"],
+        "trait": "Do No Harm",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 knife (four levels of decay)",
+            "1 syringer",
+            "2 stimpak loader syringes",
+            "1 lock joint syringe",
+            "1 backpack",
+            "1 first aid kit",
+            "2 diluted stimpaks",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "1 healing powder",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 noodle cup",
+            "1 instamash",
+            "2 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 knife (four levels of decay)",
+            "1 syringer",
+            "2 stimpak loader syringes",
+            "1 lock joint syringe",
+            "1 backpack",
+            "1 first aid kit",
+            "2 RobCo Quick Fix-it 1.0",
+            "2 RobCo Quick Fix-it 2.0",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "2 healing powder",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Drifter",
+        "description": "A wanderer surviving by relying on others, you move from city to city. Now, you aim to take control of your life and make things right.",
+        "skills": ["+2 Breach", "+2 Sneak", "+2 Unarmed"],
+        "trait": "Street Rat",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 shiv",
+            "1 pipe pistol (two levels of decay)",
+            "15 9mm bullets",
+            "1 backpack",
+            "5 canned dog food",
+            "1 iguana on a stick",
+            "2 healing powder",
+            "4 dirty water",
+            "2 purified water",
+            "1 lockpicks",
+            "1 one-person tent",
+            "1 sleeping bag",
+            "1 whiskey",
+            "1 fixer",
+            "2 jet",
+            "3 cigarettes",
+            "1 psycho",
+            "1 coffee",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 shiv",
+            "1 pipe pistol (two levels of decay)",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 lockpicks",
+            "2 RobCo Quick Fix-it 1.0",
+            "2 overclock hardware",
+            "2 cache clearer",
+            "1 military auto-tank AI upload",
+            "1 flashlight",
+            "1 energy cell",
+            "1 ¡La Fantoma! skill magazine",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Entertainer",
+        "description": "A talented performer, you mesmerize wastelanders but face challenges like extortion. You seek the next gig or a new path in the wasteland.",
+        "skills": ["+2 Barter", "+2 Speech", "+2 Intimidation"],
+        "trait": "A Moment of Respite",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 switchblade",
+            "1 10mm pistol (three levels of decay)",
+            "10 10mm ammo",
+            "1 backpack",
+            "2 dynamite",
+            "3 flares",
+            "3 Salisbury steak",
+            "1 desert salad",
+            "1 Nuka-Cola",
+            "1 dirty wastelander",
+            "1 healing powder",
+            "1 stimpak",
+            "2 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 switchblade",
+            "1 10mm pistol (two levels of decay)",
+            "20 10mm bullets",
+            "1 backpack",
+            "2 dynamite",
+            "3 flares",
+            "2 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Farmer",
+        "description": "You work the land to produce food, a valuable resource. After facing destruction, you wander to rebuild or repair your farm.",
+        "skills": ["+2 Crafting", "+2 Intimidation", "+2 Survival"],
+        "trait": "Hardened by the Earth",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 pitchfork (five levels of decay)",
+            "1 single shotgun (three levels of decay)",
+            "8 12 gauge ammo",
+            "1 backpack",
+            "1 healing powder",
+            "5 potatoes",
+            "5 tomatoes",
+            "5 mutfruit",
+            "4 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 pitchfork (five levels of decay)",
+            "1 sickle",
+            "1 single shotgun (three levels of decay)",
+            "8 12 gauge ammo",
+            "1 backpack",
+            "1 RobCo Quick Fix-it",
+            "2 potatoes",
+            "2 tomatoes",
+            "1 mutfruit",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Guard",
+        "description": "Trained to protect, you’ve faced tough situations and now use your skills in the wasteland after leaving your post.",
+        "skills": ["+2 Guns", "+2 Speech", "+2 Melee Weapons"],
+        "trait": "Vigilant Watch",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 metal armor (one level of decay)",
+            "1 police baton (two levels of decay)",
+            "1 9mm pistol",
+            "20 9mm ammo",
+            "10 9mm rubber ammo",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 binoculars",
+            "1 diluted stimpak",
+            "3 purified water",
+            "2 pork n’ beans",
+            "1 coffee",
+            "2 donuts",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 metal armor (one level of decay)",
+            "1 police baton (two levels of decay)",
+            "1 9mm pistol",
+            "35 9mm ammo",
+            "20 9mm rubber ammo",
+            "1 backpack",
+            "1 binoculars",
+            "2 RobCo Quick Fix-it",
+            "1 Milsurp Review magazine",
+            "1 cache clearer",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Hermit",
+        "description": "Living in isolation, you’ve mastered survival in the wasteland. You now emerge to share your knowledge.",
+        "skills": ["+2 Explosives", "+2 Medicine", "+2 Survival"],
+        "trait": "Recluse",
+        "starting_equipment": {
+          "Human": [
+            "1 multilayered armor (two levels of decay)",
+            "1 sharpened pole",
+            "2 dynamite",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 bear trap",
+            "1 mutt chops",
+            "1 gecko steak",
+            "1 diluted RadAway",
+            "3 healing powder",
+            "1 first aid kit",
+            "1 purified water",
+            "2 dirty water",
+            "50 caps"
+          ],
+          "Ghoul or Super Mutant": [
+            "1 multilayered armor (two levels of decay)",
+            "1 sharpened pole",
+            "2 dynamite",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 bear trap",
+            "1 mutt chops",
+            "1 gecko steak",
+            "1 iguana on a stick",
+            "4 healing powder",
+            "1 first aid kit",
+            "4 dirty water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 multilayered armor",
+            "1 sharpened pole (with strengthened upgrade)",
+            "3 dynamite",
+            "1 backpack",
+            "1 bear trap",
+            "2 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Journalist",
+        "description": "You seek truth in the wasteland, uncovering stories to inform others, even if it means bending laws.",
+        "skills": ["+2 Breach", "+2 Speech", "+2 Sneak"],
+        "trait": "Persistent",
+        "starting_equipment": {
+          "Human": [
+            "1 cloth armor",
+            "1 switchblade",
+            "1 9mm pistol (three levels of decay)",
+            "13 9mm bullets",
+            "1 backpack",
+            "1 flashlight",
+            "1 energy cell",
+            "1 bandolier",
+            "1 lockpicks",
+            "3 cram",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "1 diluted stimpak",
+            "3 purified water",
+            "50 caps"
+          ],
+          "Ghoul or Super Mutant": [
+            "1 cloth armor",
+            "1 switchblade",
+            "1 9mm pistol (three levels of decay)",
+            "13 9mm bullets",
+            "1 backpack",
+            "1 flashlight",
+            "1 energy cell",
+            "1 bandolier",
+            "1 lockpicks",
+            "3 cram",
+            "1 diluted stimpak",
+            "1 calmex",
+            "3 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 switchblade",
+            "1 9mm pistol (two levels of decay)",
+            "26 9mm bullets",
+            "1 backpack",
+            "1 flashlight",
+            "1 energy cell",
+            "1 bandolier",
+            "1 lockpicks",
+            "1 RobCo Quick Fix-it 1.0",
+            "1 coolant rerouter",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Laborer",
+        "description": "Accustomed to hard work, you’ve rebuilt and delivered goods. With jobs scarce, you seek fortune in the wasteland.",
+        "skills": ["+2 Crafting", "+2 Speech", "+2 Melee Weapons"],
+        "trait": "Long Days, Long Nights",
+        "starting_equipment": {
+          "Human or Super Mutant": [
+            "1 cloth armor",
+            "1 crowbar",
+            "1 pipe pistol (two levels of decay)",
+            "10 9mm bullets",
+            "1 backpack",
+            "1 canteen",
+            "1 rope",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 potato crisps",
+            "2 instamash",
+            "1 radstag stew",
+            "2 purified water",
+            "2 healing powder",
+            "50 caps"
+          ],
+          "Ghoul": [
+            "1 cloth armor",
+            "1 crowbar",
+            "1 pipe pistol (two levels of decay)",
+            "10 9mm bullets",
+            "1 backpack",
+            "1 canteen",
+            "1 rope",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 potato crisps",
+            "2 instamash",
+            "1 radstag stew",
+            "4 dirty water",
+            "1 stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 crowbar",
+            "1 pipe pistol (two levels of decay)",
+            "10 9mm bullets",
+            "1 backpack",
+            "1 rope",
+            "1 flashlight",
+            "1 energy cell",
+            "1 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Mechanic",
+        "description": "Skilled in fixing old-world technology, you believe your talents are best used in the wasteland.",
+        "skills": ["+2 Crafting", "+2 Guns", "+2 Science"],
+        "trait": "Proper Maintenance",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 wrench",
+            "1 pipe revolver",
+            "10 .44 bullets",
+            "1 backpack",
+            "1 bandolier",
+            "1 canteen",
+            "1 rope",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "3 cram",
+            "3 purified water",
+            "1 weapon repair kit",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 wrench",
+            "1 pipe revolver",
+            "15 .44 bullets",
+            "1 backpack",
+            "1 bandolier",
+            "1 rope",
+            "1 RobCo Quick Fix-it 1.0",
+            "2 weapon repair kit",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Mercenary",
+        "description": "A reliable protector, you’ve guarded caravans and fought threats. You now seek new opportunities in the wasteland.",
+        "skills": ["+2 Guns", "+2 Melee Weapons", "+2 Survival"],
+        "trait": "Sweeten the Deal",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 leather armor",
+            "1 combat knife (two levels of decay)",
+            "1 trail carbine (two levels of decay)",
+            "10 .44 bullets",
+            "1 backpack",
+            "2 cram",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 diluted stimpak",
+            "1 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 leather armor",
+            "1 combat knife (two levels of decay)",
+            "1 trail carbine (two levels of decay)",
+            "12 .44 bullets",
+            "1 backpack",
+            "1 RobCo Quick Fix-it 1.0",
+            "1 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Pastor",
+        "description": "A spiritual leader, you bring hope to communities. You wander to find believers or proof of your faith.",
+        "skills": ["+2 Barter", "+2 Intimidation", "+2 Speech"],
+        "trait": "Embolden",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 single shotgun (three levels of decay)",
+            "8 12 gauge ammo",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "3 pork n’ beans",
+            "1 donut",
+            "1 coffee",
+            "3 purified water",
+            "1 first aid kit",
+            "3 healing powder",
+            "50 caps"
+          ],
+          "Robot or Gen-2 Synth": [
+            "1 cloth armor",
+            "1 single shotgun (two levels of decay)",
+            "8 12 gauge ammo",
+            "1 backpack",
+            "1 flashlight",
+            "1 energy cell",
+            "1 first aid kit",
+            "1 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Pilgrim",
+        "description": "Displaced by conflict, you seek your scattered people or a new home, using old-world weapons to survive.",
+        "skills": ["+2 Energy Weapons", "+2 Sneak", "+2 Survival"],
+        "trait": "Long Roads",
+        "starting_equipment": {
+          "Human": [
+            "1 leather armor (with light upgrade)",
+            "1 sharpened pole",
+            "1 laser rifle (five levels of decay)",
+            "1 energy cell",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "2 mutfruit",
+            "2 apples",
+            "1 vegetable soup",
+            "2 purified water",
+            "1 healing powder",
+            "50 caps"
+          ],
+          "Ghoul or Super Mutant": [
+            "1 leather armor (with light upgrade)",
+            "1 sharpened pole",
+            "1 laser rifle (five levels of decay)",
+            "1 energy cell",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "2 mutfruit",
+            "2 apples",
+            "1 vegetable soup",
+            "3 dirty water",
+            "1 Nuka-Cola",
+            "1 diluted stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 leather armor (with light upgrade)",
+            "1 sharpened pole",
+            "1 laser rifle (five levels of decay)",
+            "1 energy cell",
+            "1 backpack",
+            "1 bandolier",
+            "1 binoculars",
+            "1 grappling hook",
+            "1 rope",
+            "1 RobCo Quick Fix-it 1.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Pit Fighter",
+        "description": "A seasoned fighter, you’ve battled in arenas. With your establishment gone, you seek a new purpose in the wasteland.",
+        "skills": ["+2 Barter", "+2 Melee", "+2 Unarmed"],
+        "trait": "Endure the Battle",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 lead pipe (two levels of decay)",
+            "1 brass knuckles",
+            "1 spiked knuckles",
+            "1 bandolier",
+            "1 ball bearings",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "3 cram",
+            "1 vodka",
+            "3 healing powder",
+            "3 purified water",
+            "1 diluted stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 metal armor (one level of decay)",
+            "1 lead pipe (two levels of decay)",
+            "1 brass knuckles",
+            "1 spiked knuckles",
+            "1 bandolier",
+            "1 ball bearings",
+            "1 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Scientist",
+        "description": "Using old-world knowledge, you predict and study the wasteland. You now conduct field research to fuel your curiosity.",
+        "skills": ["+2 Energy Weapons", "+2 Breach", "+2 Science"],
+        "trait": "Field Research",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 laser pistol",
+            "2 energy cell",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "3 cram",
+            "2 purified water",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "1 stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 laser pistol",
+            "2 energy cell",
+            "1 backpack",
+            "2 RobCo Quick Fix-it 2.0",
+            "1 Programmer's Digest magazine",
+            "1 data scrubber",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Scribe",
+        "description": "An organizer of knowledge, you aim to share what you’ve learned to better the wasteland or find more to add to your collection.",
+        "skills": ["+2 Crafting", "+2 Energy Weapons", "+2 Medicine"],
+        "trait": "Wasteland Knowledge",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 laser pistol",
+            "2 energy cell",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "3 cram",
+            "2 purified water",
+            "1 diluted RadAway",
+            "1 Rad-X",
+            "1 stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 laser pistol",
+            "2 energy cell",
+            "1 backpack",
+            "2 RobCo Quick Fix-it 2.0",
+            "1 Programmer's Digest magazine",
+            "1 data scrubber",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Soldier",
+        "description": "Trained to protect, you’ve served in combat and scouting missions. With your term ended, you apply your skills in the wasteland.",
+        "skills": ["+2 Explosives", "+2 Guns", "+2 Medicine"],
+        "trait": "Efficient Combatant",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 leather armor",
+            "1 combat knife (two levels of decay)",
+            "1 trail carbine (two levels of decay)",
+            "10 .44 bullets",
+            "1 backpack",
+            "2 cram",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 diluted stimpak",
+            "1 purified water",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 leather armor",
+            "1 combat knife (two levels of decay)",
+            "1 trail carbine (two levels of decay)",
+            "12 .44 bullets",
+            "1 backpack",
+            "1 RobCo Quick Fix-it 1.0",
+            "1 RobCo Quick Fix-it 2.0",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Trader",
+        "description": "A gatherer of valuables, you barter and trade across the wasteland. With low stock, you seek to replenish your earnings.",
+        "skills": ["+2 Barter", "+2 Speech", "+2 Intimidation"],
+        "trait": "Bargaining Chip",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 cloth armor",
+            "1 shiv",
+            "1 pipe pistol (two levels of decay)",
+            "15 9mm bullets",
+            "1 backpack",
+            "5 canned dog food",
+            "1 iguana on a stick",
+            "2 healing powder",
+            "4 dirty water",
+            "2 purified water",
+            "1 lockpicks",
+            "1 one-person tent",
+            "1 sleeping bag",
+            "1 whiskey",
+            "1 fixer",
+            "2 jet",
+            "3 cigarettes",
+            "1 psycho",
+            "1 coffee",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 cloth armor",
+            "1 shiv",
+            "1 pipe pistol (two levels of decay)",
+            "15 9mm bullets",
+            "1 backpack",
+            "1 lockpicks",
+            "2 RobCo Quick Fix-it 1.0",
+            "2 overclock hardware",
+            "2 cache clearer",
+            "1 military auto-tank AI upload",
+            "1 flashlight",
+            "1 energy cell",
+            "1 ¡La Fantoma! skill magazine",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Vault Dweller",
+        "description": "Raised in a vault, you’ve stepped into the unfamiliar wasteland. The world is vast, and you carry unique vault items.",
+        "skills": ["+2 Medicine", "+2 Speech", "+2 Science"],
+        "trait": "Talented",
+        "starting_equipment": {
+          "Human, Ghoul, or Super Mutant": [
+            "1 vault suit",
+            "1 10mm pistol",
+            "10 10mm ammo",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "1 canteen",
+            "1 weapon repair kit",
+            "1 Pip-Boy (any)",
+            "1 BlamCo Mac & Cheese",
+            "1 Salisbury Steak",
+            "1 Yum Yum Deviled Eggs",
+            "1 coffee",
+            "4 purified water",
+            "1 stimpak"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 vault suit",
+            "1 laser pistol",
+            "2 energy cell",
+            "1 backpack",
+            "1 Pip-Boy (any)",
+            "2 RobCo Quick Fix-it 2.0",
+            "1 Programmer's Digest magazine",
+            "1 data scrubber",
+            "50 caps"
+          ]
+        }
+      },
+      {
+        "name": "Wastelander",
+        "description": "A seasoned traveler of the wasteland, you’ve lived a nomadic life. Now, you aim to make a lasting impact.",
+        "skills": ["+2 Guns", "+2 Survival", "+2 Unarmed"],
+        "trait": "Adventurers Instinct",
+        "starting_equipment": {
+          "Human": [
+            "1 leather armor",
+            "1 sharpened pole",
+            "1 10mm pistol",
+            "10 10mm ammo",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "2 mutfruit",
+            "2 apples",
+            "1 vegetable soup",
+            "2 purified water",
+            "1 healing powder",
+            "50 caps"
+          ],
+          "Ghoul or Super Mutant": [
+            "1 leather armor",
+            "1 sharpened pole",
+            "1 10mm pistol",
+            "10 10mm ammo",
+            "1 backpack",
+            "1 sleeping bag",
+            "1 one-person tent",
+            "2 mutfruit",
+            "2 apples",
+            "1 vegetable soup",
+            "3 dirty water",
+            "1 Nuka-Cola",
+            "1 diluted stimpak",
+            "50 caps"
+          ],
+          "Gen-2 Synth or Robot": [
+            "1 leather armor",
+            "1 sharpened pole",
+            "1 10mm pistol",
+            "10 10mm ammo",
+            "1 backpack",
+            "1 bandolier",
+            "1 binoculars",
+            "1 grappling hook",
+            "1 rope",
+            "1 RobCo Quick Fix-it 1.0",
+            "50 caps"
+          ]
+        }
+      }
+    ],
+    "Traits": [
+      {
+        "name": "The Sight Beyond",
+        "background": "Cultist",
+        "description": "Grants an enhanced perception of hidden signs or omens in the wasteland, providing advantage on checks to detect supernatural or mysterious phenomena."
+      },
+      {
+        "name": "Do No Harm",
+        "background": "Doctor",
+        "description": "Your commitment to healing prevents you from dealing lethal damage unless absolutely necessary, granting bonuses to Medicine checks and stabilizing dying creatures."
+      },
+      {
+        "name": "Street Rat",
+        "background": "Drifter",
+        "description": "Your rough upbringing gives you an edge in urban environments, granting advantage on Sneak and Breach checks in city settings."
+      },
+      {
+        "name": "A Moment of Respite",
+        "background": "Entertainer",
+        "description": "Your performances can calm allies, granting temporary hit points or reducing stress during short rests."
+      },
+      {
+        "name": "Hardened by the Earth",
+        "background": "Farmer",
+        "description": "Your resilience from working the land increases your endurance, granting resistance to environmental hazards like radiation or extreme weather."
+      },
+      {
+        "name": "Vigilant Watch",
+        "background": "Guard",
+        "description": "Your training enhances your awareness, granting advantage on perception checks to detect ambushes or threats."
+      },
+      {
+        "name": "Recluse",
+        "background": "Hermit",
+        "description": "Your solitary lifestyle enhances your survival instincts, granting bonuses to Survival checks and resistance to fear effects."
+      },
+      {
+        "name": "Persistent",
+        "background": "Journalist",
+        "description": "Your determination to uncover the truth grants advantage on checks to investigate or persuade others for information."
+      },
+      {
+        "name": "Long Days, Long Nights",
+        "background": "Laborer",
+        "description": "Your endurance from hard labor allows you to push through fatigue, granting extra stamina or resistance to exhaustion."
+      },
+      {
+        "name": "Proper Maintenance",
+        "background": "Mechanic",
+        "description": "Your expertise reduces the decay rate of equipment you maintain and grants bonuses to repair checks."
+      },
+      {
+        "name": "Sweeten the Deal",
+        "background": "Mercenary",
+        "description": "Your reputation allows you to negotiate better rewards, granting advantage on Barter checks for contracts."
+      },
+      {
+        "name": "Embolden",
+        "background": "Pastor",
+        "description": "Your inspiring words grant allies advantage on checks to resist fear or despair in dire situations."
+      },
+      {
+        "name": "Long Roads",
+        "background": "Pilgrim",
+        "description": "Your experience traveling grants bonuses to navigation and movement speed across long distances."
+      },
+      {
+        "name": "Endure the Battle",
+        "background": "Pit Fighter",
+        "description": "Your combat experience allows you to shrug off minor injuries, granting resistance to bludgeoning damage in melee."
+      },
+      {
+        "name": "Field Research",
+        "background": "Scientist",
+        "description": "Your analytical skills grant advantage on Science checks to analyze creatures or environmental phenomena."
+      },
+      {
+        "name": "Wasteland Knowledge",
+        "background": "Scribe",
+        "description": "Your extensive reading grants bonuses to knowledge-based checks about the wasteland’s history or technology."
+      },
+      {
+        "name": "Efficient Combatant",
+        "background": "Soldier",
+        "description": "Your training optimizes your action economy, reducing the AP cost of certain combat actions."
+      },
+      {
+        "name": "Bargaining Chip",
+        "background": "Trader",
+        "description": "Your trading savvy grants advantage on Barter checks and increases the value of goods you sell."
+      },
+      {
+        "name": "Talented",
+        "background": "Vault Dweller",
+        "description": "Your vault upbringing grants versatility, allowing you to pick an additional skill proficiency or tool expertise."
+      },
+      {
+        "name": "Adventurers Instinct",
+        "background": "Wastelander",
+        "description": "Your instincts grant advantage on Survival checks to avoid danger or find resources in the wasteland."
+      }
+    ]
+  }

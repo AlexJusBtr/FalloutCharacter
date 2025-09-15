@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabletop RT</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1>Tabletop RT</h1>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button id="hamburger" class="secondary" title="Search (Ctrl+K)">☰</button>
+        <div id="userBox" class="user-box"></div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="accountView" class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="row">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="row">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="player">Player</option>
+              <option value="dm">DM</option>
+            </select>
+          </div>
+          <div class="row hidden" id="dmKeyRow">
+            <label for="dmKey">DM Key</label>
+            <input id="dmKey" name="dmKey" placeholder="Enter DM key" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <section id="charactersView" class="card hidden">
+        <div class="card-header">
+          <h2>Characters</h2>
+          <div class="actions">
+            <button id="logoutBtn" class="secondary">Logout</button>
+          </div>
+        </div>
+        <div class="chars-grid">
+          <aside id="leftPane">
+            <div id="diceFeed" class="dice-feed"></div>
+          </aside>
+          <div id="charsMain">
+            <div id="dmTools" class="dm-tools hidden"></div>
+            <div id="createWrap" class="card hidden" style="margin-bottom:10px; padding:12px;">
+              <h3>Create Your Character</h3>
+              <form id="createForm" class="grid-2">
+                <div class="row">
+                  <label>Name</label>
+                  <input id="cr-name" required />
+                </div>
+                <div class="row">
+                  <label>Race</label>
+                  <select id="cr-race">
+                    <option value="Human">Human</option>
+                    <option value="Ghoul">Ghoul</option>
+                    <option value="Super Mutant">Super Mutant</option>
+                    <option value="Synth">Synth</option>
+                  </select>
+                </div>
+                <div class="row" style="grid-column:1/-1;">
+                  <label>Background</label>
+                  <input id="cr-background" placeholder="e.g., Vault Dweller" />
+                </div>
+                <div class="row"><label>S</label><input id="cr-S" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>P</label><input id="cr-P" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>E</label><input id="cr-E" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>C</label><input id="cr-C" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>I</label><input id="cr-I" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>A</label><input id="cr-A" type="number" value="5" min="1" max="10"/></div>
+                <div class="row"><label>L</label><input id="cr-L" type="number" value="5" min="1" max="10"/></div>
+                <div class="row" style="grid-column:1/-1;">
+                  <label>Perks (comma separated)</label>
+                  <input id="cr-perks" placeholder="e.g., Toughness, Scrounger" />
+                </div>
+                <div style="grid-column:1/-1; display:flex; gap:8px;">
+                  <button type="submit">Create</button>
+                  <div id="cr-derived" class="muted">Max HP: <span id="cr-hp">—</span></div>
+                </div>
+              </form>
+            </div>
+            <div id="charactersList" class="list"></div>
+          </div>
+          <aside id="rightPane">
+            <div id="damageFeed" class="dice-feed"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="characterSheetView" class="card hidden">
+        <div class="card-header">
+          <h2>Character Sheet</h2>
+          <div class="actions">
+            <button id="backToChars">Back</button>
+          </div>
+        </div>
+        <div class="sheet-grid">
+          <form id="characterForm"></form>
+          <aside id="skillsPane"></aside>
+        </div>
+        <div class="toolbar">
+          <button id="openInventory">Inventory</button>
+          <button id="openEquipment">Equipment</button>
+          <button id="openShop">Shop</button>
+          <button id="openCrafting" class="secondary">Crafting</button>
+          <button id="openConditions" class="secondary">Conditions</button>
+          <button id="openAssist" class="secondary">Assist</button>
+        </div>
+      </section>
+
+      <section id="inventoryView" class="card hidden">
+        <div class="card-header">
+          <h2>Inventory</h2>
+          <div class="actions">
+            <button id="backToCharsFromInv" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromInv">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="inventoryContent"></div>
+      </section>
+
+      <section id="equipmentView" class="card hidden">
+        <div class="card-header">
+          <h2>Equipment</h2>
+          <div class="actions">
+            <button id="backToCharsFromEquip" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromEquip">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="equipmentContent"></div>
+      </section>
+
+      <section id="shopView" class="card hidden">
+        <div class="card-header">
+          <h2>Shop</h2>
+          <div class="actions">
+            <button id="backToCharsFromShop" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromShop">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="shopContent"></div>
+      </section>
+
+      <section id="shopManageView" class="card hidden">
+        <div class="card-header">
+          <h2>Shop Management</h2>
+          <div class="actions"><button id="backToCharsFromShopManage">Back to Characters</button></div>
+        </div>
+        <div id="shopManagePage"></div>
+      </section>
+
+      <section id="craftingView" class="card hidden">
+        <div class="card-header">
+          <h2>Crafting</h2>
+          <div class="actions">
+            <button id="backToCharsFromCraft" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromCraft">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="craftingContent"></div>
+      </section>
+
+      <section id="assistView" class="card hidden">
+        <div class="card-header">
+          <h2>Assist Tools</h2>
+          <div class="actions">
+            <button id="backToCharsFromAssist" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromAssist">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="assistContent"></div>
+      </section>
+
+      <section id="conditionsView" class="card hidden">
+        <div class="card-header">
+          <h2>Conditions</h2>
+          <div class="actions">
+            <button id="backToCharsFromCond" class="secondary">Back to Characters</button>
+            <button id="backToSheetFromCond">Back to Sheet</button>
+          </div>
+        </div>
+        <div id="conditionsContent"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="searchOverlay" class="overlay hidden">
+    <div class="dialog">
+      <div class="toolbar">
+        <input id="searchInput" placeholder="Search items, perks, traits, conditions..." style="flex:1;"/>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Item">Items</button>
+        <button class="filter-btn" data-filter="Perk">Perks</button>
+        <button class="filter-btn" data-filter="Trait">Traits</button>
+        <button class="filter-btn" data-filter="Condition">Conditions</button>
+      </div>
+      <div id="searchResults" class="list"></div>
+      <div class="row-btns" style="margin-top:8px; justify-content:flex-end;"><button id="searchClose" class="secondary">Close</button></div>
+    </div>
+  </div>
+
+  <!-- Pickers -->
+  <div id="perkPicker" class="overlay hidden">
+    <div class="dialog">
+      <div class="card-header"><h3>Pick Perks</h3><div class="actions"><button id="perkPickerClose" class="secondary">Close</button></div></div>
+      <div id="perkPickerGrid" class="list"></div>
+    </div>
+  </div>
+  <div id="traitPicker" class="overlay hidden">
+    <div class="dialog">
+      <div class="card-header"><h3>Pick Traits</h3><div class="actions"><button id="traitPickerClose" class="secondary">Close</button></div></div>
+      <div id="traitPickerGrid" class="list"></div>
+    </div>
+  </div>
+
+  <div id="customBgOverlay" class="overlay hidden">
+    <div class="dialog">
+      <div class="card-header"><h3>Custom Background</h3><div class="actions"><button id="customBgClose" class="secondary">Close</button></div></div>
+      <div class="toolbar">
+        <div class="row" style="flex:1;">
+          <label>Pick three skills (+2 each)</label>
+          <div id="cbgSkills" class="skills-grid"></div>
+          <div class="muted" id="cbgSkillsHint"></div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <input id="cbgItemSearch" placeholder="Search items to add..." style="flex:1;"/>
+        <button id="cbgAddItem" type="button">Add Selected</button>
+      </div>
+      <div id="cbgItemsGrid" class="list"></div>
+      <div class="row"><label>Chosen Equipment</label><div id="cbgChosen" class="list"></div></div>
+      <div class="row-btns" style="justify-content:flex-end;"><button id="cbgApply">Apply to Character</button></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+{
+    "AbilityScores": {
+      "Description": "Seven core abilities (S.P.E.C.I.A.L.) define a creature’s physical and mental characteristics, used for ability checks, skill rolls, and attack rolls. Scores range from 1 to 10 for characters (up to 20 for monsters), with modifiers from -4 (score of 1) to +5 (score of 10). A score of 0 or below results in instant death.",
+      "ModifiersTable": [
+        {"Score": 1, "Modifier": -4},
+        {"Score": 2, "Modifier": -3},
+        {"Score": 3, "Modifier": -2},
+        {"Score": 4, "Modifier": -1},
+        {"Score": 5, "Modifier": 0},
+        {"Score": 6, "Modifier": 1},
+        {"Score": 7, "Modifier": 2},
+        {"Score": 8, "Modifier": 3},
+        {"Score": 9, "Modifier": 4},
+        {"Score": 10, "Modifier": 5}
+      ],
+      "CharacterCreation": {
+        "StartingScores": "All ability scores begin at 5 at 1st level.",
+        "PointsAllocation": "You receive 3 points to increase any ability score (+1 per point). You can decrease a score to gain additional points equal to the decrease. Maximum score is 10, minimum is 1.",
+        "ModifierCalculation": "Modifier is calculated as score minus 5 (e.g., Luck score of 7 yields +2, Strength score of 3 yields -2).",
+        "BackgroundSkills": "Selecting a Background increases three skill modifiers of your choice by 2.",
+        "LuckEffect": "Luck modifier adds a +1 bonus to all skills per +1 modifier (e.g., Luck modifier of +2 grants +2 to all skills)."
+      },
+      "Abilities": [
+        {
+          "Name": "Strength",
+          "Description": "Represents raw physical power, improving hit and damage with melee weapons and unarmed attacks, and serving as a scare tactic. Determines weapon handling and Carry Load.",
+          "Mechanics": {
+            "CarryLoad": "Maximum Carry Load is Strength Score × 10. Exceeding this incurs the encumbered condition; exceeding double incurs heavily encumbered.",
+            "WeaponStrengthRequirement": "Weapons have a Strength requirement. If unmet, attack rolls with that weapon have disadvantage."
+          },
+          "Skills": [
+            {
+              "Name": "Intimidation",
+              "Description": "Measures physical dauntingness and ability to frighten others. Can be modified by Strength instead of Charisma."
+            },
+            {
+              "Name": "Melee Weapons",
+              "Description": "Measures expertise with weapons like knives, boards, nine-irons, or chainsaws. Bonus is added to attack rolls with melee weapons."
+            },
+            {
+              "Name": "Unarmed",
+              "Description": "Measures ability to punch, strike, wrestle, kick, elbow, knee, or grapple. Bonus is added to unarmed attack rolls. Unarmed attacks deal 1d4 + Strength or Agility modifier bludgeoning damage, critically hit on a 20 (double damage), and can be non-lethal."
+            }
+          ]
+        },
+        {
+          "Name": "Perception",
+          "Description": "Encompasses senses, insight, attention to detail, and quick action under pressure. Influences combat initiative, Energy Weapons attacks, and ranged weapon range.",
+          "Mechanics": {
+            "CombatSequence": "Determines turn order in combat. All creatures roll Combat Sequence, recorded in descending order.",
+            "PassiveSense": "Score is 12 + Perception modifier. Creatures sneaking remain undetected if their Sneak roll exceeds this.",
+            "WeaponRange": "Ranged weapons’ normal and long range are calculated as listed range × Perception score. Attacks beyond normal range have disadvantage; beyond long range are impossible."
+          },
+          "Skills": [
+            {
+              "Name": "Breach",
+              "Description": "Measures ability to open locks, hack computers, disarm traps, or access restricted areas. Can be modified by Perception instead of Intelligence. Can re-roll a number of times equal to Luck modifier (GM’s discretion)."
+            },
+            {
+              "Name": "Energy Weapons",
+              "Description": "Measures expertise with technological weapons like lasers, plasma, and electromagnetic coil weapons. Bonus is added to attack rolls with energy weapons."
+            },
+            {
+              "Name": "Explosives",
+              "Description": "Measures knowledge in arming, disarming, and handling explosives. For throwing: roll d20 + Explosives bonus (1: immediate detonation, 2-3: half-distance throw and detonate next turn, 3-14: detonate next turn, 15+: detonate end of turn). For armed explosives: check DC 12 or below explodes immediately, 13+ detonates end of turn."
+            },
+            {
+              "Name": "Medicine",
+              "Description": "Measures aptitude for diagnosing and treating symptoms, and crafting chems (requires minimum Medicine skill). Stop bleeding: 6 AP, 1 cloth junk, DC 15 Medicine check. Save dying character: 6 AP, DC 10 + failed Death Saves - successful Death Saves, success grants 1 hit point. Can be modified by Perception instead of Intelligence."
+            }
+          ]
+        },
+        {
+          "Name": "Endurance",
+          "Description": "Represents physical toughness and perseverance. Influences hit points, Healing Rate, Radiation DC, and survival knowledge.",
+          "Mechanics": {
+            "DeathSaves": "At 0 hit points, gain dying condition, fall prone, 0 AP. Gain 4 AP per turn (max 6). Spend 2 AP for DC 10 Death Save (d20 + Luck or Endurance modifier + Party Nerve). 3 successes restore 1 hit point; 3 failures result in death.",
+            "HealingRate": "Calculated as half of (level + Endurance score). Healed after 8-hour rest, certain foods, First Aid perk, or stimpak (non-robots).",
+            "HitPoints": "At 1st level, 10 + Endurance modifier. Damage subtracts from Stamina Points first, then Hit Points. 0 Hit Points triggers dying condition.",
+            "RadiationDC": "For Humans, 12 - Endurance modifier. Roll d20 vs. Radiation DC in Irradiated Zones; failure adds 1 radiation level, success increases Radiation DC by 2 until Rads are removed."
+          },
+          "Skills": [
+            {
+              "Name": "Survival",
+              "Description": "Measures adaptation, land knowledge, hunting, and culinary expertise. Used to track creatures, craft food/drink (requires specific Survival skill), or learn about creature habits/types/abilities (GM’s discretion)."
+            }
+          ]
+        },
+        {
+          "Name": "Charisma",
+          "Description": "Represents force of personality and communication ability. Enhances leadership and Party Nerve, boosting party perseverance.",
+          "Mechanics": {
+            "PartyNerve": "Sum of all player characters’ Charisma modifiers, halved (rounded down). Added to Death Saves. Grants temporary stamina points equal to Party Nerve bonus after rolling combat sequence."
+          },
+          "Skills": [
+            {
+              "Name": "Barter",
+              "Description": "Measures trade expertise with merchants or powerful figures. Discount ability grants percentage discount equal to Barter skill bonus when purchasing, usable once per 8-hour rest."
+            },
+            {
+              "Name": "Intimidation",
+              "Description": "Measures ability to frighten or make others reconsider confrontation. Can be modified by Charisma instead of Strength."
+            },
+            {
+              "Name": "Speech",
+              "Description": "Measures communication, persuasion, deception, and reading others. Used to convince NPCs, tell lies, discern intentions, or communicate non-verbally (GM’s discretion)."
+            }
+          ]
+        },
+        {
+          "Name": "Intelligence",
+          "Description": "Represents reasoning, knowledge, and memory. Influences skill points gained when leveling and crafting ability for weapons, mods, and armor upgrades.",
+          "Mechanics": {
+            "SkillPoints": "Higher Intelligence grants more skill points when leveling; lower grants fewer.",
+            "CraftingAbility": "High Intelligence enables crafting more items like weapons, mods, and armor upgrades."
+          },
+          "Skills": [
+            {
+              "Name": "Breach",
+              "Description": "Measures ability to open locks, hack computers, disarm traps, or access restricted areas. Can be modified by Intelligence instead of Perception. Can re-roll a number of times equal to Luck modifier (GM’s discretion)."
+            },
+            {
+              "Name": "Crafting",
+              "Description": "Measures knowledge of schematics to repair and craft items. Most weapons, armor, mods, and upgrades require a minimum Crafting skill."
+            },
+            {
+              "Name": "Medicine",
+              "Description": "Measures aptitude for diagnosing and treating symptoms, and crafting chems (requires minimum Medicine skill). Stop bleeding: 6 AP, 1 cloth junk, DC 15 Medicine check. Save dying character: 6 AP, DC 10 + failed Death Saves - successful Death Saves, success grants 1 hit point. Can be modified by Intelligence instead of Perception."
+            },
+            {
+              "Name": "Science",
+              "Description": "Measures expertise in scientific fields like computers, biology, cosmology, physics, equations, mechanics, and engineering."
+            }
+          ]
+        },
+        {
+          "Name": "Agility",
+          "Description": "Represents speed, reflexes, and coordination. Influences Guns and Sneak skills, and action points for combat actions.",
+          "Mechanics": {
+            "ActionPoints": "Higher Agility grants more action points for movement, attacks, and other actions in combat."
+          },
+          "Skills": [
+            {
+              "Name": "Guns",
+              "Description": "Measures expertise with firearms. Bonus is added to attack rolls with guns."
+            },
+            {
+              "Name": "Sneak",
+              "Description": "Measures ability to remain undetected. Success depends on beating the target’s Passive Sense score."
+            }
+          ]
+        },
+        {
+          "Name": "Luck",
+          "Description": "Represents fortune and chance. Affects all skills by adding a +1 bonus per +1 modifier and allows re-rolling certain checks like Breach.",
+          "Mechanics": {
+            "SkillBonus": "Luck modifier adds +1 to all skill checks per +1 modifier.",
+            "ReRoll": "Allows re-rolling checks like Breach a number of times equal to Luck modifier (GM’s discretion)."
+          },
+          "Skills": []
+        }
+      ]
+    },
+    "SkillChecks": {
+      "Description": "Skill checks evaluate talent and training to overcome challenges. The GM sets a Difficulty Class (DC) when there’s a chance of failure. Success requires meeting or exceeding the DC; failure results in no progress or setbacks.",
+      "Guidelines": {
+        "WhenToRoll": "GM calls for a skill check if there’s at least a 20% chance of failure (DC 'very easy'). Tasks with lower failure chance may succeed automatically. Extremely small failure chances may require a roll (used sparingly).",
+        "DifficultyClassesTable": [
+          {"DC": 1, "Difficulty": "Extremely small chance of failure"},
+          {"DC": 4, "Difficulty": "Very Easy"},
+          {"DC": 8, "Difficulty": "Easy"},
+          {"DC": 12, "Difficulty": "Medium"},
+          {"DC": 16, "Difficulty": "Hard"},
+          {"DC": 20, "Difficulty": "Very Hard"},
+          {"DC": 25, "Difficulty": "Nearly Impossible"},
+          {"DC": 30, "Difficulty": "Extremely small chance of success"}
+        ]
+      },
+      "SkillsList": [
+        {"Name": "Barter", "PrimaryAbility": "Charisma"},
+        {"Name": "Breach", "PrimaryAbility": "Perception or Intelligence"},
+        {"Name": "Crafting", "PrimaryAbility": "Intelligence"},
+        {"Name": "Energy Weapons", "PrimaryAbility": "Perception"},
+        {"Name": "Explosives", "PrimaryAbility": "Perception"},
+        {"Name": "Guns", "PrimaryAbility": "Agility"},
+        {"Name": "Intimidation", "PrimaryAbility": "Strength or Charisma"},
+        {"Name": "Medicine", "PrimaryAbility": "Perception or Intelligence"},
+        {"Name": "Melee Weapons", "PrimaryAbility": "Strength"},
+        {"Name": "Science", "PrimaryAbility": "Intelligence"},
+        {"Name": "Sneak", "PrimaryAbility": "Agility"},
+        {"Name": "Speech", "PrimaryAbility": "Charisma"},
+        {"Name": "Survival", "PrimaryAbility": "Endurance"},
+        {"Name": "Unarmed", "PrimaryAbility": "Strength"}
+      ]
+    }
+  }

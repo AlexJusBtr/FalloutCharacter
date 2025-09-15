@@ -1,0 +1,440 @@
+{
+    "CharacterCreation": {
+      "Description": "Character creation can be done for a first-level character or any level, following a specific checklist.",
+      "Steps": [
+        {
+          "Step": 1,
+          "Description": "Choose your Race."
+        },
+        {
+          "Step": 2,
+          "Description": "Assign ability scores (S.P.E.C.I.A.L.): Each starts at 5. Gain 3 points to increase any score (+1 per point). Can decrease a score to gain extra points equal to the decrease. Maximum score is 10, minimum is 1."
+        },
+        {
+          "Step": 3,
+          "Description": "Determine modifiers: Modifier is score minus 5 (e.g., Luck of 7 gives +2, Strength of 3 gives -2)."
+        },
+        {
+          "Step": 4,
+          "Description": "Calculate skill bonuses: Each skill is modified by its associated ability score’s modifier on d20 rolls."
+        },
+        {
+          "Step": 5,
+          "Description": "Add half your Luck modifier (rounded down) to all skills."
+        },
+        {
+          "Step": 6,
+          "Description": "Choose Background and assign skill bonuses: Gain +2 to three different skills listed in the chosen Background."
+        },
+        {
+          "Step": 7,
+          "Description": "Optionally choose one or two Traits (can be chosen later). Optionally modify with Wild Wasteland."
+        },
+        {
+          "Step": 8,
+          "Description": "Calculate Stamina Points (SP): At 1st level, SP equals Agility modifier + 10."
+        },
+        {
+          "Step": 9,
+          "Description": "Calculate Hit Points (HP): At 1st level, HP equals Endurance modifier + 10."
+        },
+        {
+          "Step": 10,
+          "Description": "Calculate Action Points (AP): At 1st level, AP equals Agility modifier + 10."
+        },
+        {
+          "Step": 11,
+          "Description": "Calculate Healing Rate: Equals level + Endurance score, halved."
+        },
+        {
+          "Step": 12,
+          "Description": "Calculate Carry Load: Equals Strength score × 10."
+        },
+        {
+          "Step": 13,
+          "Description": "Calculate passive sense: Equals 12 + Perception modifier."
+        },
+        {
+          "Step": 14,
+          "Description": "Calculate Party Nerve bonus: Sum of all player characters’ Charisma modifiers, halved. Added to Death Saves and grants temporary SP equal to the bonus when rolling combat sequence."
+        },
+        {
+          "Step": 15,
+          "Description": "Calculate Group Sneak: Average Sneak modifier of all player characters (each Sneak modifier divided by number of player characters)."
+        },
+        {
+          "Step": 16,
+          "Description": "Add equipment from Background or forgo for 850 caps to purchase starting equipment."
+        },
+        {
+          "Step": 17,
+          "Description": "Calculate Armor Class (AC): At 1st level, AC is 10, modified by armor, perks, or abilities. Cannot be lower than 10 unless specified."
+        },
+        {
+          "Step": 18,
+          "Description": "Calculate Damage Threshold (DT): At 1st level, DT is 0, modified by armor, perks, or abilities."
+        },
+        {
+          "Step": 19,
+          "Description": "Hunger, Dehydration, and Exhaustion levels start at 0."
+        },
+        {
+          "Step": 20,
+          "Description": "If Human, determine Radiation Difficulty Class (DC): Equals 12 - Endurance modifier."
+        },
+        {
+          "Step": 21,
+          "Description": "If you have a weapon, calculate Attack bonus: Equals skill bonus for the weapon’s skill (e.g., Guns for pistols, Energy Weapons for lasers).",
+          "WeaponSkills": {
+            "Big Guns, Pistols, Rifles, Shotguns, Submachine Guns": "Guns skill",
+            "Bladed Weapons, Blunt Weapons, Mechanical Weapons": "Melee Weapons skill",
+            "Energy Weapons": "Energy Weapons skill",
+            "Explosives": "Explosives skill",
+            "Unarmed": "Unarmed skill"
+          }
+        },
+        {
+          "Step": 22,
+          "Description": "Calculate Damage bonus: Weapon damage plus ability modifier of the associated skill (e.g., Agility modifier for shotguns)."
+        },
+        {
+          "Step": 23,
+          "Description": "Optionally choose one or two Traits and modify with Wild Wasteland if not already done."
+        }
+      ]
+    },
+    "LevelingUp": {
+      "Description": "Levels reflect experience and adaptation. Gain 1000 XP to level up, awarded by the GM. Each level provides benefits like Stamina Points, Hit Points, Perk Points, and Skill Points.",
+      "GainingXP": {
+        "Description": "GM awards XP after rests following quests, encounters, or discoveries. All players share the same XP, defaulting to the highest total. Players with lower XP gain the difference.",
+        "Modifiers": [
+          {
+            "Condition": "Reaching 0 Hit Points",
+            "Bonus": "10% bonus XP per player character that fell to 0 HP."
+          },
+          {
+            "Condition": "Death",
+            "Bonus": "1000 XP per player character if another permanently dies."
+          },
+          {
+            "Condition": "Creature Discovery",
+            "Bonus": "20% bonus XP for rolling combat sequence with a new creature."
+          },
+          {
+            "Condition": "Location Discovery",
+            "Bonus": "20% bonus XP for resting in a new city, town, ruin, dungeon, or point of interest."
+          }
+        ],
+        "Note": "XP is rewarded for surviving encounters, not killing, as 'failure is the best teacher.'"
+      },
+      "SkillPoints": {
+        "Description": "Distribute Skill Points to skills for a permanent +1 bonus per point. Number of points depends on Intelligence score.",
+        "Allocation": [
+          {
+            "IntelligenceScore": "5",
+            "Points": "4 at levels 5, 9, 13, 17, 21, 25, 29"
+          },
+          {
+            "IntelligenceScore": "6 or higher",
+            "Points": "5 at levels 5, 9, 13, 17, 21, 25, 29"
+          },
+          {
+            "IntelligenceScore": "4 or lower",
+            "Points": "3 at levels 5, 9, 13, 17, 21, 25, 29"
+          }
+        ],
+        "Adjustment": "If Intelligence score changes, total Skill Points adjust as if the new modifier applied from 1st level."
+      },
+      "PerkPoints": {
+        "Description": "Use Perk Points to increase an ability score by 1 or choose a perk from page 27 (if requirements are met). Gained at every level except 5, 9, 13, 17, and 19.",
+        "TotalByLevel": {
+          "Level1": 1,
+          "Level2": 2,
+          "Level3": 3,
+          "Level4": 4,
+          "Level5": 4,
+          "Level6": 5,
+          "Level30": 25
+        }
+      },
+      "StaminaPoints": {
+        "Description": "At 1st level, SP equals Agility modifier + 10. Increases by 5 + Agility modifier at levels 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29. If Agility modifier changes, SP adjusts as if the new modifier applied from 1st level."
+      },
+      "HitPoints": {
+        "Description": "At 1st level, HP equals Endurance modifier + 10. Increases by 5 + Endurance modifier at levels 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29. If Endurance modifier changes, HP adjusts as if the new modifier applied from 1st level."
+      },
+      "LevelUpTable": {
+        "Description": "Details SP, HP, Perk Points, and Skill Points by level, accounting for Intelligence modifiers (-1, 0, +1).",
+        "Table": [
+          {
+            "Level": 1,
+            "SP": "10 + Agility modifier",
+            "HP": "10 + Endurance modifier",
+            "PerkPoints": 1,
+            "SkillPoints": {"Int-1": 0, "Int0": 0, "Int+1": 0}
+          },
+          {
+            "Level": 2,
+            "SP": "10 + Agility modifier",
+            "HP": "10 + Endurance modifier",
+            "PerkPoints": 2,
+            "SkillPoints": {"Int-1": 0, "Int0": 0, "Int+1": 0}
+          },
+          {
+            "Level": 3,
+            "SP": "15 + Agility modifier × 2",
+            "HP": "15 + Endurance modifier × 2",
+            "PerkPoints": 3,
+            "SkillPoints": {"Int-1": 0, "Int0": 0, "Int+1": 0}
+          },
+          {
+            "Level": 5,
+            "SP": "20 + Agility modifier × 3",
+            "HP": "20 + Endurance modifier × 3",
+            "PerkPoints": 4,
+            "SkillPoints": {"Int-1": 3, "Int0": 4, "Int+1": 5}
+          },
+          {
+            "Level": 9,
+            "SP": "30 + Agility modifier × 5",
+            "HP": "30 + Endurance modifier × 5",
+            "PerkPoints": 4,
+            "SkillPoints": {"Int-1": 6, "Int0": 8, "Int+1": 10}
+          },
+          {
+            "Level": 13,
+            "SP": "40 + Agility modifier × 7",
+            "HP": "40 + Endurance modifier × 7",
+            "PerkPoints": 4,
+            "SkillPoints": {"Int-1": 9, "Int0": 12, "Int+1": 15}
+          },
+          {
+            "Level": 17,
+            "SP": "50 + Agility modifier × 9",
+            "HP": "50 + Endurance modifier × 9",
+            "PerkPoints": 4,
+            "SkillPoints": {"Int-1": 12, "Int0": 16, "Int+1": 20}
+          },
+          {
+            "Level": 19,
+            "SP": "55 + Agility modifier × 10",
+            "HP": "55 + Endurance modifier × 10",
+            "PerkPoints": 4,
+            "SkillPoints": {"Int-1": 12, "Int0": 16, "Int+1": 20}
+          },
+          {
+            "Level": 21,
+            "SP": "60 + Agility modifier × 11",
+            "HP": "60 + Endurance modifier × 11",
+            "PerkPoints": 5,
+            "SkillPoints": {"Int-1": 15, "Int0": 20, "Int+1": 25}
+          },
+          {
+            "Level": 25,
+            "SP": "70 + Agility modifier × 13",
+            "HP": "70 + Endurance modifier × 13",
+            "PerkPoints": 6,
+            "SkillPoints": {"Int-1": 18, "Int0": 24, "Int+1": 30}
+          },
+          {
+            "Level": 29,
+            "SP": "80 + Agility modifier × 15",
+            "HP": "80 + Endurance modifier × 15",
+            "PerkPoints": 7,
+            "SkillPoints": {"Int-1": 21, "Int0": 28, "Int+1": 35}
+          },
+          {
+            "Level": 30,
+            "SP": "80 + Agility modifier × 15",
+            "HP": "80 + Endurance modifier × 15",
+            "PerkPoints": 25,
+            "SkillPoints": {"Int-1": 21, "Int0": 28, "Int+1": 35}
+          }
+        ]
+      }
+    },
+    "Races": [
+      {
+        "Name": "Human",
+        "Description": "Dominant species, often called 'normals' or 'smoothskins.' Exhibit increased genetic diversity due to radiation, with minor non-lethal phenotypic changes (e.g., extra toes, skin lesions).",
+        "Traits": {
+          "Age": "Reach adulthood in late teens, live less than a century (rare in the wasteland).",
+          "Size": "Vary widely, can be Medium or Small.",
+          "RadiationDC": "For Humans, Radiation DC is 12 - Endurance modifier."
+        },
+        "Variant Traits": [
+          {
+            "Name": "Resourceful",
+            "Description": "Gain one extra Karma Cap per game (if GM allows)."
+          },
+          {
+            "Name": "Unexposed",
+            "Description": "Disadvantage on all Radiation and Addiction checks (if GM allows)."
+          },
+          {
+            "Name": "Gen 3 Synth",
+            "Description": "Synthetic machines indistinguishable from humans, created by 'The Institute.' No statistical change, but offers psychological/narrative depth. Secretly a Gen 3 Synth on a d20 roll of 20 at creation."
+          }
+        ]
+      },
+      {
+        "Name": "Ghoul",
+        "Description": "Mutated humans with a zombie-like appearance due to intense radiation. Extended lifespans, infertile, immune to background radiation (sometimes healed by it). Can live in human societies or form own communities.",
+        "Traits": {
+          "Age": "Nearly immortal, some pre-Great War ghouls (over 200 years old) still exist.",
+          "Size": "Vary widely, can be Medium or Small.",
+          "Evolution": "Cannot gain radiation levels, immune to radiation damage, no Irradiated levels from food or water.",
+          "ResilientAnatomy": "Resistant to poison damage. Stamina points from food, drinks, or chems halved (rounded down). Hit points from stimpaks halved (rounded down). Cannot gain hit points from healing powder. Syringes (unless 'loaders') have no effect. Half damage from bleeding condition."
+        },
+        "Variant Traits": [
+          {
+            "Name": "Many Roads Walked",
+            "Description": "Gain +2 in all skills and an extra perk at 1st Level (if GM allows)."
+          },
+          {
+            "Name": "Old Bones",
+            "Description": "Immune to poison damage and gain the Stitched Together perk (if GM allows)."
+          },
+          {
+            "Name": "Half Life",
+            "Description": "Mind slips daily, becoming feral. At Level 15, fully consumed by ghoulification and controlled by GM (if GM allows)."
+          }
+        ]
+      },
+      {
+        "Name": "Gen-2 Synth",
+        "Description": "Biological and mechanical robots from the Institute, with plastic-like skin and exposed internals. Limited A.I., resemble mannequins. Some escape and live with altered memories.",
+        "Traits": {
+          "Age": "Can live hundreds of years before corrosion/programming deterioration; repairs make them nearly immortal.",
+          "Size": "Vary widely, can be Medium or Small.",
+          "InorganicBody": "Immune to radiation and poison. No effects from Chems, Drinks, or Food. No need to breathe, sleep, eat, or drink."
+        },
+        "Variant Traits": [
+          {
+            "Name": "Brittle Body",
+            "Description": "Gain two limb conditions instead of one when targeted. Vulnerable to electricity damage (if GM allows)."
+          },
+          {
+            "Name": "Software and Hardware Upgrades",
+            "Description": "Considered a Robot for perk requirements when gaining a perk (if GM allows)."
+          },
+          {
+            "Name": "Artificial Intelligence Algorithms",
+            "Description": "Gain 1 extra skill point when gaining skill points (if GM allows)."
+          }
+        ]
+      },
+      {
+        "Name": "Robot",
+        "Description": "Autonomous pre-War machines for utility or military tasks. Some are hostile, others aid or are ambivalent.",
+        "Traits": {
+          "Age": "Can live hundreds of years before corrosion/deterioration; repairs make them nearly immortal.",
+          "Size": "Most are human-sized. Handy robots: 2.5-3.5 feet (hover 2-3 feet off ground). Protectrons: rarely exceed 5 feet. Robobrains: ~5.5 feet. All are Medium.",
+          "InorganicBody": "Cannot gain radiation levels, immune to radiation/poison damage, no bleeding levels, no effects from Chems, Drinks, or Food. No need to breathe, sleep, eat, or drink.",
+          "SeveredLimbs": "Reattaching limbs requires 3 steel, 1 circuitry junk item, taking minutes equal to 10 minus crafter’s crafting skill bonus (6 AP if time reduced to 0). No shock from severed limbs.",
+          "ArmorAndWeapons": "Can use armor and weapons like other races. Sub-type weapons can be upgraded/modified. Cannot use power armor."
+        },
+        "SubTypes": [
+          {
+            "Name": "Handy",
+            "Description": "Maintenance/construction robots with multiple appendages, levitating via jet engine. Served as butlers, workers, guards.",
+            "Traits": {
+              "LimbsAndTargetedAttacks": "Three arms, three eyes, up to three hands. No head, groin, or legs for targeted attacks/severance. Eye attacks cost 2 less AP. Jet engine can be targeted (like leg attack, +2 AP). If jet engine severed, fall prone, cannot move until reattached.",
+              "Fuel": "Requires fuel weekly (7 days/168 hours). 6 AP to fill with 1 gallon fuel or 6 oil junk items. Without fuel, DC 12 Endurance check hourly (DC +2 on success). Failure causes unconsciousness until fueled. Fusion core provides 30 days.",
+              "JetEngine": "Hovers, avoiding floor traps/effects. Falls if prone, stunned, or unconscious.",
+              "IncredibleMultiTalentedAppliance": {
+                "Description": "Built with three special tools/weapons in arms. One-handed, no AP to equip/stow, cannot detach unless arm severed.",
+                "Options": [
+                  {
+                    "Name": "Buzz Saw",
+                    "Details": "Melee Weapon. 5 AP. 1d8 slashing. Critical: 20, x2, applies bleeding. Properties: Cleave, Durable."
+                  },
+                  {
+                    "Name": "Clippers",
+                    "Details": "Melee Weapon. 3 AP. 1d4 piercing. Critical: 19-20, 1d4 piercing. Properties: Dismember, Durable."
+                  },
+                  {
+                    "Name": "Drill",
+                    "Details": "Melee Weapon. 6 AP. 1d8 slashing. Critical: 20, 2d8 slashing. Properties: Durable, Mangle."
+                  },
+                  {
+                    "Name": "Gripper",
+                    "Details": "Two finger-like appendages for grabbing, twisting, operating, using weapons, holding items. Fewer than two Grippers limits to one hand, affecting two-handed/unwieldy/kickback weapons."
+                  },
+                  {
+                    "Name": "Torch",
+                    "Details": "Ranged Weapon, 10 ft. line. 5 AP. 1d10 fire. Ammo: fuel, 5 rounds. Properties: Area of Effect, Durable, Incendiary."
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "Name": "Protectron",
+            "Description": "Human-like robots with glass dome ocular lens, slow but can swivel upper body 90 degrees to track targets.",
+            "Traits": {
+              "LimbsAndTargetedAttacks": "Two arms, two legs, two hands, two feet, head, torso. No eyes or groin for targeted attacks/severance.",
+              "ReinforcedPlating": "DT increases by 1, even without armor.",
+              "Slow": "Maximum 6 AP on movement per turn.",
+              "ProtectAndServe": {
+                "Description": "Built with one special tool/weapon in one arm. One-handed, no AP to equip/stow, cannot detach unless arm severed.",
+                "Options": [
+                  {
+                    "Name": "Taser",
+                    "Details": "Melee Weapon. 4 AP. 2d8 electricity. Critical: 20, x2, applies dazed. Properties: Durable."
+                  },
+                  {
+                    "Name": "Laser",
+                    "Details": "Ranged Weapon, Range: x10/x20. 4 AP. 1d8 laser. Critical: 20, x2, applies burning. Ammo: Fusion cell, 30 rounds. Properties: Durable, Semi-Automatic."
+                  },
+                  {
+                    "Name": "Defibrillator",
+                    "Details": "Unarmed Attack. 6 AP. 2d8 electricity. Critical: 20, 1d8. Properties: Durable, Revitalizing."
+                  },
+                  {
+                    "Name": "Cryo Spray",
+                    "Details": "Ranged Weapon, 20 ft. cone. 5 AP. 2d4 cold. Ammo: Cryo cell, 3 rounds. Properties: Area of Effect, Durable, Freezing, Slow."
+                  },
+                  {
+                    "Name": "Nail Gun",
+                    "Details": "Ranged Weapon, Range: x3/x10. 6 AP. 1 piercing per attack. Critical: 20, 10 piercing. Ammo: Nails, 90 rounds. Properties: Automatic: 2, Durable."
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "Name": "Robobrain",
+            "Description": "Multi-role platforms with brain as central processor, robust tracked chassis, powerful armaments.",
+            "Traits": {
+              "LimbsAndTargetedAttacks": "Two arms, two hands, head, torso. No legs, feet, eyes, or groin for targeted attacks/severance. All-terrain rollers can be targeted (like leg attacks, cannot be severed).",
+              "AllTerrainRollers": "No extra AP for difficult terrain.",
+              "NeuroTransmitters": "Vulnerable to electricity damage. Head-targeted attacks apply two conditions instead of one."
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Super Mutant",
+        "Description": "Genetically enhanced humans via Forced Evolutionary Virus (FEV), created as superior soldiers. Large, green/yellow/olive-skinned, strong, resistant to damage, aging, disease, but infertile with fleeting human memories. Some Nightkin have gray-purple skin from Stealth Boy exposure.",
+        "Traits": {
+          "Age": "Nearly immortal, some have lived hundreds of years.",
+          "Size": "7-9 feet tall, Medium. Cannot use power armor unless modded for their body type.",
+          "Evolution": "Cannot gain radiation levels, immune to radiation damage, no Irradiated levels from food or water.",
+          "SuperiorStrength": "Strength score increases by 1 (minimum 6). Carry Load increases by 40.",
+          "MassExertion": "Required food and water daily (and hunger/dehydration levels) are doubled.",
+          "Bulky": "Weapons or armor gain an additional level of decay when they would normally gain one."
+        },
+        "Variant Traits": [
+          {
+            "Name": "Defective Strain",
+            "Description": "Replaces Superior Strength. Strength and Endurance scores increase by 2, Carry Load increases by 40. Intelligence score reduced by 2 (maximum 3) (if GM allows)."
+          },
+          {
+            "Name": "Nightkin",
+            "Description": "Replaces Superior Strength. Strength score increases by 1 (minimum 6). Carry Load increases by 40. Gain Stealth field: spend 3 AP to become invisible for 1 minute. Each use after first per day temporarily decreases Perception by 1 for 24 hours (minimum 1), does not limit perk requirements (if GM allows)."
+          }
+        ]
+      }
+    ]
+  }
