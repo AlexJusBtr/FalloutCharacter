@@ -10,25 +10,20 @@ const { Server } = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, {
-    cors: {
-        origin: true,
-        credentials: true
-    }
-});
+const io = new Server(server, { cors: { origin: true, credentials: true } });
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// -------------------- Rules aggregation (in-memory cache) --------------------
+// -------------------- Rules Cache --------------------
 let RULES_CACHE = null;
 let ITEM_WEIGHT_INDEX = null;
 
 function readJsonSafe(relPath) {
     try {
         const p = path.join(__dirname, 'public', relPath);
-        if (!fs.existsSync(p)) return null;
+        if (!fs.existsSync(p)) throw new Error(`File ${relPath} not found`);
         return JSON.parse(fs.readFileSync(p, 'utf-8'));
     } catch (e) {
         console.error(`Failed to read JSON ${relPath}: ${e.message}`);
@@ -80,22 +75,13 @@ function generateItemCategories(itemsDoc) {
 function loadUnifiedRules() {
     const ability = readJsonSafe('ability_scores_skills.json');
     const backgrounds = readJsonSafe('backgrounds.json');
-    const crafting = readJsonSafe('crafting_decay_blueprints.json');
-    const condLoot = readJsonSafe('conditions_and_loot_gm_section.json');
     const items = readJsonSafe('items.json');
-    const traitsRaw = readJsonSafe('traits.json');
     const perksRaw = readJsonSafe('perks.json');
     const racesDoc = readJsonSafe('character_creation_leveling_races.json');
+    const condLoot = readJsonSafe('conditions_and_loot_gm_section.json');
     const races = Array.isArray(racesDoc?.races) ? racesDoc.races : [
         { name: 'Human' }, { name: 'Ghoul' }, { name: 'Super Mutant' }, { name: 'Synth' }
     ];
-    const skills = (ability?.SkillChecks?.SkillsList || []).map(s => ({
-        name: s.Name,
-        baseFormula: s.PrimaryAbility.includes(' or ')
-            ? `Math.max(${s.PrimaryAbility.split(' or ').map(p => `${p[0]} - 5`).join(', ')}) + (L - 5)`
-            : `(${s.PrimaryAbility[0]} - 5) + (L - 5)`
-    }));
-    const traits = Array.isArray(backgrounds?.Traits) ? backgrounds.Traits : (Array.isArray(traitsRaw?.traits) ? traitsRaw.traits : []);
     const perks = Array.isArray(perksRaw?.Perks) ? perksRaw.Perks : [];
     const rules = {
         special: {
@@ -108,12 +94,15 @@ function loadUnifiedRules() {
                 spFormula: '10 + (A - 5)'
             }
         },
-        skills,
+        skills: (ability?.SkillChecks?.SkillsList || []).map(s => ({
+            name: s.Name,
+            baseFormula: s.PrimaryAbility.includes(' or ')
+                ? `Math.max(${s.PrimaryAbility.split(' or ').map(p => `${p[0]} - 5`).join(', ')}) + (L - 5)`
+                : `(${s.PrimaryAbility[0]} - 5) + (L - 5)`
+        })),
         races,
         backgrounds: Array.isArray(backgrounds?.Backgrounds) ? backgrounds.Backgrounds : [],
-        traits,
         perks,
-        crafting: crafting || {},
         items: items || {},
         conditions: Array.isArray(condLoot?.ConditionsAndLoot?.Conditions) ? condLoot.ConditionsAndLoot.Conditions : []
     };
@@ -124,8 +113,7 @@ function loadUnifiedRules() {
 
 app.get('/rules.json', (req, res) => {
     try {
-        const rules = loadUnifiedRules();
-        res.json(rules);
+        res.json(loadUnifiedRules());
     } catch (e) {
         console.error(`Error serving /rules.json: ${e.message}`);
         res.status(500).json({ error: 'Failed to load rules' });
@@ -135,15 +123,24 @@ app.get('/rules.json', (req, res) => {
 app.get('/api/item-categories', (req, res) => {
     try {
         const items = readJsonSafe('items.json');
-        const categories = generateItemCategories(items || {});
-        res.json({ categories });
+        res.json({ categories: generateItemCategories(items || {}) });
     } catch (e) {
         console.error(`Error serving /api/item-categories: ${e.message}`);
         res.status(500).json({ error: 'Failed to load categories' });
     }
 });
 
-// -------------------- Derived stat helpers --------------------
+app.get('/api/perks', (req, res) => {
+    try {
+        loadUnifiedRules();
+        res.json({ perks: RULES_CACHE.perks || [] });
+    } catch (e) {
+        console.error(`Error serving /api/perks: ${e.message}`);
+        res.status(500).json({ error: 'Failed to load perks' });
+    }
+});
+
+// -------------------- Derived Stats --------------------
 function computeDerived(character) {
     const S = Number(character?.special?.S || 1);
     const E = Number(character?.special?.E || 1);
@@ -156,7 +153,6 @@ function computeDerived(character) {
     const carryCurrent = sumInventoryWeight(character?.inventory || []);
     let ac = 10;
     let dt = 0;
-    let radiationDc = Math.max(0, 12 - (E - 5));
     try {
         const eq = character?.equipment ? Object.values(character.equipment) : [];
         const armors = (RULES_CACHE?.items?.Armor || []);
@@ -173,26 +169,10 @@ function computeDerived(character) {
                 dt += Number(w.damage_threshold || 0);
             }
         }
-        const armorUp = (RULES_CACHE?.items?.['Armor Upgrades'] || []);
-        const upsRaw = character?.equipmentUpgrades || {};
-        const upsList = Object.entries(upsRaw).map(([k, v]) => [k, Number(v) || 1]);
-        for (const [upName, rankVal] of upsList) {
-            const up = armorUp.find(u => String(u.name).toLowerCase() === String(upName).toLowerCase());
-            const r = Number(rankVal || 1);
-            if (!up || r <= 0) continue;
-            if (up.name === 'Reinforced') dt += r;
-            if (up.name === 'Hardened') ac += r;
-            if (up.name === 'Lead Lined') radiationDc = Math.max(0, radiationDc - 2 * r);
-            if (up.name === 'Sturdy') {
-                character.derived = character.derived || {};
-                character.derived.sturdyIgnoreLevels = Math.max(Number(character.derived.sturdyIgnoreLevels || 0), r === 1 ? 2 : (r === 2 ? 4 : 4));
-                character.derived.armorNoCritDecay = character.derived.armorNoCritDecay || (r === 3);
-            }
-        }
     } catch (e) {
         console.error(`Error computing derived stats: ${e.message}`);
     }
-    return { maxHp, ap, sp, carryMax, carryCurrent, luckMod: (L - 5), ac, dt, radiationDc };
+    return { maxHp, ap, sp, carryMax, carryCurrent, luckMod: (L - 5), ac, dt };
 }
 
 function sumInventoryWeight(inv) {
@@ -240,10 +220,9 @@ if (useMongo) {
         hp: { type: Number, default: 1 },
         maxHp: { type: Number, default: 1 },
         caps: { type: Number, default: 0 },
-        inventory: [String],
+        inventory: { type: [String], default: [] },
         materials: { type: Map, of: Number, default: {} },
         equipment: { type: Map, of: String, default: {} },
-        equipmentUpgrades: { type: Map, of: String, default: {} },
         conditions: { type: [String], default: [] },
         shopAccess: { type: Boolean, default: false }
     }, { timestamps: true });
@@ -261,7 +240,7 @@ if (useMongo) {
     };
 }
 
-// In-memory fallback state
+// In-memory fallback
 const sessions = new Map();
 const users = new Map();
 const characters = new Map();
@@ -275,7 +254,9 @@ function getSession(req) {
 async function getCharacter(charId) {
     try {
         if (useMongo) {
-            return await global.DB.Character.findOne({ id: charId }).lean();
+            const char = await global.DB.Character.findOne({ id: charId }).lean();
+            console.log(`Fetched character ${charId}: ${char ? 'Found' : 'Not found'}`);
+            return char;
         }
         return characters.get(charId) || null;
     } catch (e) {
@@ -290,13 +271,15 @@ async function saveCharacter(char) {
             const existing = await global.DB.Character.findOne({ id: char.id });
             if (existing) {
                 await global.DB.Character.updateOne({ id: char.id }, char);
-                return await global.DB.Character.findOne({ id: char.id }).lean();
+                console.log(`Updated character ${char.id}`);
             } else {
                 await global.DB.Character.create(char);
-                return char;
+                console.log(`Created character ${char.id}`);
             }
+            return await global.DB.Character.findOne({ id: char.id }).lean();
         } else {
             characters.set(char.id, char);
+            console.log(`Saved character ${char.id} in-memory`);
             return char;
         }
     } catch (e) {
@@ -308,7 +291,9 @@ async function saveCharacter(char) {
 async function getUser(userId) {
     try {
         if (useMongo) {
-            return await global.DB.User.findOne({ userId }).lean();
+            const user = await global.DB.User.findOne({ userId }).lean();
+            console.log(`Fetched user ${userId}: ${user ? 'Found' : 'Not found'}`);
+            return user;
         }
         return users.get(userId) || null;
     } catch (e) {
@@ -322,16 +307,12 @@ app.post('/api/login', async (req, res) => {
     const { name, role, dmKey } = req.body || {};
     let reqRole = role;
     let cleanName = String(name || '').trim();
-    if (typeof cleanName !== 'string' || !cleanName) {
-        return res.status(400).json({ error: 'Invalid name or role' });
-    }
+    if (!cleanName) return res.status(400).json({ error: 'Invalid name' });
     const hasDmToken = /(^dm:)|(#dm\b)|(\[dm\])/i.test(cleanName);
     if (hasDmToken) cleanName = cleanName.replace(/(^dm:)|(#dm\b)|(\[dm\])/ig, '').trim();
     if (dmKey && String(dmKey) === String(process.env.DM_KEY || 'letmein')) reqRole = 'dm';
     if (hasDmToken) reqRole = 'dm';
-    if (!reqRole || !['player', 'dm'].includes(reqRole)) {
-        return res.status(400).json({ error: 'Invalid name or role' });
-    }
+    if (!reqRole || !['player', 'dm'].includes(reqRole)) return res.status(400).json({ error: 'Invalid role' });
     try {
         let existing = null;
         if (useMongo) {
@@ -340,6 +321,7 @@ app.post('/api/login', async (req, res) => {
                 const userId = (reqRole === 'dm' ? 'dm-' : 'p-') + uuidv4();
                 await global.DB.User.create({ userId, name: cleanName, role: reqRole });
                 existing = { userId, name: cleanName, role: reqRole };
+                console.log(`Created user ${userId}: ${cleanName} (${reqRole})`);
             }
         } else {
             for (const u of users.values()) {
@@ -357,7 +339,7 @@ app.post('/api/login', async (req, res) => {
         const sid = uuidv4();
         sessions.set(sid, { userId: existing.userId, role: existing.role });
         res.cookie('sid', sid, { httpOnly: true, sameSite: 'lax' });
-        return res.json({ user: existing });
+        res.json({ user: existing });
     } catch (e) {
         console.error(`Login error: ${e.message}`);
         res.status(500).json({ error: 'Server error during login' });
@@ -374,7 +356,7 @@ app.post('/api/logout', (req, res) => {
 app.get('/api/me', async (req, res) => {
     const s = getSession(req);
     if (!s) return res.status(401).json({ error: 'Not logged in' });
-    let user = await getUser(s.userId);
+    const user = await getUser(s.userId);
     res.json({ user });
 });
 
@@ -393,6 +375,7 @@ app.get('/api/characters', async (req, res) => {
         if (s.role === 'player') {
             out = withOwners.map(c => c.ownerId === s.userId ? c : { id: c.id, name: c.name, ownerId: c.ownerId, ownerName: c.ownerName });
         }
+        console.log(`Sent characters list to ${s.userId}: ${out.length} characters`);
         res.json({ characters: out });
     } catch (e) {
         console.error(`Error fetching characters: ${e.message}`);
@@ -405,7 +388,8 @@ app.get('/api/my/character', async (req, res) => {
     if (!s) return res.status(401).json({ error: 'Not logged in' });
     if (s.role !== 'player') return res.status(400).json({ error: 'Only players have a personal character' });
     try {
-        let ch = useMongo ? await global.DB.Character.findOne({ ownerId: s.userId }).lean() : Array.from(characters.values()).find(c => c.ownerId === s.userId);
+        const ch = useMongo ? await global.DB.Character.findOne({ ownerId: s.userId }).lean() : Array.from(characters.values()).find(c => c.ownerId === s.userId);
+        console.log(`Sent my character to ${s.userId}: ${ch ? ch.id : 'None'}`);
         res.json({ character: ch || null });
     } catch (e) {
         console.error(`Error fetching my character: ${e.message}`);
@@ -433,12 +417,13 @@ app.post('/api/character', async (req, res) => {
         let doc = {
             id, name, ownerId, race: race || '', background: background || '', trait: trait || '',
             special: safeSPECIAL, perks: Array.isArray(perks) ? perks.slice(0, 30) : [],
-            level: 1, xp: 0, hp: maxHp, maxHp, caps: 0, inventory: [], materials: {}, equipment: {}, equipmentUpgrades: {}, conditions: [], shopAccess: false
+            level: 1, xp: 0, hp: maxHp, maxHp, caps: 0, inventory: [], materials: {}, equipment: {}, conditions: [], shopAccess: false
         };
         doc.ownerName = (await getUser(ownerId))?.name || 'Unknown';
         doc = withDerivedPersisted(doc);
         await saveCharacter(doc);
         io.emit('character:update', { character: doc });
+        console.log(`Created character ${id} for user ${ownerId}`);
         res.json({ character: doc });
     } catch (e) {
         console.error(`Error creating character: ${e.message}`);
@@ -446,54 +431,35 @@ app.post('/api/character', async (req, res) => {
     }
 });
 
-app.post('/api/characters/:id', async (req, res) => {
-    const s = getSession(req);
-    if (!s) return res.status(401).json({ error: 'Not logged in' });
-    try {
-        let char = await getCharacter(req.params.id);
-        if (!char) return res.status(404).json({ error: 'Not found' });
-        const isOwner = char.ownerId === s.userId;
-        const isDm = s.role === 'dm';
-        if (!isOwner && !isDm) return res.status(403).json({ error: 'Forbidden' });
-        const { name, hp, caps, inventory, conditions, equipment } = req.body || {};
-        if (typeof name === 'string') char.name = name;
-        if (Number.isFinite(hp)) char.hp = Math.max(0, Math.min(char.maxHp, hp));
-        if (Number.isFinite(caps)) char.caps = caps;
-        if (Array.isArray(inventory)) char.inventory = inventory.slice(0, 100);
-        if (Array.isArray(conditions)) char.conditions = conditions.slice(0, 20);
-        if (equipment && typeof equipment === 'object') char.equipment = { ...char.equipment, ...equipment };
-        withDerivedPersisted(char);
-        char = await saveCharacter(char);
-        io.emit('character:update', { character: char });
-        res.json({ character: char });
-    } catch (e) {
-        console.error(`Error updating character ${req.params.id}: ${e.message}`);
-        res.status(500).json({ error: 'Server error' });
-    }
-});
-
-app.post('/api/characters/:id/shop', async (req, res) => {
+app.post('/api/characters/:id/materials', async (req, res) => {
     const s = getSession(req);
     if (!s) return res.status(401).json({ error: 'Not logged in' });
     if (s.role !== 'dm') return res.status(403).json({ error: 'DM only' });
     try {
         let char = await getCharacter(req.params.id);
-        if (!char) return res.status(404).json({ error: 'Not found' });
-        const { allow } = req.body || {};
-        char.shopAccess = !!allow;
+        if (!char) return res.status(404).json({ error: 'Character not found' });
+        const { add = {} } = req.body || {};
+        char.materials = { ...char.materials };
+        for (const [mat, qty] of Object.entries(add)) {
+            if (typeof mat === 'string' && Number.isFinite(Number(qty))) {
+                char.materials[mat.toLowerCase()] = (Number(char.materials[mat.toLowerCase()] || 0) + Number(qty)) || 0;
+            }
+        }
+        withDerivedPersisted(char);
         char = await saveCharacter(char);
         io.emit('character:update', { character: char });
-        console.log(`Shop access set to ${allow} for character ${req.params.id}`);
+        console.log(`Added materials ${JSON.stringify(add)} to character ${req.params.id}`);
         res.json({ character: char });
     } catch (e) {
-        console.error(`Error setting shop access for character ${req.params.id}: ${e.message}`);
+        console.error(`Error updating materials for character ${req.params.id}: ${e.message}`);
         res.status(500).json({ error: 'Server error' });
     }
 });
 
 app.get('/api/shop', async (req, res) => {
     try {
-        let items = useMongo ? await global.DB.ShopItem.find({}).lean() : Array.from(shopItems.values());
+        const items = useMongo ? await global.DB.ShopItem.find({}).lean() : Array.from(shopItems.values());
+        console.log(`Sent shop items: ${items.length} items`);
         res.json({ items });
     } catch (e) {
         console.error(`Error fetching shop items: ${e.message}`);
@@ -523,8 +489,7 @@ app.post('/api/shop/:id/buy', async (req, res) => {
             shopItems.set(item.id, item);
         }
         io.emit('character:update', { character: char });
-        const list = useMongo ? await global.DB.ShopItem.find({}).lean() : Array.from(shopItems.values());
-        io.emit('shop:update', { items: list });
+        io.emit('shop:update', { items: useMongo ? await global.DB.ShopItem.find({}).lean() : Array.from(shopItems.values()) });
         console.log(`Character ${char.id} bought ${item.name}`);
         res.json({ character: char, item });
     } catch (e) {
@@ -536,15 +501,14 @@ app.post('/api/shop/:id/buy', async (req, res) => {
 // -------------------- Socket.IO --------------------
 io.use(async (socket, next) => {
     try {
-        const cookieHeader = socket.handshake.headers.cookie || '';
-        const cookies = Object.fromEntries(cookieHeader.split(';').filter(Boolean).map(p => {
+        const cookies = Object.fromEntries((socket.handshake.headers.cookie || '').split(';').filter(Boolean).map(p => {
             const [k, v] = p.trim().split('=');
             return [decodeURIComponent(k), decodeURIComponent(v || '')];
         }));
         const sid = cookies.sid;
-        if (!sid) return next(new Error('no sid'));
+        if (!sid) throw new Error('No session ID');
         const sess = sessions.get(sid);
-        if (!sess) return next(new Error('bad sid'));
+        if (!sess) throw new Error('Invalid session ID');
         socket.data.session = sess;
         let user = await getUser(sess.userId);
         if (!user) {
@@ -552,10 +516,11 @@ io.use(async (socket, next) => {
             if (!useMongo) users.set(sess.userId, user);
         }
         socket.data.user = user;
-        return next();
+        console.log(`Socket connected for user ${user.userId} (${user.role})`);
+        next();
     } catch (e) {
         console.error(`Socket auth error: ${e.message}`);
-        return next(e);
+        next(e);
     }
 });
 
@@ -566,7 +531,7 @@ io.on('connection', (socket) => {
 
     socket.on('characters:request', async () => {
         try {
-            const list = useMongo ? await global.DB.Character.find({}).lean() : Array.from(characters.values());
+            let list = useMongo ? await global.DB.Character.find({}).lean() : Array.from(characters.values());
             loadUnifiedRules();
             const withDer = list.map(c => withDerivedPersisted({ ...c }));
             const withOwners = await Promise.all(withDer.map(async c => ({
@@ -578,6 +543,7 @@ io.on('connection', (socket) => {
                 out = withOwners.map(c => c.ownerId === sess.userId ? c : { id: c.id, name: c.name, ownerId: c.ownerId, ownerName: c.ownerName });
             }
             socket.emit('characters:list', { characters: out });
+            console.log(`Sent characters list to ${user.userId}: ${out.length} characters`);
         } catch (e) {
             console.error(`Error handling characters:request: ${e.message}`);
             socket.emit('error', { message: 'Failed to fetch characters' });
@@ -588,33 +554,10 @@ io.on('connection', (socket) => {
         try {
             const items = useMongo ? await global.DB.ShopItem.find({}).lean() : Array.from(shopItems.values());
             socket.emit('shop:update', { items });
+            console.log(`Sent shop items to ${user.userId}: ${items.length} items`);
         } catch (e) {
             console.error(`Error handling shop:request: ${e.message}`);
             socket.emit('error', { message: 'Failed to fetch shop items' });
-        }
-    });
-
-    socket.on('character:update', async ({ id, updates }) => {
-        try {
-            let char = await getCharacter(id);
-            if (!char) return socket.emit('error', { message: 'Character not found' });
-            const isOwner = char.ownerId === sess.userId;
-            const isDm = sess.role === 'dm';
-            if (!isOwner && !isDm) return socket.emit('error', { message: 'Forbidden' });
-            const { name, hp, caps, inventory, conditions, equipment } = updates || {};
-            if (typeof name === 'string') char.name = name;
-            if (Number.isFinite(hp)) char.hp = Math.max(0, Math.min(char.maxHp, hp));
-            if (Number.isFinite(caps)) char.caps = caps;
-            if (Array.isArray(inventory)) char.inventory = inventory.slice(0, 100);
-            if (Array.isArray(conditions)) char.conditions = conditions.slice(0, 20);
-            if (equipment && typeof equipment === 'object') char.equipment = { ...char.equipment, ...equipment };
-            withDerivedPersisted(char);
-            char = await saveCharacter(char);
-            io.emit('character:update', { character: char });
-            console.log(`Character ${id} updated: ${JSON.stringify({ name, hp, caps, inventory, conditions, equipment })}`);
-        } catch (e) {
-            console.error(`Error in character:update for ${id}: ${e.message}`);
-            socket.emit('error', { message: 'Failed to update character' });
         }
     });
 
@@ -632,7 +575,7 @@ io.on('connection', (socket) => {
             withDerivedPersisted(char);
             char = await saveCharacter(char);
             io.emit('character:update', { character: char });
-            console.log(`Equipped ${item} to slot ${slot || 'Weapon 1'} for character ${id}`);
+            console.log(`Equipped ${item || 'nothing'} to slot ${slot || 'Weapon 1'} for character ${id}`);
         } catch (e) {
             console.error(`Error in character:equip for ${id}: ${e.message}`);
             socket.emit('error', { message: 'Failed to equip item' });
@@ -655,6 +598,25 @@ io.on('connection', (socket) => {
         } catch (e) {
             console.error(`Error in dm:applyDamage for ${characterId}: ${e.message}`);
             socket.emit('error', { message: 'Failed to apply damage' });
+        }
+    });
+
+    socket.on('dm:giveXP', async ({ characterId, xp }) => {
+        if (sess.role !== 'dm') return socket.emit('error', { message: 'DM only' });
+        try {
+            let char = await getCharacter(characterId);
+            if (!char) return socket.emit('error', { message: 'Character not found' });
+            const xpAdd = Number(xp) || 0;
+            if (xpAdd >= 0) {
+                char.xp = (char.xp || 0) + xpAdd;
+            }
+            withDerivedPersisted(char);
+            char = await saveCharacter(char);
+            io.emit('character:update', { character: char });
+            console.log(`Added ${xp} XP to character ${characterId}, new XP: ${char.xp}`);
+        } catch (e) {
+            console.error(`Error in dm:giveXP for ${characterId}: ${e.message}`);
+            socket.emit('error', { message: 'Failed to give XP' });
         }
     });
 
@@ -688,6 +650,15 @@ io.on('connection', (socket) => {
             console.error(`Error in dm:setConditions for ${characterId}: ${e.message}`);
             socket.emit('error', { message: 'Failed to set conditions' });
         }
+    });
+
+    socket.on('dm:rollDice', ({ sides }) => {
+        if (sess.role !== 'dm') return socket.emit('error', { message: 'DM only' });
+        const n = Number(sides);
+        if (![4, 6, 8, 10, 12, 20].includes(n)) return socket.emit('error', { message: 'Invalid dice size' });
+        const result = 1 + Math.floor(Math.random() * n);
+        io.emit('dice:rolled', { by: user.name, sides: n, result, ts: Date.now() });
+        console.log(`DM ${user.name} rolled d${n}: ${result}`);
     });
 });
 
