@@ -1,4 +1,4 @@
-// server.js (no changes needed, as per the input)
+// server.js (complete fixed version)
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -80,6 +80,7 @@ function loadUnifiedRules() {
     const perksRaw = readJsonSafe('perks.json');
     const racesDoc = readJsonSafe('character_creation_leveling_races.json');
     const condLoot = readJsonSafe('conditions_and_loot_gm_section.json');
+    const crafting = readJsonSafe('crafting.json');
     const races = Array.isArray(racesDoc?.races) ? racesDoc.races : [
         { name: 'Human' }, { name: 'Ghoul' }, { name: 'Super Mutant' }, { name: 'Synth' }
     ];
@@ -105,7 +106,8 @@ function loadUnifiedRules() {
         backgrounds: Array.isArray(backgrounds?.Backgrounds) ? backgrounds.Backgrounds : [],
         perks,
         items: items || {},
-        conditions: Array.isArray(condLoot?.ConditionsAndLoot?.Conditions) ? condLoot.ConditionsAndLoot.Conditions : []
+        conditions: Array.isArray(condLoot?.ConditionsAndLoot?.Conditions) ? condLoot.ConditionsAndLoot.Conditions : [],
+        crafting: crafting || {}
     };
     RULES_CACHE = rules;
     ITEM_WEIGHT_INDEX = buildItemWeightIndex(items || {});
@@ -605,22 +607,29 @@ io.on('connection', (socket) => {
         }
     });
 
-    socket.on('dm:giveXP', async ({ characterId, xp }) => {
+    socket.on('dm:applyXp', async ({ characterId, delta }) => {
         if (sess.role !== 'dm') return socket.emit('error', { message: 'DM only' });
         try {
             let char = await getCharacter(characterId);
             if (!char) return socket.emit('error', { message: 'Character not found' });
-            const xpAdd = Number(xp) || 0;
-            if (xpAdd >= 0) {
-                char.xp = (char.xp || 0) + xpAdd;
+            const xpAdd = Number(delta) || 0;
+            char.xp = Math.max(0, (char.xp || 0) + xpAdd);
+            // Level up logic
+            let thresh = Math.max(50, 100 * (char.level || 1));
+            while (char.xp >= thresh) {
+                char.xp -= thresh;
+                char.level = (char.level || 1) + 1;
+                thresh = Math.max(50, 100 * char.level);
+                // Add skill points or perks on level up
+                char.unspentSkillPoints = (char.unspentSkillPoints || 0) + 5; // Assume 5 per level
             }
             withDerivedPersisted(char);
             char = await saveCharacter(char);
             io.emit('character:update', { character: char });
-            console.log(`Added ${xp} XP to character ${characterId}, new XP: ${char.xp}`);
+            console.log(`Added ${delta} XP to character ${characterId}, new XP: ${char.xp}, level: ${char.level}`);
         } catch (e) {
-            console.error(`Error in dm:giveXP for ${characterId}: ${e.message}`);
-            socket.emit('error', { message: 'Failed to give XP' });
+            console.error(`Error in dm:applyXp for ${characterId}: ${e.message}`);
+            socket.emit('error', { message: 'Failed to apply XP' });
         }
     });
 
