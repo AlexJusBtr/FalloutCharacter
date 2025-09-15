@@ -1,4 +1,4 @@
-// app.js (fixed version)
+// app.js (complete fixed version)
 (() => {
     const qs = (sel) => document.querySelector(sel);
     const el = {
@@ -1784,4 +1784,4 @@
     roleSel.onchange = refresh; refresh();
   }
 
-})(); 
+})();
